@@ -1,7 +1,7 @@
 import torch
-from .efficientnet.efficientnet import efficientnet_b3_pruned, efficientnet_b1
+from .efficientnet.efficientnet import efficientnet_b3_pruned
 from .inception import Inception3
-from .swin import swin_t_features, swin_s_features, swin_b_features, swin_v2_t_features, swin_v2_s_features, swin_v2_b_features
+from .swin import swin_t_features
 from .resnet import resnet50_features
 
 
@@ -20,11 +20,6 @@ class Backbones(object):
     @staticmethod
     def effi_b3_p(pretrained=True, **kwargs):
         model = efficientnet_b3_pruned(pretrained=pretrained, drop_rate=0.3, drop_path_rate=0.2, just_feature=True)
-        return model
-
-    @staticmethod
-    def effi_b1_p(pretrained=True, **kwargs):
-        model = efficientnet_b1(pretrained=pretrained, drop_rate=0.3, drop_path_rate=0.2, just_feature=True)
         return model
     
     @staticmethod
@@ -52,47 +47,4 @@ class Backbones(object):
         model = swin_t_features(weights=weights)
         return model   
 
-    @staticmethod
-    def swin_s(pretrained=True, **kwargs):
-        if pretrained:
-            weights = 'IMAGENET1K_V1'
-        else:
-            weights = None
-        model = swin_s_features(weights=weights)
-        return model
-
-    @staticmethod
-    def swin_b(pretrained=True, **kwargs):
-        if pretrained:
-            weights = 'IMAGENET1K_V1'
-        else:
-            weights = None
-        model = swin_b_features(weights=weights)
-        return model
-    
-    @staticmethod
-    def swin2_t(pretrained=True, **kwargs):
-        if pretrained:
-            weights = 'IMAGENET1K_V1'
-        else:
-            weights = None
-        model = swin_v2_t_features(weights=weights)
-        return model   
-
-    @staticmethod
-    def swin2_s(pretrained=True, **kwargs):
-        if pretrained:
-            weights = 'IMAGENET1K_V1'
-        else:
-            weights = None
-        model = swin_v2_s_features(weights=weights)
-        return model
-
-    @staticmethod
-    def swin2_b(pretrained=True, **kwargs):
-        if pretrained:
-            weights = 'IMAGENET1K_V1'
-        else:
-            weights = None
-        model = swin_v2_b_features(weights=weights)
-        return model        
+          
