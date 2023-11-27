@@ -1,0 +1,129 @@
+# evaluation metrics
+import numpy as np
+from sklearn.metrics import average_precision_score, roc_auc_score, roc_curve
+
+
+def one_hot(x, num_ratings=None):
+    if num_ratings is None:
+        num_ratings = int(max(x)) + 1
+    return np.eye(num_ratings)[x]
+
+
+def _fast_hist(label_true, label_pred, n_class=2):
+    hist = np.bincount((n_class * label_true.astype(np.int) + label_pred.astype(np.int)).flatten(),
+                       minlength=n_class ** 2).reshape(n_class, n_class)
+    return hist
+
+
+
+class Measurement(object):
+    @staticmethod
+    def conf_mats(targets, preds):
+        targets = np.array(targets)
+        preds = np.array(preds)
+
+        assert preds.shape == targets.shape
+        n_class = targets.shape[1]
+        hists = np.zeros((n_class, 2, 2))
+        for i in range(n_class):
+            hists[i] = _fast_hist(targets[:, i].flatten(), preds[:, i].flatten())
+        return hists
+
+    @staticmethod
+    def conf_mat_based_measurements(hists, e=1e-10):
+        n_class = hists.shape[0]
+        precisions = np.zeros(n_class)
+        recalls = np.zeros(n_class)
+        fs = np.zeros(n_class)
+        specificities = np.zeros(n_class)
+        for i in range(n_class):
+            hist = hists[i]
+            tp = hist[1, 1]
+            tn = hist[0, 0]
+            fp = hist[0, 1]
+            fn = hist[1, 0]
+
+            precisions[i] = tp / (tp + fp + e)
+            recalls[i] = tp / (tp + fn + e)
+            fs[i] = 2 * tp / (2 * tp + fp + fn + 2 * e)
+            specificities[i] = tn / (tn + fp + e)
+
+        return precisions, recalls, fs, specificities
+
+    @staticmethod
+    def score_based_measurements(scores, targets):
+        assert scores.shape == targets.shape
+        im_num, label_num = scores.shape
+
+        aps = np.zeros(label_num)
+        iaps = np.zeros(im_num)
+        aucs = np.zeros(label_num)
+
+        for i in range(label_num):
+            score = scores[:, i]
+            target = targets[:, i]
+            if (target == 0).all() or (target == 1).all():
+                ap = np.nan
+                auc = np.nan
+            else:
+                ap = average_precision_score(target, score)
+                auc = roc_auc_score(target, score)
+            aps[i] = ap
+            aucs[i] = auc
+        for i in range(im_num):
+            score = scores[i, :]
+            target = targets[i, :]
+            if (target == 0).all() or (target == 1).all():
+                ap = np.nan
+            else:
+                ap = average_precision_score(target, score)
+            iaps[i] = ap
+
+        return aps, iaps, aucs
+
+
+class Evaluater(Measurement):
+    def evaluate(self, scores, targets, thre=0):
+        preds = scores.copy()
+        preds[preds>thre] = 1
+        preds[preds<=thre] = 0
+        preds = preds.astype(np.int)
+        targets = targets.astype(np.int)
+
+        hist = self.conf_mats(targets, preds)
+        precisions, recalls, fs, specificities = self.conf_mat_based_measurements(hist)
+        aps, iaps, aucs = self.score_based_measurements(scores, targets)
+
+        
+        return hist, precisions, recalls, fs, specificities, aps, iaps, aucs
+
+    @staticmethod
+    def best_f1(scores, targets):
+        n_class = scores.shape[1]
+
+        senss = []
+        specs = []
+        thress = []
+        f1s = []
+        
+        for i in range(n_class):
+            b_spec = -1
+            b_sens = -1
+            b_f1 = -1
+            b_thre = -1
+            fprs, tprs, thres = roc_curve(targets[:, i], scores[:, i])
+
+            for fpr, tpr, thre in zip(fprs, tprs, thres):
+                sens = tpr
+                spec = 1 - fpr
+                f1 = 2 * sens * spec / (sens + spec + 1e-10)
+                if f1 > b_f1:
+                    b_f1 = f1
+                    b_sens = sens
+                    b_spec = spec
+                    b_thre = thre
+            senss.append(b_sens)
+            specs.append(b_spec)
+            f1s.append(b_f1)
+            thress.append(b_thre)
+        return senss, specs, thress, f1s
