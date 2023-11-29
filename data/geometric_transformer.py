@@ -5,7 +5,7 @@ import cv2
 
 class GeometricTransformer(object):
     @staticmethod
-    def resize(im, size=(512, 512)):
+    def resize(im, size):
         e = 1e-15
         if im.dtype != 'float32':
             im = im.astype(np.float32)

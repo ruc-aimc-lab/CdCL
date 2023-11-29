@@ -155,6 +155,9 @@ class CdCL(nn.Module):
         print(no_update_keys)
         super().load_state_dict(own_state, strict=True)
 
+    def forward(self, x):
+        pass
+
     def forward_lap(self, x):
         x = self.backbone(x)
 
@@ -189,6 +192,8 @@ class CdCL(nn.Module):
         else:
             new_cfp = cfp
         return new_cfp
+    
+
 
 
 class CdCLTraining(CdCL):

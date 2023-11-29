@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from .backbones import build_backbone
-from .FOVNet import VITMixupWholeTraining
+from .FOVNet import CdCLTraining
 
 
 def build_model(model_name, training_params):
@@ -15,7 +15,7 @@ class Models(object):
     @staticmethod
     def vit_fov_mixup_mean_whole_effi_b3_p(n_class, custom_pretrained, model_params, training_params):
         backbone = build_backbone(model_name='effi_b3_p', pretrained=True)
-        model = VITMixupWholeTraining(backbone=backbone, n_class=n_class, channels=1536, 
+        model = CdCLTraining(backbone=backbone, n_class=n_class, channels=1536, 
                                     crit_sup=nn.BCEWithLogitsLoss(),
                                     weights=model_params['weights'],
                                     mhsa_nums=model_params['mhsa_nums'],
