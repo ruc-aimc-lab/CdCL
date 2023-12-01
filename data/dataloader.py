@@ -1,5 +1,5 @@
 import os
-from .dataset import CFPDataset, UWFDataset, UWFDatasetFolder
+from .dataset import MyDataset
 from torch.utils.data import DataLoader
 from .augmentation import OurAug
 import json
@@ -9,7 +9,7 @@ def build_cfp_dataloader(paths, training_params, augmentation_params, collection
     for collection in collection_name.split('+'):
         lstpath = os.path.join(paths['collection_root'], collection, 'ImageSet', 'idx.txt')
         lstpaths.append(lstpath)
-    im_root = paths['cfp_image_root']
+    im_root = paths['image_root']
 
     augmentation_params['whole_size_h'] = augmentation_params['source_size_h']
     augmentation_params['whole_size_w'] = augmentation_params['source_size_w']
@@ -21,15 +21,17 @@ def build_cfp_dataloader(paths, training_params, augmentation_params, collection
                       'instance_size_w':augmentation_params['instance_size_w'],
                       'whole_size_h': augmentation_params['whole_size_h'],
                       'whole_size_w': augmentation_params['whole_size_w']})
-    num_class = training_params['n_class']
+    
     batch_size = training_params['batch_size_cfp']
     num_workers = training_params['num_workers']
 
     with open(mapping_path, 'r') as fin:
         mappings = fin.read()
         mappings = json.loads(mappings)
+    
+    assert training_params['n_class'] == len(mappings)
 
-    dataset = CFPDataset(lstpath=lstpaths, img_root=im_root, aug=aug, num_class=num_class, mappings=mappings)
+    dataset = MyDataset(lstpath=lstpaths, img_root=im_root, aug=aug, mappings=mappings)
     dataloader = DataLoader(dataset, shuffle=train, batch_size=batch_size, num_workers=num_workers)
 
     return dataloader

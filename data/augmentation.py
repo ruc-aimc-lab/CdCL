@@ -9,7 +9,7 @@ class OurAug(ColorTransformer, GeometricTransformer):
     def __init__(self, params):
         self.aug_cfg = params
 
-    def process(self, img, rand_values=None, size_h=None, size_w=None):
+    def process(self, img, size_h, size_w, rand_values=None):
         chosen_value = {}
 
         im = np.copy(img)
