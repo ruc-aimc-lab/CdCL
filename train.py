@@ -3,24 +3,21 @@ import sys
 import json
 from trainer import Trainer
 import warnings
-warnings.filterwarnings("ignore")
+
+# warnings.filterwarnings("ignore")
 
 
-def main(cfp_train_collection, uwf_train_collection, uwf_val_collection, config_path):
+def main(source_train_collection, target_train_collection, target_val_collection, config_path):
     f = open(config_path, 'r').read()
     config = json.loads(f)
 
     paths = config['paths']
     training_params = config['training_params']
     augmentation_params = config['augmentation_params']
-    paths['cfp_train_collection'] = cfp_train_collection
-    paths['uwf_train_collection'] = uwf_train_collection
-    paths['uwf_val_collection'] = uwf_val_collection
+    paths['source_train_collection'] = source_train_collection
+    paths['target_train_collection'] = target_train_collection
+    paths['target_val_collection'] = target_val_collection
     paths['config_path'] = config_path
-
-    #model = build_model(training_params['net'], training_params)
-    #model.cuda()
-    #print('finish model loading')
 
     trainer = Trainer(paths=paths,
                       training_params=training_params,

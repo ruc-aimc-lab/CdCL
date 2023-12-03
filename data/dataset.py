@@ -3,19 +3,16 @@ import os
 import cv2
 import numpy as np
 from torch.utils.data import Dataset
-from .augmentation import OurAug
+from .augmentation import MyAug
 import random
 
 
 class MyDataset(Dataset):
-    def __init__(self, lstpath, img_root, mappings, aug: OurAug, ratio=1., domain='source') -> None:
+    def __init__(self, lstpath, img_root, mappings, aug: MyAug, ratio=1.) -> None:
         """
         lstpath: path of the dataset list file
         img_root: root path of images
         """
-        if domain not in ['source', 'target']:
-            raise Exception('Invalid domain type {}'.format(domain))
-        self.domain = domain
 
         self.img_root = img_root
         self.aug = aug

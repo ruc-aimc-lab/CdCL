@@ -1,15 +1,16 @@
 # 数据增强模块
 import numpy as np
+import cv2
 from .color_transformer import ColorTransformer
 from .geometric_transformer import GeometricTransformer
 
 
-class OurAug(ColorTransformer, GeometricTransformer):
+class MyAug(ColorTransformer, GeometricTransformer):
    
     def __init__(self, params):
         self.aug_cfg = params
 
-    def process(self, img, size_h, size_w, rand_values=None):
+    def process(self, img, rand_values=None):
         chosen_value = {}
 
         im = np.copy(img)
@@ -76,9 +77,10 @@ class OurAug(ColorTransformer, GeometricTransformer):
                     chosen_value['w_dev'] = w_dev
                 im = self.zoom(im, w_dev)
         
-        output_shape = (size_w, size_h)
+        
+        output_shape = (self.aug_cfg['size_w'], self.aug_cfg['size_h'])
         if tuple(im.shape[:2]) != output_shape:
-            im = self.resize(im, output_shape)
+            im = cv2.resize(im, output_shape)
 
         # start color augmentation
         if self.aug_cfg.get('gamma', False):

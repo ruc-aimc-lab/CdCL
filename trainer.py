@@ -15,12 +15,11 @@ class Trainer(object):
         self.paths = paths
         self.augmentation_params = augmentation_params
 
-        self.cfp_imroot = paths['cfp_image_root']
-        self.uwf_imroot = paths['uwf_image_root']
+        self.imroot = paths['image_root']
 
-        self.train_cfp_collection = paths['cfp_train_collection']
-        self.train_uwf_collection = paths['uwf_train_collection']
-        self.val_uwf_collection = paths['uwf_val_collection']
+        self.train_cfp_collection = paths['source_train_collection']
+        self.train_uwf_collection = paths['target_train_collection']
+        self.val_uwf_collection = paths['target_val_collection']
 
         self.collection_root = paths['collection_root']
         self.config_path = paths['config_path']
@@ -30,11 +29,11 @@ class Trainer(object):
 
         self.num_workers = self.training_params['num_workers']
 
-        self.wf_image = self.training_params['wf_image']  # 用来区分输入的是uwf还是wf
+        # self.target_type = self.training_params['target_type']  # 用来区分输入的是uwf还是wf
         
         self.evaluater = Evaluater()
         # 数据集
-        self.train_cfp_loader = build_cfp_dataloader(
+        self.train_cfp_loader = build_dataloader(
             paths=self.paths, training_params=self.training_params, 
             augmentation_params=self.augmentation_params, 
             collection_name=self.train_cfp_collection, 
