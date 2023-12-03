@@ -10,7 +10,7 @@ def build_model(model_name, training_params):
     model = getattr(Models, model_name)(n_class=n_class, custom_pretrained=custom_pretrained, model_params=training_params['model_params'], training_params=training_params)
     return model
 
-
+ 
 class Models(object):
     @staticmethod
     def vit_fov_mixup_mean_whole_effi_b3_p(n_class, custom_pretrained, model_params, training_params):
