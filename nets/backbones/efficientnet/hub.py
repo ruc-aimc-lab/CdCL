@@ -1,24 +1,23 @@
 import json
 import logging
 import os
-from functools import partial
-from typing import Union, Optional
+from typing import Union
 
 import torch
-from torch.hub import load_state_dict_from_url, download_url_to_file, urlparse, HASH_REGEX
+from torch.hub import download_url_to_file, urlparse, HASH_REGEX
 try:
     from torch.hub import get_dir
 except ImportError:
     from torch.hub import _get_torch_home as get_dir
 
-try:
+"""try:
     from timm import __version__
     from huggingface_hub import hf_hub_url
     from huggingface_hub import cached_download
     cached_download = partial(cached_download, library_name="timm", library_version=__version__)
-except ImportError:
-    hf_hub_url = None
-    cached_download = None
+except ImportError:"""
+hf_hub_url = None
+cached_download = None
 
 _logger = logging.getLogger(__name__)
 

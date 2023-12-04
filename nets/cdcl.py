@@ -128,7 +128,7 @@ class LocalAveragePooling(nn.Module):
         
 
 class CdCL(nn.Module):
-    def __init__(self, backbone, n_class, backbone_out_channels, mhsa_nums=0, mil_ratio=3, over_lap=True):
+    def __init__(self, backbone, n_class, backbone_out_channels, mhsa_nums=0, lap_ratio=3, over_lap=True):
         super().__init__()
         self.backbone = backbone
 
@@ -137,9 +137,9 @@ class CdCL(nn.Module):
         else:
             self.mhsa = nn.Identity()
 
-        self.lap = LocalAveragePooling(ratio=mil_ratio, over_lap=over_lap)
+        self.lap = LocalAveragePooling(ratio=lap_ratio, over_lap=over_lap)
 
-        self.cw_att_fusion = ChannelAttention(channels=backbone_out_channels, reduction=8, act=nn.Softmax(dim=1))
+        self.channel_att_fusion = ChannelAttention(channels=backbone_out_channels, reduction=8, act=nn.Softmax(dim=1))
        
         self.gap = nn.AdaptiveAvgPool2d(1) # spatial-wise global average pooling
         self.classifier_gap = MLP(in_features=backbone_out_channels, hidden_features=128, out_features=n_class)
@@ -177,26 +177,24 @@ class CdCL(nn.Module):
         return x, feature
 
     @staticmethod
-    def uniform_size(cfp, uwf):
-        # uniform the size of cfp and uwf tensors for mixup 
-        min_n = min(cfp.size(0), uwf.size(0))
-        cfp = cfp[:min_n]
-        uwf = uwf[:min_n]
+    def uniform_size(source, target):
+        # uniform the size of source domain and target domain tensors for mixup 
+        min_n = min(source.size(0), target.size(0))
+        source = source[:min_n]
+        target = target[:min_n]
 
-        w_cfp = cfp.size(3)
-        w_uwf = uwf.size(3)
-        dw = int((w_uwf - w_cfp) / 2)
-        if w_uwf != w_cfp:
-            new_cfp = torch.zeros_like(uwf)
-            new_cfp[:, :, :, dw:dw+w_cfp] = cfp
+        w_source = source.size(3)
+        w_target = target.size(3)
+        dw = int((w_target - w_source) / 2)
+        if w_target != w_source:
+            new_source = torch.zeros_like(target)
+            new_source[:, :, :, dw:dw+w_source] = source
         else:
-            new_cfp = cfp
-        return new_cfp
-    
+            new_source = source
+        return new_source
 
 
-
-class CdCLTraining(CdCL):
+class CdCLProcessor(object):
     def __init__(self, backbone, n_class, channels, crit_sup, weights, mix_ratio, training_params, mhsa_nums=0, mil_ratio=3, over_lap=True):
         super().__init__(backbone, n_class, channels, mhsa_nums=mhsa_nums, mil_ratio=mil_ratio, over_lap=over_lap)
 

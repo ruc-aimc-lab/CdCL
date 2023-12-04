@@ -1,3 +1,5 @@
+# copy from torchvsion, delete the classifier layer
+
 from functools import partial
 from typing import Any, Callable, List, Optional, Type, Union
 

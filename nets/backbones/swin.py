@@ -1,5 +1,5 @@
 """
-从torchvsion里面复制过来的，只是把torchvision的实现去掉了最后的分类层，只用来作为backbone提取特征
+copy from torchvsion, delete the classifier layer
 """
 
 import math

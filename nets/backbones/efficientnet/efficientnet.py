@@ -1,3 +1,6 @@
+# copy from timm, delete the classifier layer
+
+
 """ The EfficientNet Family in PyTorch
 
 An implementation of EfficienNet that covers variety of related models with efficient architectures:
@@ -16,8 +19,6 @@ the models and weights open source!
 Hacked together by / Copyright 2021 Ross Wightman
 """
 from functools import partial
-from typing import List
-import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -25,8 +26,7 @@ import torch.nn.functional as F
 from .efficientnet_blocks import SqueezeExcite
 from .efficientnet_builder import EfficientNetBuilder, decode_arch_def, efficientnet_init_weights,\
     round_channels, resolve_bn_args, resolve_act_layer, BN_EPS_TF_DEFAULT
-from .features import FeatureInfo, FeatureHooks
-from .helpers import build_model_with_cfg, default_cfg_for_features
+from .helpers import build_model_with_cfg
 from .layers import create_conv2d, create_classifier
 from .registry import register_model
 

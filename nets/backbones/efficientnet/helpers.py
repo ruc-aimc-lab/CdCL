@@ -12,7 +12,7 @@ from typing import Any, Callable, Optional, Tuple
 import torch
 import torch.nn as nn
 
-from .features import FeatureListNet, FeatureDictNet, FeatureHookNet
+from .features import FeatureListNet, FeatureHookNet
 from .hub import has_hf_hub, download_cached_file, load_state_dict_from_hf, load_state_dict_from_url
 from .layers import Conv2dSame, Linear
 

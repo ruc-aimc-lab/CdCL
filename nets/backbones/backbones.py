@@ -1,3 +1,9 @@
+"""
+The implementations of different backbones and the ImageNet pretrained weights 
+are from torchvison and timm.
+Some implementations and weights may be not the newest version.
+"""
+
 import torch
 from .efficientnet.efficientnet import efficientnet_b3_pruned
 from .inception import Inception3
@@ -6,15 +12,20 @@ from .resnet import resnet50_features
 
 
 def build_backbone(model_name, pretrained, custom_pretrained=None):
+    """
+    pretrained: whether to use ImageNet pretrained weights
+    custom_pretrained: the path of customized pretrained weights
+    """
     model = getattr(Backbones, model_name)(pretrained=pretrained)
     if custom_pretrained is not None:
-        model_path = custom_pretrained
-        if model_path is not None:
-            print('load custom_pretrained', model_path)
-            print(torch.load(model_path))
-            model.my_load_state_dict(torch.load(model_path))
+        """
+        Source domain pretrained weights may be loaded here.
+        Use the weights pretrained on source domain (color fundus image) can increase the performance of some models
+        """
+        print('load custom_pretrained', custom_pretrained)
+        model.my_load_state_dict(torch.load(custom_pretrained))
     return model
-    
+
 
 class Backbones(object):
     @staticmethod

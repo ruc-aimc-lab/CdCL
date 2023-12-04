@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 from .backbones import build_backbone
-from .FOVNet import CdCLTraining
+from .cdcl import CdCLTraining
 
 
 def build_model(model_name, training_params):
