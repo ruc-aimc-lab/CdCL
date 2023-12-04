@@ -8,6 +8,9 @@ from utils import Evaluater
 from data import build_dataloader
 from predictor import Predictor
 import numpy as np
+import warnings
+warnings.filterwarnings("ignore", category=RuntimeWarning)
+
 
 class Trainer(object):
     def __init__(self, paths, training_params, augmentation_params):
@@ -55,7 +58,6 @@ class Trainer(object):
         self.model = build_model(training_params['net'], training_params)
         self.model.change_device('cuda')
         print('finish model loading')
-        # self.optimizer = Optimizer(self.model, self.training_params, method=training_params['optimizer'])
 
         # 输出目录
         self.run_num = 0
@@ -137,6 +139,7 @@ class Trainer(object):
                 self.model.change_model_mode('eval')
                 self.validate()
                 self.model.change_model_mode('train')
+                # self.end = True
                 if self.end:
                     break
             self.iteration += 1

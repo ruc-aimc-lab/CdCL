@@ -33,9 +33,8 @@ def main(train_source_collection, train_target_collection, val_target_collection
         domain='target', train=False)
 
 
-    model = build_model(training_params['net'], training_params)
-    for param in model.parameters():
-        param.requires_grad = False
+    model = build_model(training_params['net'], training_params, only_predict=True)
+    model.requires_grad_false()
     model.change_model_mode('eval')
     model_path = os.path.join(collection_root + '_out', train_target_collection + '_' + train_source_collection, 'Models', val_target_collection, config_name, 'runs_{}'.format(run_num), 'best_model.pkl')
     model.load_model(model_path)

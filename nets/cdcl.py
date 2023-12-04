@@ -185,26 +185,9 @@ class CdCL(nn.Module):
         x = self.classifier_gap(feature)
         return x, feature
 
-    @staticmethod
-    def uniform_size(source, target):
-        # uniform the size of source domain and target domain tensors for mixup 
-        min_n = min(source.size(0), target.size(0))
-        source = source[:min_n]
-        target = target[:min_n]
-
-        w_source = source.size(3)
-        w_target = target.size(3)
-        dw = int((w_target - w_source) / 2)
-        if w_target != w_source:
-            new_source = torch.zeros_like(target)
-            new_source[:, :, :, dw:dw+w_source] = source
-        else:
-            new_source = source
-        return new_source, target
-
 
 class CdCLProcessor(object):
-    def __init__(self, backbone, backbone_out_channels, training_params):
+    def __init__(self, backbone, backbone_out_channels, training_params, only_predict=False):
         model_params = training_params['model_params']
         n_class = model_params['n_class']
         mhsa_nums = model_params['mhsa_nums']
@@ -214,12 +197,12 @@ class CdCLProcessor(object):
         
         self.model = CdCL(backbone=backbone, n_class=n_class, backbone_out_channels=backbone_out_channels, 
                      mhsa_nums=mhsa_nums, lap_ratio=lap_ratio, over_lap=over_lap)
+        if not only_predict:
+            self.mix_ratio = model_params['mix_ratio']  # (0.5, 1)
 
-        self.mix_ratio = model_params['mix_ratio']  # (0.5, 1)
-
-        self.opt = Optimizer([self.model], training_params)
-        self.crit = nn.BCEWithLogitsLoss()
-        self.weights = model_params['weights'] # 长度为2，原始损失，mix up损失
+            self.opt = Optimizer([self.model], training_params)
+            self.crit = nn.BCEWithLogitsLoss()
+            self.weights = model_params['weights'] # 长度为2，原始损失，mix up损失
 
     def train_model(self, source, target, source_label, target_label):
         '''if cfp.size(0) != clarus_whole.size(0):
@@ -239,8 +222,8 @@ class CdCLProcessor(object):
         score_target = self.model(target)
         score_mixup = self.model(mixup)
         
-        loss_target = self.crit_sup(score_target, target_label)
-        loss_mixup = self.crit_sup(score_mixup, target_label) * self.mix_ratio + self.crit_sup(score_mixup, source_label) * (1 - self.mix_ratio)
+        loss_target = self.crit(score_target, target_label)
+        loss_mixup = self.crit(score_mixup, target_label) * self.mix_ratio + self.crit(score_mixup, source_label) * (1 - self.mix_ratio)
 
         loss = loss_target * self.weights[0] + loss_mixup * self.weights[1]
 
@@ -248,20 +231,23 @@ class CdCLProcessor(object):
         self.opt.g_step()
         self.opt.update_lr()
 
-        return score_target, loss, [], []
+        return score_target, loss
 
     def predict_result(self, x):
         return self.model(x)
     
     def change_model_mode(self, mode):
-        
         if mode == 'train':
             self.model.train()
         elif mode == 'eval':
             self.model.eval()
         else:
             raise Exception('Invalid model mode {}'.format(mode))
-        
+
+    def requires_grad_false(self,):
+        for param in self.model.parameters():
+            param.requires_grad = False
+
     def change_device(self, device):
         self.model.to(device)
 
@@ -270,3 +256,20 @@ class CdCLProcessor(object):
 
     def load_model(self, path):
         self.model.load_state_dict(torch.load(path))
+
+    @staticmethod
+    def uniform_size(source, target):
+        # uniform the size of source domain and target domain tensors for mixup 
+        min_n = min(source.size(0), target.size(0))
+        source = source[:min_n]
+        target = target[:min_n]
+
+        w_source = source.size(3)
+        w_target = target.size(3)
+        dw = int((w_target - w_source) / 2)
+        if w_target != w_source:
+            new_source = torch.zeros_like(target)
+            new_source[:, :, :, dw:dw+w_source] = source
+        else:
+            new_source = source
+        return new_source, target
