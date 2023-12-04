@@ -1,2 +1,2 @@
-from .dataloader import build_uwf_dataloader, build_cfp_dataloader, build_uwf_dataloader_folder
+from .dataloader import build_dataloader
 from .augmentation import MyAug

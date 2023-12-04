@@ -5,7 +5,7 @@ import torch
 from nets import build_model
 
 from utils import Evaluater
-from data import build_cfp_dataloader, build_uwf_dataloader
+from data import build_dataloader
 from predictor import Predictor
 import numpy as np
 
@@ -17,9 +17,9 @@ class Trainer(object):
 
         self.imroot = paths['image_root']
 
-        self.train_cfp_collection = paths['source_train_collection']
-        self.train_uwf_collection = paths['target_train_collection']
-        self.val_uwf_collection = paths['target_val_collection']
+        self.train_source_collection = paths['source_train_collection']
+        self.train_target_collection = paths['target_train_collection']
+        self.val_target_collection = paths['target_val_collection']
 
         self.collection_root = paths['collection_root']
         self.config_path = paths['config_path']
@@ -33,21 +33,21 @@ class Trainer(object):
         
         self.evaluater = Evaluater()
         # 数据集
-        self.train_cfp_loader = build_dataloader(
-            paths=self.paths, training_params=self.training_params, 
+        self.train_source_loader = build_dataloader(
+            paths=self.paths, collection_names=self.train_source_collection, 
+            training_params=self.training_params, mapping_path=self.mapping_path,
             augmentation_params=self.augmentation_params, 
-            collection_name=self.train_cfp_collection, 
-            mapping_path=self.mapping_path, train=True)
-        self.train_uwf_loader = build_uwf_dataloader(
-            paths=self.paths, training_params=self.training_params, 
+            domain='source', train=True)
+        self.train_target_loader = build_dataloader(
+            paths=self.paths, collection_names=self.train_target_collection, 
+            training_params=self.training_params, mapping_path=self.mapping_path, 
             augmentation_params=self.augmentation_params, 
-            collection_name=self.train_uwf_collection, 
-            mapping_path=self.mapping_path, train=True, WF=self.wf_image)
-        self.val_uwf_loader = build_uwf_dataloader(
-            paths=self.paths, training_params=self.training_params, 
+            domain='target', train=True)
+        self.val_target_loader = build_dataloader(
+            paths=self.paths, collection_names=self.val_uwf_collection, 
+            training_params=self.training_params, mapping_path=self.mapping_path, 
             augmentation_params=self.augmentation_params, 
-            collection_name=self.val_uwf_collection, 
-            mapping_path=self.mapping_path, train=False, WF=self.wf_image)
+            domain='target', train=False)
         
 
         self.inter_val = int(self.train_uwf_loader.dataset.__len__() / self.train_uwf_loader.batch_size) + 1

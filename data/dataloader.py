@@ -7,7 +7,7 @@ import json
 def build_dataloader(paths, collection_names, training_params, mapping_path, augmentation_params, domain, train):
     lstpaths = []
     for collection in collection_names.split('+'):
-        lstpath = os.path.join(paths['collection_root'], collection, 'ImageSet', 'idx.txt')
+        lstpath = os.path.join(paths['collection_root'], collection, 'Annotations', 'anno.txt')
         lstpaths.append(lstpath)
     im_root = paths['image_root']
 
@@ -25,7 +25,7 @@ def build_dataloader(paths, collection_names, training_params, mapping_path, aug
     num_workers = training_params['num_workers']
     ratio = training_params.get(ratio, 1.)
     if ratio < 1:
-        print('Use {} percent of the dataset'.format(ratio * 100))
+        print('Use {}% of the data'.format(ratio * 100))
 
     with open(mapping_path, 'r') as fin:
         mappings = fin.read()
