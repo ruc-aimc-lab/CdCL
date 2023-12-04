@@ -2,7 +2,7 @@ import os
 import sys
 import json
 
-from nets import build_model
+from models import build_model
 from dataloader import build_dataloader
 import numpy as np
 from predictor import Predictor

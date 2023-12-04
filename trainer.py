@@ -2,7 +2,7 @@
 import os
 import time
 import torch
-from nets import build_model
+from models import build_model
 
 from utils import Evaluater
 from dataloader import build_dataloader
