@@ -13,9 +13,9 @@ def build_model(model_name, training_params):
  
 class Models(object):
     @staticmethod
-    def vit_fov_mixup_mean_whole_effi_b3_p(n_class, custom_pretrained, model_params, training_params):
+    def cdcl_effi_b3_p(custom_pretrained, model_params, training_params):
         backbone = build_backbone(model_name='effi_b3_p', pretrained=True)
-        model = CdCLTraining(backbone=backbone, n_class=n_class, channels=1536, 
+        model = CdCLTraining(backbone=backbone, n_class=model_params['n_class'], channels=1536, 
                                     crit_sup=nn.BCEWithLogitsLoss(),
                                     weights=model_params['weights'],
                                     mhsa_nums=model_params['mhsa_nums'],

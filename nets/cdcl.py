@@ -151,15 +151,24 @@ class CdCL(nn.Module):
         # left_keys = [k for k, v in state_dict.items() if k not in own_state or own_state[k].shape != v.shape]
         no_update_keys = [k for k, v in own_state.items() if k not in state_dict or state_dict[k].shape != v.shape]
         own_state.update(new_state)
-        print('load pretrained')
+        print('load custom pretrained')
         print(no_update_keys)
         super().load_state_dict(own_state, strict=True)
 
     def forward(self, x):
-        pass
+        B = x.size(0)
+        score_gap, feature_gap = self.forward_gap(x)
+        score_lap, feature_lap = self.forward_lap(x)
+
+        weight_fusion = self.cw_att_fusion(torch.cat((feature_gap.view(B, 1, -1), feature_lap.view(B, 1, -1)), dim=1))
+        score = torch.cat((score_gap.view(B, 1, -1), score_lap.view(B, 1, -1)), dim=1)
+        score = torch.bmm(weight_fusion, score) # B * n_class * 2 , B * 2 * n_class
+        score = score.view(B, -1)
+
+        return score
 
     def forward_lap(self, x):
-        x = self.backbone(x)
+        x = self.backbone.forward_features(x)
 
         x = self.lap(x).flatten(2).transpose(1, 2)
         feature = self.mhsa(x)
@@ -169,7 +178,7 @@ class CdCL(nn.Module):
         return x, feature
     
     def forward_gap(self, x):
-        x = self.backbone(x)
+        x = self.backbone.forward_features(x)
 
         feature = self.gap(x).view(x.size(0), -1)
 
@@ -196,6 +205,9 @@ class CdCL(nn.Module):
 
 class CdCLProcessor(object):
     def __init__(self, backbone, n_class, channels, crit_sup, weights, mix_ratio, training_params, mhsa_nums=0, mil_ratio=3, over_lap=True):
+        
+        
+        
         super().__init__(backbone, n_class, channels, mhsa_nums=mhsa_nums, mil_ratio=mil_ratio, over_lap=over_lap)
 
         self.mix_ratio = mix_ratio  # (0.5, 1)
