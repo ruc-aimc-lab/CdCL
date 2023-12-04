@@ -200,80 +200,65 @@ class CdCL(nn.Module):
             new_source[:, :, :, dw:dw+w_source] = source
         else:
             new_source = source
-        return new_source
+        return new_source, target
 
 
 class CdCLProcessor(object):
-    def __init__(self, backbone, n_class, channels, crit_sup, weights, mix_ratio, training_params, mhsa_nums=0, mil_ratio=3, over_lap=True):
+    def __init__(self, backbone, backbone_out_channels, training_params):
+        model_params = training_params['model_params']
+        n_class = model_params['n_class']
+        mhsa_nums = model_params['mhsa_nums']
+        lap_ratio = model_params['lap_ratio']
+        over_lap = model_params['over_lap']
         
         
-        
-        super().__init__(backbone, n_class, channels, mhsa_nums=mhsa_nums, mil_ratio=mil_ratio, over_lap=over_lap)
+        self.model = CdCL(backbone=backbone, n_class=n_class, backbone_out_channels=backbone_out_channels, 
+                     mhsa_nums=mhsa_nums, lap_ratio=lap_ratio, over_lap=over_lap)
 
-        self.mix_ratio = mix_ratio  # (0.5, 1)
+        self.mix_ratio = model_params['mix_ratio']  # (0.5, 1)
 
-        self.opt = Optimizer([self.backbone, self.classifier, self.classifier_whole, self.mhsa, self.cw_att_fusion], training_params)
-        self.crit_mixup = nn.BCEWithLogitsLoss()
-        self.crit_sup = crit_sup
-        self.weights = weights # 长度为2，原始损失，mix up损失
+        self.opt = Optimizer([self.model], training_params)
+        self.crit = nn.BCEWithLogitsLoss()
+        self.weights = model_params['weights'] # 长度为2，原始损失，mix up损失
 
-    def train_model(self, cfp, clarus_whole, gt_cfp, gt_clarus):
-        if cfp.size(0) != clarus_whole.size(0):
+    def train_model(self, source, target, gt_source, gt_target):
+        '''if cfp.size(0) != clarus_whole.size(0):
             if cfp.size(0) > clarus_whole.size(0):
                 cfp = cfp[:clarus_whole.size(0)]
                 gt_cfp = gt_cfp[:clarus_whole.size(0)]
             else:
                 repeat_num = int(math.ceil(clarus_whole.size(0) / cfp.size(0)))
                 cfp = cfp.repeat((repeat_num, 1, 1, 1))[:clarus_whole.size(0)]
-                gt_cfp = gt_cfp.repeat((repeat_num, 1))[:clarus_whole.size(0)]
+                gt_cfp = gt_cfp.repeat((repeat_num, 1))[:clarus_whole.size(0)]'''
 
         self.opt.z_grad()
 
-        new_cfp = self.uniform_size(cfp=cfp, clarus_whole=clarus_whole)
-        mix_clarus = (1 - self.mix_ratio) * new_cfp + self.mix_ratio * clarus_whole
+        source, target = self.uniform_size(source=source, target=target)
+        mixup = (1 - self.mix_ratio) * source + self.mix_ratio * target
 
-        score_mix_vit, mix_feature_vit = self.forward(mix_clarus)
-        score_mix_whole, mix_feature_whole = self.forward_whole(mix_clarus)
-
-        score_vit, feature_vit = self.forward(clarus_whole)
-        score_whole, feature_whole = self.forward_whole(clarus_whole)
-            
-        B = clarus_whole.size(0)
-
-        weight_fusion = self.cw_att_fusion(torch.cat((feature_whole.view(B, 1, -1), feature_vit.view(B, 1, -1)), dim=1))
-        clarus_score = torch.cat((score_whole.view(B, 1, -1), score_vit.view(B, 1, -1)), dim=1)
+        score_target = self.model(target)
+        score_mixup = self.model(mixup)
         
-        clarus_score = torch.bmm(weight_fusion, clarus_score) # B * n_class * 2 , B * 2 * n_class
-        clarus_score = clarus_score.view(B, -1)
-        
-        
-        loss_merged_score = self.crit_sup(clarus_score, gt_clarus)
+        loss_target = self.crit_sup(score_target, gt_target)
+        loss_mixup = self.crit_sup(score_mixup, gt_target) * self.mix_ratio + self.crit_sup(score_mixup, gt_source) * (1 - self.mix_ratio)
 
-        mix_weight_fusion = self.cw_att_fusion(torch.cat((mix_feature_whole.view(B, 1, -1), mix_feature_vit.view(B, 1, -1)), dim=1))
-        mix_clarus_score = torch.cat((score_mix_whole.view(B, 1, -1), score_mix_vit.view(B, 1, -1)), dim=1)
-        mix_clarus_score = torch.bmm(mix_weight_fusion, mix_clarus_score) # B * n_class * 2 , B * 2 * n_class
-        mix_clarus_score = mix_clarus_score.view(B, -1)
-       
-        loss_mix_merged_score = self.crit_sup(mix_clarus_score, gt_clarus) * self.mix_ratio + self.crit_sup(mix_clarus_score, gt_cfp) * (1 - self.mix_ratio)
-
-        loss = loss_merged_score * self.weights[0] + loss_mix_merged_score * self.weights[1]
+        loss = loss_target * self.weights[0] + loss_mixup * self.weights[1]
 
         loss.backward()
         self.opt.g_step()
         self.opt.update_lr()
 
-        return clarus_score, loss, [], []
+        return score_target, loss, [], []
 
-    def predict_result(self, clarus_whole):
-        B = clarus_whole.size(0)
-        score_whole, feature_whole = self.forward_whole(clarus_whole)
-
-        score_vit, feature_vit = self.forward(clarus_whole)
-
-        weight_fusion = self.cw_att_fusion(torch.cat((feature_whole.view(B, 1, -1), feature_vit.view(B, 1, -1)), dim=1))
-        clarus_score = torch.cat((score_whole.view(B, 1, -1), score_vit.view(B, 1, -1)), dim=1)
-        clarus_score = torch.bmm(weight_fusion, clarus_score) # B * n_class * 2 , B * 2 * n_class
-        clarus_score = clarus_score.view(B, -1)
-
-        return clarus_score
+    def predict_result(self, x):
+        return self.model(x)
+    
+    def change_model_mode(self, mode):
+        
+        if mode == 'train':
+            self.model.train()
+        elif mode == 'eval':
+            self.model.eval()
+        else:
+            raise Exception('Invalid model mode {}'.format(mode))
 

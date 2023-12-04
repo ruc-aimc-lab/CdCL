@@ -31,7 +31,7 @@ def build_dataloader(paths, collection_names, training_params, mapping_path, aug
         mappings = fin.read()
         mappings = json.loads(mappings)
     
-    assert training_params['n_class'] == len(mappings)
+    assert training_params['model_params']['n_class'] == len(mappings)
 
     dataset = MyDataset(lstpath=lstpaths, img_root=im_root, aug=aug, mappings=mappings, ratio=ratio)
     dataloader = DataLoader(dataset, shuffle=train, batch_size=batch_size, num_workers=num_workers)
