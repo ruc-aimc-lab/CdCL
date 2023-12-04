@@ -1,5 +1,5 @@
 # CdCL
-Code for our BIBM2023 paper "Supervised Domain Adaptation for Recognizing Retinal Diseases from Wide-Field Fundus Images"
+Code for our BIBM2023 paper [Supervised Domain Adaptation for Recognizing Retinal Diseases from Wide-Field Fundus Images](https://arxiv.org/abs/2305.08078)
 
 # Get started
 ### Datasets
