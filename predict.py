@@ -5,7 +5,6 @@ import json
 from nets import build_model
 from data import build_dataloader
 import numpy as np
-import torch
 from predictor import Predictor
 
 

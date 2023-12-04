@@ -1,4 +1,5 @@
-# 数据增强模块
+# data augmentation
+# can be replaced by torchvision.transforms
 import numpy as np
 import cv2
 from .color_transformer import ColorTransformer

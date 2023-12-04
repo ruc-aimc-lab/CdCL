@@ -2,9 +2,7 @@ import os
 import sys
 import json
 from trainer import Trainer
-import warnings
 
-# warnings.filterwarnings("ignore")
 
 
 def main(source_train_collection, target_train_collection, target_val_collection, config_path):
