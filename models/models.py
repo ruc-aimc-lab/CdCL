@@ -19,6 +19,8 @@ class Models(object):
                               training_params=training_params,
                               only_predict=only_predict)
         if custom_pretrained:
+            """Source domain pretrained weights may be loaded here.
+                Use the weights pretrained on source domain (color fundus image) can increase the performances of some models"""
             model.my_load_state_dict(torch.load(custom_pretrained))
         return model
 
