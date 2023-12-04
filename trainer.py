@@ -61,10 +61,10 @@ class Trainer(object):
 
         # 输出目录
         self.run_num = 0
-        self.out = os.path.join(self.collection_root + '_out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
+        self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
         while os.path.exists(self.out):
             self.run_num += 1
-            self.out = os.path.join(self.collection_root + '_out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
+            self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
         os.makedirs(os.path.join(self.out, 'models'))
 
         # log head

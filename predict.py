@@ -39,7 +39,7 @@ def main(train_source_collection, train_target_collection, val_target_collection
     model.load_model(model_path)
     model.change_device('cuda')
 
-    out_root = os.path.join(collection_root + '_out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+    out_root = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num))
     if not os.path.exists(out_root):
         os.makedirs(out_root)

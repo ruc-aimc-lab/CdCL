@@ -46,7 +46,7 @@ def main(train_source_collection, train_target_collection, val_target_collection
     paths = config['paths']
     collection_root = paths['collection_root']
 
-    pred_path = os.path.join(collection_root + '_out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+    pred_path = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num), 'results.csv')
     gt_path = os.path.join(collection_root, test_target_collection, 'Annotations', 'anno.txt')
     
@@ -77,7 +77,7 @@ def main(train_source_collection, train_target_collection, val_target_collection
     column_head = ['mean'] + [reserve_mappings[i] for i in range(len(precisions))]
     results = [precisions, recalls, fs, specificities, aucs, aps]
 
-    with open(os.path.join(collection_root + '_out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+    with open(os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num), 'eval_results.csv'), 'w') as fout:
         column_head = ','.join(column_head)
         fout.write(',{}\n'.format(column_head))
