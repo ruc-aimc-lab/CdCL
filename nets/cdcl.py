@@ -221,7 +221,7 @@ class CdCLProcessor(object):
         self.crit = nn.BCEWithLogitsLoss()
         self.weights = model_params['weights'] # 长度为2，原始损失，mix up损失
 
-    def train_model(self, source, target, gt_source, gt_target):
+    def train_model(self, source, target, source_label, target_label):
         '''if cfp.size(0) != clarus_whole.size(0):
             if cfp.size(0) > clarus_whole.size(0):
                 cfp = cfp[:clarus_whole.size(0)]
@@ -239,8 +239,8 @@ class CdCLProcessor(object):
         score_target = self.model(target)
         score_mixup = self.model(mixup)
         
-        loss_target = self.crit_sup(score_target, gt_target)
-        loss_mixup = self.crit_sup(score_mixup, gt_target) * self.mix_ratio + self.crit_sup(score_mixup, gt_source) * (1 - self.mix_ratio)
+        loss_target = self.crit_sup(score_target, target_label)
+        loss_mixup = self.crit_sup(score_mixup, target_label) * self.mix_ratio + self.crit_sup(score_mixup, source_label) * (1 - self.mix_ratio)
 
         loss = loss_target * self.weights[0] + loss_mixup * self.weights[1]
 
