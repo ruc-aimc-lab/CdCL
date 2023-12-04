@@ -38,18 +38,17 @@ def load_gt(gt_path, mapping):
     return gt_dic
 
 
-def main(train_cfp_collection, train_uwf_collection, val_uwf_collection, config_path, test_uwf_collection, run_num):
+def main(train_source_collection, train_target_collection, val_target_collection, config_path, test_target_collection, run_num):
     with open(config_path, 'r') as fin:
         config = json.load(fin)
     config_name = config_path.split(os.sep)[-1]
 
     paths = config['paths']
-
     collection_root = paths['collection_root']
 
-    pred_path = os.path.join(collection_root + '_out', test_uwf_collection, 'Predictions', train_uwf_collection + '_' + train_cfp_collection,
-                            val_uwf_collection, config_name, 'runs_{}'.format(run_num), 'results.csv')
-    gt_path = os.path.join(collection_root, test_uwf_collection, 'Annotations', 'anno.txt')
+    pred_path = os.path.join(collection_root + '_out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+                            val_target_collection, config_name, 'runs_{}'.format(run_num), 'results.csv')
+    gt_path = os.path.join(collection_root, test_target_collection, 'Annotations', 'anno.txt')
     
     mapping_path = paths['mapping_path']
     with open(mapping_path, 'r') as fin:
@@ -73,13 +72,13 @@ def main(train_cfp_collection, train_uwf_collection, val_uwf_collection, config_
     evaluater = Evaluater()
 
     hist, precisions, recalls, fs, specificities, aps, iaps, aucs = evaluater.evaluate(preds, gts, thre=0.5)
-    recalls, specificities, thres, fs = evaluater.best_f1(preds, gts)
-    row_heads = ['precision', 'recall', 'f1', 'specificity', 'auc', 'ap', 'thres']
+    # recalls, specificities, thres, fs = evaluater.best_f1(preds, gts)
+    row_heads = ['precision', 'recall', 'f1', 'specificity', 'auc', 'ap']
     column_head = ['mean'] + [reserve_mappings[i] for i in range(len(precisions))]
-    results = [precisions, recalls, fs, specificities, aucs, aps, thres]
+    results = [precisions, recalls, fs, specificities, aucs, aps]
 
-    with open(os.path.join(collection_root + '_out', test_uwf_collection, 'Predictions', train_uwf_collection + '_' + train_cfp_collection,
-                            val_uwf_collection, config_name, 'runs_{}'.format(run_num), 'eval_results.csv'), 'w') as fout:
+    with open(os.path.join(collection_root + '_out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+                            val_target_collection, config_name, 'runs_{}'.format(run_num), 'eval_results.csv'), 'w') as fout:
         column_head = ','.join(column_head)
         fout.write(',{}\n'.format(column_head))
 
@@ -92,12 +91,12 @@ def main(train_cfp_collection, train_uwf_collection, val_uwf_collection, config_
 
 
 if __name__ == '__main__':
-    train_cfp_collection = sys.argv[1]
-    train_uwf_collection = sys.argv[2]
-    val_uwf_collection = sys.argv[3]
+    train_source_collection = sys.argv[1]
+    train_target_collection = sys.argv[2]
+    val_target_collection = sys.argv[3]
     config_path = sys.argv[4]
-    test_uwf_collection = sys.argv[5]
+    test_target_collection = sys.argv[5]
     run_num = sys.argv[6]
-    main(train_cfp_collection, train_uwf_collection, val_uwf_collection, config_path, test_uwf_collection, run_num)
+    main(train_source_collection, train_target_collection, val_target_collection, config_path, test_target_collection, run_num)
     
 

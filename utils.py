@@ -94,7 +94,6 @@ class Evaluater(Measurement):
         precisions, recalls, fs, specificities = self.conf_mat_based_measurements(hist)
         aps, iaps, aucs = self.rank_based_measurements(scores, labels)
 
-        
         return hist, precisions, recalls, fs, specificities, aps, iaps, aucs
 
     @staticmethod

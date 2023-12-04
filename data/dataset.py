@@ -32,31 +32,32 @@ class MyDataset(Dataset):
             lst = random.sample(lst, int(len(lst) * self.ratio))
         return lst
 
-    def __getitem__(self, index, only_img=False, only_label=False):
-        assert not (only_img and only_label)
+    def __getitem__(self, index):
 
         line = self.lst[index]
-        dataset, img_name, labels = line 
-        labels = labels.split(',')
 
+        dataset, img_name, labels = line 
         img_path = os.path.join(self.img_root, dataset, img_name)
         if not os.path.exists(img_path):
             raise Exception(img_path)
+        
+        # load image
         img = cv2.imread(img_path)[:, :, [2, 1, 0]]
-
         # the input size of source image and target image may be different
         size_h = self.aug.aug_cfg['{}_size_h'.format(self.domain)]
         size_w = self.aug.aug_cfg['{}_size_w'.format(self.domain)]
-
         img, _ = self.aug.process(img, size_h=size_h, size_w=size_w)
         img = np.multiply(img, 1 / 255.0)
         img = np.transpose(img, (2, 0, 1))
-
+        
+        # load labels
+        labels = labels.split(',')
         gt = np.zeros(self.num_class)
         for label in labels:
             if label not in self.mappings:
                 continue
             gt[self.mappings[label]] = 1
+        
         return img_path, img, gt
 
     def __len__(self):
