@@ -1,0 +1,1 @@
+python main.py train_RFMiD train_TOP_10percent val_TOP configs/cdcl_effi_b3_p.json test_TOP 0

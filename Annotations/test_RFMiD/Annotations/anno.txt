@@ -5,25 +5,25 @@ RFMiD	test_4.jpg
 RFMiD	test_5.jpg	
 RFMiD	test_6.jpg	
 RFMiD	test_7.jpg	
-RFMiD	test_8.jpg	黄斑前膜
+RFMiD	test_8.jpg	
 RFMiD	test_9.jpg	DR
-RFMiD	test_10.jpg	DR,激光术后
+RFMiD	test_10.jpg	DR
 RFMiD	test_11.jpg	
 RFMiD	test_12.jpg	AMD
-RFMiD	test_13.jpg	黄斑前膜,黄斑裂孔
-RFMiD	test_14.jpg	视神经萎缩
+RFMiD	test_13.jpg	
+RFMiD	test_14.jpg	
 RFMiD	test_15.jpg	
-RFMiD	test_16.jpg	黄斑前膜
-RFMiD	test_17.jpg	黄斑前膜
+RFMiD	test_16.jpg	
+RFMiD	test_17.jpg	
 RFMiD	test_18.jpg	
 RFMiD	test_19.jpg	
-RFMiD	test_20.jpg	激光术后,黄斑裂孔
-RFMiD	test_21.jpg	激光术后
+RFMiD	test_20.jpg	
+RFMiD	test_21.jpg	
 RFMiD	test_22.jpg	
 RFMiD	test_23.jpg	
 RFMiD	test_24.jpg	
 RFMiD	test_25.jpg	
-RFMiD	test_26.jpg	星状玻璃体变性
+RFMiD	test_26.jpg	
 RFMiD	test_27.jpg	
 RFMiD	test_28.jpg	
 RFMiD	test_29.jpg	
@@ -44,77 +44,77 @@ RFMiD	test_43.jpg	AMD
 RFMiD	test_44.jpg	AMD
 RFMiD	test_45.jpg	AMD
 RFMiD	test_46.jpg	AMD
-RFMiD	test_47.jpg	中浆
-RFMiD	test_48.jpg	AMD,病理性近视
+RFMiD	test_47.jpg	
+RFMiD	test_48.jpg	AMD
 RFMiD	test_49.jpg	AMD
 RFMiD	test_50.jpg	
 RFMiD	test_51.jpg	AMD
 RFMiD	test_52.jpg	AMD
-RFMiD	test_53.jpg	视神经萎缩
-RFMiD	test_54.jpg	中浆
+RFMiD	test_53.jpg	
+RFMiD	test_54.jpg	
 RFMiD	test_55.jpg	
 RFMiD	test_56.jpg	
 RFMiD	test_57.jpg	AMD
 RFMiD	test_58.jpg	
 RFMiD	test_59.jpg	AMD
 RFMiD	test_60.jpg	
-RFMiD	test_61.jpg	视盘水肿
+RFMiD	test_61.jpg	
 RFMiD	test_62.jpg	
 RFMiD	test_63.jpg	
-RFMiD	test_64.jpg	视盘水肿
-RFMiD	test_65.jpg	视盘水肿
+RFMiD	test_64.jpg	
+RFMiD	test_65.jpg	
 RFMiD	test_66.jpg	
 RFMiD	test_67.jpg	AMD
 RFMiD	test_68.jpg	
 RFMiD	test_69.jpg	
 RFMiD	test_70.jpg	
-RFMiD	test_71.jpg	视盘水肿
-RFMiD	test_72.jpg	视盘水肿
+RFMiD	test_71.jpg	
+RFMiD	test_72.jpg	
 RFMiD	test_73.jpg	
 RFMiD	test_74.jpg	RVO
 RFMiD	test_75.jpg	
 RFMiD	test_76.jpg	
-RFMiD	test_77.jpg	中浆
-RFMiD	test_78.jpg	病理性近视
-RFMiD	test_79.jpg	病理性近视
-RFMiD	test_80.jpg	病理性近视
+RFMiD	test_77.jpg	
+RFMiD	test_78.jpg	
+RFMiD	test_79.jpg	
+RFMiD	test_80.jpg	
 RFMiD	test_81.jpg	RVO
 RFMiD	test_82.jpg	DR
 RFMiD	test_83.jpg	DR
 RFMiD	test_84.jpg	DR
 RFMiD	test_85.jpg	
 RFMiD	test_86.jpg	DR
-RFMiD	test_87.jpg	病理性近视
-RFMiD	test_88.jpg	视盘水肿
-RFMiD	test_89.jpg	AMD,星状玻璃体变性
+RFMiD	test_87.jpg	
+RFMiD	test_88.jpg	
+RFMiD	test_89.jpg	AMD
 RFMiD	test_90.jpg	
 RFMiD	test_91.jpg	RVO
-RFMiD	test_92.jpg	中浆
+RFMiD	test_92.jpg	
 RFMiD	test_93.jpg	RVO
 RFMiD	test_94.jpg	
 RFMiD	test_95.jpg	
 RFMiD	test_96.jpg	RVO
 RFMiD	test_97.jpg	
-RFMiD	test_98.jpg	病理性近视
+RFMiD	test_98.jpg	
 RFMiD	test_99.jpg	
 RFMiD	test_100.jpg	DR
 RFMiD	test_101.jpg	DR
-RFMiD	test_102.jpg	视盘水肿
-RFMiD	test_103.jpg	视盘水肿
+RFMiD	test_102.jpg	
+RFMiD	test_103.jpg	
 RFMiD	test_104.jpg	
 RFMiD	test_105.jpg	RVO
-RFMiD	test_106.jpg	病理性近视
-RFMiD	test_107.jpg	病理性近视
+RFMiD	test_106.jpg	
+RFMiD	test_107.jpg	
 RFMiD	test_108.jpg	
 RFMiD	test_109.jpg	
-RFMiD	test_110.jpg	AMD,病理性近视
+RFMiD	test_110.jpg	AMD
 RFMiD	test_111.jpg	DR
 RFMiD	test_112.jpg	DR
-RFMiD	test_113.jpg	视盘水肿
+RFMiD	test_113.jpg	
 RFMiD	test_114.jpg	DR
 RFMiD	test_115.jpg	DR
 RFMiD	test_116.jpg	
-RFMiD	test_117.jpg	黄斑裂孔
+RFMiD	test_117.jpg	
 RFMiD	test_118.jpg	
 RFMiD	test_119.jpg	
 RFMiD	test_120.jpg	
@@ -122,13 +122,13 @@ RFMiD	test_121.jpg	DR
 RFMiD	test_122.jpg	AMD
 RFMiD	test_123.jpg	
 RFMiD	test_124.jpg	DR
-RFMiD	test_125.jpg	视神经萎缩
-RFMiD	test_126.jpg	视神经萎缩
+RFMiD	test_125.jpg	
+RFMiD	test_126.jpg	
 RFMiD	test_127.jpg	
 RFMiD	test_128.jpg	DR
 RFMiD	test_129.jpg	DR
 RFMiD	test_130.jpg	
-RFMiD	test_131.jpg	中浆
+RFMiD	test_131.jpg	
 RFMiD	test_132.jpg	
 RFMiD	test_133.jpg	
 RFMiD	test_134.jpg	RVO
@@ -136,8 +136,8 @@ RFMiD	test_135.jpg
 RFMiD	test_136.jpg	RVO
 RFMiD	test_137.jpg	
 RFMiD	test_138.jpg	
-RFMiD	test_139.jpg	DR,激光术后
-RFMiD	test_140.jpg	DR,激光术后,视神经萎缩
+RFMiD	test_139.jpg	DR
+RFMiD	test_140.jpg	DR
 RFMiD	test_141.jpg	DR
 RFMiD	test_142.jpg	DR
 RFMiD	test_143.jpg	
@@ -150,18 +150,18 @@ RFMiD	test_149.jpg
 RFMiD	test_150.jpg	
 RFMiD	test_151.jpg	DR
 RFMiD	test_152.jpg	AMD
-RFMiD	test_153.jpg	激光术后
+RFMiD	test_153.jpg	
 RFMiD	test_154.jpg	RVO
-RFMiD	test_155.jpg	视神经萎缩
+RFMiD	test_155.jpg	
 RFMiD	test_156.jpg	
-RFMiD	test_157.jpg	病理性近视
+RFMiD	test_157.jpg	
 RFMiD	test_158.jpg	RVO
 RFMiD	test_159.jpg	
 RFMiD	test_160.jpg	DR
 RFMiD	test_161.jpg	DR
-RFMiD	test_162.jpg	视盘水肿
+RFMiD	test_162.jpg	
 RFMiD	test_163.jpg	
-RFMiD	test_164.jpg	视盘水肿
+RFMiD	test_164.jpg	
 RFMiD	test_165.jpg	DR
 RFMiD	test_166.jpg	
 RFMiD	test_167.jpg	DR
@@ -170,8 +170,8 @@ RFMiD	test_169.jpg	DR
 RFMiD	test_170.jpg	
 RFMiD	test_171.jpg	
 RFMiD	test_172.jpg	
-RFMiD	test_173.jpg	中浆
-RFMiD	test_174.jpg	中浆
+RFMiD	test_173.jpg	
+RFMiD	test_174.jpg	
 RFMiD	test_175.jpg	DR
 RFMiD	test_176.jpg	DR
 RFMiD	test_177.jpg	
@@ -180,12 +180,12 @@ RFMiD	test_179.jpg
 RFMiD	test_180.jpg	DR
 RFMiD	test_181.jpg	DR
 RFMiD	test_182.jpg	DR
-RFMiD	test_183.jpg	视盘水肿
+RFMiD	test_183.jpg	
 RFMiD	test_184.jpg	
 RFMiD	test_185.jpg	DR
 RFMiD	test_186.jpg	
 RFMiD	test_187.jpg	
-RFMiD	test_188.jpg	AMD,病理性近视
+RFMiD	test_188.jpg	AMD
 RFMiD	test_189.jpg	AMD
 RFMiD	test_190.jpg	RVO
 RFMiD	test_191.jpg	RVO
@@ -198,8 +198,8 @@ RFMiD	test_197.jpg
 RFMiD	test_198.jpg	
 RFMiD	test_199.jpg	
 RFMiD	test_200.jpg	DR
-RFMiD	test_201.jpg	视神经萎缩
-RFMiD	test_202.jpg	视神经萎缩
+RFMiD	test_201.jpg	
+RFMiD	test_202.jpg	
 RFMiD	test_203.jpg	
 RFMiD	test_204.jpg	
 RFMiD	test_205.jpg	DR
@@ -220,8 +220,8 @@ RFMiD	test_219.jpg
 RFMiD	test_220.jpg	RVO
 RFMiD	test_221.jpg	
 RFMiD	test_222.jpg	DR
-RFMiD	test_223.jpg	病理性近视
-RFMiD	test_224.jpg	DR,激光术后
+RFMiD	test_223.jpg	
+RFMiD	test_224.jpg	DR
 RFMiD	test_225.jpg	
 RFMiD	test_226.jpg	
 RFMiD	test_227.jpg	
@@ -238,22 +238,22 @@ RFMiD	test_237.jpg	RVO
 RFMiD	test_238.jpg	
 RFMiD	test_239.jpg	RVO
 RFMiD	test_240.jpg	
-RFMiD	test_241.jpg	中浆
+RFMiD	test_241.jpg	
 RFMiD	test_242.jpg	
 RFMiD	test_243.jpg	AMD
 RFMiD	test_244.jpg	RVO
 RFMiD	test_245.jpg	
-RFMiD	test_246.jpg	中浆
+RFMiD	test_246.jpg	
 RFMiD	test_247.jpg	DR
 RFMiD	test_248.jpg	DR
 RFMiD	test_249.jpg	
 RFMiD	test_250.jpg	
 RFMiD	test_251.jpg	
 RFMiD	test_252.jpg	
-RFMiD	test_253.jpg	病理性近视
-RFMiD	test_254.jpg	病理性近视
+RFMiD	test_253.jpg	
+RFMiD	test_254.jpg	
 RFMiD	test_255.jpg	DR
-RFMiD	test_256.jpg	视神经萎缩
+RFMiD	test_256.jpg	
 RFMiD	test_257.jpg	
 RFMiD	test_258.jpg	
 RFMiD	test_259.jpg	DR
@@ -282,12 +282,12 @@ RFMiD	test_281.jpg
 RFMiD	test_282.jpg	DR
 RFMiD	test_283.jpg	DR
 RFMiD	test_284.jpg	DR
-RFMiD	test_285.jpg	DR,激光术后
-RFMiD	test_286.jpg	DR,激光术后
-RFMiD	test_287.jpg	病理性近视
-RFMiD	test_288.jpg	病理性近视
+RFMiD	test_285.jpg	DR
+RFMiD	test_286.jpg	DR
+RFMiD	test_287.jpg	
+RFMiD	test_288.jpg	
 RFMiD	test_289.jpg	DR
-RFMiD	test_290.jpg	RVO,激光术后
+RFMiD	test_290.jpg	RVO
 RFMiD	test_291.jpg	
 RFMiD	test_292.jpg	DR
 RFMiD	test_293.jpg	DR
@@ -301,22 +301,22 @@ RFMiD	test_300.jpg	DR
 RFMiD	test_301.jpg	
 RFMiD	test_302.jpg	
 RFMiD	test_303.jpg	
-RFMiD	test_304.jpg	视盘水肿
+RFMiD	test_304.jpg	
 RFMiD	test_305.jpg	
 RFMiD	test_306.jpg	DR
 RFMiD	test_307.jpg	DR
 RFMiD	test_308.jpg	DR
 RFMiD	test_309.jpg	
 RFMiD	test_310.jpg	
-RFMiD	test_311.jpg	视神经萎缩
-RFMiD	test_312.jpg	中浆
+RFMiD	test_311.jpg	
+RFMiD	test_312.jpg	
 RFMiD	test_313.jpg	
 RFMiD	test_314.jpg	
 RFMiD	test_315.jpg	
 RFMiD	test_316.jpg	DR
-RFMiD	test_317.jpg	DR,视神经萎缩
-RFMiD	test_318.jpg	RVO,视神经萎缩
-RFMiD	test_319.jpg	DR,激光术后
+RFMiD	test_317.jpg	DR
+RFMiD	test_318.jpg	RVO
+RFMiD	test_319.jpg	DR
 RFMiD	test_320.jpg	DR
 RFMiD	test_321.jpg	
 RFMiD	test_322.jpg	
@@ -327,10 +327,10 @@ RFMiD	test_326.jpg
 RFMiD	test_327.jpg	
 RFMiD	test_328.jpg	AMD
 RFMiD	test_329.jpg	
-RFMiD	test_330.jpg	视神经萎缩
+RFMiD	test_330.jpg	
 RFMiD	test_331.jpg	
 RFMiD	test_332.jpg	
-RFMiD	test_333.jpg	视盘水肿
+RFMiD	test_333.jpg	
 RFMiD	test_334.jpg	DR
 RFMiD	test_335.jpg	DR
 RFMiD	test_336.jpg	
@@ -338,13 +338,13 @@ RFMiD	test_337.jpg
 RFMiD	test_338.jpg	
 RFMiD	test_339.jpg	
 RFMiD	test_340.jpg	
-RFMiD	test_341.jpg	视盘水肿
-RFMiD	test_342.jpg	视盘水肿
+RFMiD	test_341.jpg	
+RFMiD	test_342.jpg	
 RFMiD	test_343.jpg	AMD
-RFMiD	test_344.jpg	病理性近视
-RFMiD	test_345.jpg	病理性近视
-RFMiD	test_346.jpg	病理性近视
-RFMiD	test_347.jpg	病理性近视
+RFMiD	test_344.jpg	
+RFMiD	test_345.jpg	
+RFMiD	test_346.jpg	
+RFMiD	test_347.jpg	
 RFMiD	test_348.jpg	
 RFMiD	test_349.jpg	DR
 RFMiD	test_350.jpg	DR
@@ -362,7 +362,7 @@ RFMiD	test_361.jpg
 RFMiD	test_362.jpg	
 RFMiD	test_363.jpg	
 RFMiD	test_364.jpg	RVO
-RFMiD	test_365.jpg	视神经萎缩
+RFMiD	test_365.jpg	
 RFMiD	test_366.jpg	
 RFMiD	test_367.jpg	
 RFMiD	test_368.jpg	
@@ -387,8 +387,8 @@ RFMiD	test_386.jpg	DR
 RFMiD	test_387.jpg	DR
 RFMiD	test_388.jpg	RVO
 RFMiD	test_389.jpg	
-RFMiD	test_390.jpg	视神经萎缩
-RFMiD	test_391.jpg	视神经萎缩
+RFMiD	test_390.jpg	
+RFMiD	test_391.jpg	
 RFMiD	test_392.jpg	
 RFMiD	test_393.jpg	
 RFMiD	test_394.jpg	DR
@@ -397,26 +397,26 @@ RFMiD	test_396.jpg
 RFMiD	test_397.jpg	
 RFMiD	test_398.jpg	
 RFMiD	test_399.jpg	
-RFMiD	test_400.jpg	视神经萎缩
-RFMiD	test_401.jpg	视神经萎缩
+RFMiD	test_400.jpg	
+RFMiD	test_401.jpg	
 RFMiD	test_402.jpg	
 RFMiD	test_403.jpg	
 RFMiD	test_404.jpg	
 RFMiD	test_405.jpg	
-RFMiD	test_406.jpg	病理性近视
+RFMiD	test_406.jpg	
 RFMiD	test_407.jpg	DR
-RFMiD	test_408.jpg	DR,激光术后
+RFMiD	test_408.jpg	DR
 RFMiD	test_409.jpg	
 RFMiD	test_410.jpg	DR
 RFMiD	test_411.jpg	
-RFMiD	test_412.jpg	中浆
+RFMiD	test_412.jpg	
 RFMiD	test_413.jpg	RVO
-RFMiD	test_414.jpg	病理性近视
-RFMiD	test_415.jpg	DR,激光术后
-RFMiD	test_416.jpg	DR,激光术后
+RFMiD	test_414.jpg	
+RFMiD	test_415.jpg	DR
+RFMiD	test_416.jpg	DR
 RFMiD	test_417.jpg	
-RFMiD	test_418.jpg	病理性近视,视神经萎缩
-RFMiD	test_419.jpg	病理性近视,视神经萎缩
+RFMiD	test_418.jpg	
+RFMiD	test_419.jpg	
 RFMiD	test_420.jpg	
 RFMiD	test_421.jpg	
 RFMiD	test_422.jpg	
@@ -428,25 +428,25 @@ RFMiD	test_427.jpg
 RFMiD	test_428.jpg	
 RFMiD	test_429.jpg	DR
 RFMiD	test_430.jpg	DR
-RFMiD	test_431.jpg	病理性近视
+RFMiD	test_431.jpg	
 RFMiD	test_432.jpg	DR
-RFMiD	test_433.jpg	病理性近视
+RFMiD	test_433.jpg	
 RFMiD	test_434.jpg	
 RFMiD	test_435.jpg	
-RFMiD	test_436.jpg	中浆
+RFMiD	test_436.jpg	
 RFMiD	test_437.jpg	
 RFMiD	test_438.jpg	
 RFMiD	test_439.jpg	
 RFMiD	test_440.jpg	
 RFMiD	test_441.jpg	
 RFMiD	test_442.jpg	
-RFMiD	test_443.jpg	星状玻璃体变性
+RFMiD	test_443.jpg	
 RFMiD	test_444.jpg	RVO
-RFMiD	test_445.jpg	中浆
+RFMiD	test_445.jpg	
 RFMiD	test_446.jpg	
 RFMiD	test_447.jpg	
 RFMiD	test_448.jpg	
-RFMiD	test_449.jpg	AMD,星状玻璃体变性
+RFMiD	test_449.jpg	AMD
 RFMiD	test_450.jpg	
 RFMiD	test_451.jpg	
 RFMiD	test_452.jpg	
@@ -487,14 +487,14 @@ RFMiD	test_486.jpg
 RFMiD	test_487.jpg	
 RFMiD	test_488.jpg	
 RFMiD	test_489.jpg	
-RFMiD	test_490.jpg	黄斑前膜
+RFMiD	test_490.jpg	
 RFMiD	test_491.jpg	
 RFMiD	test_492.jpg	DR
-RFMiD	test_493.jpg	视盘水肿
+RFMiD	test_493.jpg	
 RFMiD	test_494.jpg	
 RFMiD	test_495.jpg	
-RFMiD	test_496.jpg	DR,视神经萎缩
-RFMiD	test_497.jpg	DR,视神经萎缩
+RFMiD	test_496.jpg	DR
+RFMiD	test_497.jpg	DR
 RFMiD	test_498.jpg	DR
 RFMiD	test_499.jpg	
 RFMiD	test_500.jpg	
@@ -536,13 +536,13 @@ RFMiD	test_535.jpg
 RFMiD	test_536.jpg	
 RFMiD	test_537.jpg	
 RFMiD	test_538.jpg	
-RFMiD	test_539.jpg	星状玻璃体变性
+RFMiD	test_539.jpg	
 RFMiD	test_540.jpg	
 RFMiD	test_541.jpg	
 RFMiD	test_542.jpg	
 RFMiD	test_543.jpg	
 RFMiD	test_544.jpg	
-RFMiD	test_545.jpg	病理性近视
+RFMiD	test_545.jpg	
 RFMiD	test_546.jpg	
 RFMiD	test_547.jpg	
 RFMiD	test_548.jpg	
@@ -604,8 +604,8 @@ RFMiD	test_603.jpg
 RFMiD	test_604.jpg	
 RFMiD	test_605.jpg	
 RFMiD	test_606.jpg	
-RFMiD	test_607.jpg	病理性近视
-RFMiD	test_608.jpg	激光术后,视神经萎缩
+RFMiD	test_607.jpg	
+RFMiD	test_608.jpg	
 RFMiD	test_609.jpg	
 RFMiD	test_610.jpg	RVO
 RFMiD	test_611.jpg	
@@ -631,10 +631,10 @@ RFMiD	test_630.jpg
 RFMiD	test_631.jpg	
 RFMiD	test_632.jpg	
 RFMiD	test_633.jpg	
-RFMiD	test_634.jpg	视神经萎缩
-RFMiD	test_635.jpg	病理性近视
-RFMiD	test_636.jpg	病理性近视
-RFMiD	test_637.jpg	病理性近视
+RFMiD	test_634.jpg	
+RFMiD	test_635.jpg	
+RFMiD	test_636.jpg	
+RFMiD	test_637.jpg	
 RFMiD	test_638.jpg	RVO
 RFMiD	test_639.jpg	
-RFMiD	test_640.jpg	AMD,病理性近视
+RFMiD	test_640.jpg	AMD

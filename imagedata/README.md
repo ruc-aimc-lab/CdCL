@@ -1,7 +1,7 @@
 # Data preparation
 ### Datasets
 - RFMiD: [https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid](https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid)
-- TOP : [https://github.com/DateCazuki/Fundus_Diagnosis](https://github.com/DateCazuki/Fundus_Diagnosis)
+- TOP: [https://github.com/DateCazuki/Fundus_Diagnosis](https://github.com/DateCazuki/Fundus_Diagnosis)
 
 ### Data Organization
 The images are organized as follows:
@@ -35,5 +35,4 @@ The annotations are organized as follows:
     val_RFMiD/
     val_TOP/
 ```
-
 

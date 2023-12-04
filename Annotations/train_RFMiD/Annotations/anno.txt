@@ -2,20 +2,20 @@ RFMiD	train_1.jpg	DR
 RFMiD	train_2.jpg	DR
 RFMiD	train_3.jpg	DR
 RFMiD	train_4.jpg	
-RFMiD	train_5.jpg	DR,激光术后
-RFMiD	train_6.jpg	AMD,病理性近视
-RFMiD	train_7.jpg	AMD,病理性近视
-RFMiD	train_8.jpg	AMD,病理性近视
-RFMiD	train_9.jpg	黄斑前膜
+RFMiD	train_5.jpg	DR
+RFMiD	train_6.jpg	AMD
+RFMiD	train_7.jpg	AMD
+RFMiD	train_8.jpg	AMD
+RFMiD	train_9.jpg	
 RFMiD	train_10.jpg	
 RFMiD	train_11.jpg	AMD
-RFMiD	train_12.jpg	AMD,病理性近视
+RFMiD	train_12.jpg	AMD
 RFMiD	train_13.jpg	
 RFMiD	train_14.jpg	
 RFMiD	train_15.jpg	
 RFMiD	train_16.jpg	
 RFMiD	train_17.jpg	
-RFMiD	train_18.jpg	DR,激光术后
+RFMiD	train_18.jpg	DR
 RFMiD	train_19.jpg	DR
 RFMiD	train_20.jpg	DR
 RFMiD	train_21.jpg	
@@ -23,8 +23,8 @@ RFMiD	train_22.jpg
 RFMiD	train_23.jpg	
 RFMiD	train_24.jpg	
 RFMiD	train_25.jpg	AMD
-RFMiD	train_26.jpg	DR,激光术后
-RFMiD	train_27.jpg	视神经萎缩
+RFMiD	train_26.jpg	DR
+RFMiD	train_27.jpg	
 RFMiD	train_28.jpg	
 RFMiD	train_29.jpg	
 RFMiD	train_30.jpg	
@@ -39,24 +39,24 @@ RFMiD	train_38.jpg	DR
 RFMiD	train_39.jpg	DR
 RFMiD	train_40.jpg	
 RFMiD	train_41.jpg	RVO
-RFMiD	train_42.jpg	DR,激光术后
+RFMiD	train_42.jpg	DR
 RFMiD	train_43.jpg	DR
 RFMiD	train_44.jpg	DR
 RFMiD	train_45.jpg	
 RFMiD	train_46.jpg	
-RFMiD	train_47.jpg	病理性近视
-RFMiD	train_48.jpg	病理性近视
+RFMiD	train_47.jpg	
+RFMiD	train_48.jpg	
 RFMiD	train_49.jpg	DR
 RFMiD	train_50.jpg	DR
 RFMiD	train_51.jpg	
 RFMiD	train_52.jpg	
-RFMiD	train_53.jpg	中浆
+RFMiD	train_53.jpg	
 RFMiD	train_54.jpg	
-RFMiD	train_55.jpg	视盘水肿
-RFMiD	train_56.jpg	视盘水肿
-RFMiD	train_57.jpg	视神经萎缩
+RFMiD	train_55.jpg	
+RFMiD	train_56.jpg	
+RFMiD	train_57.jpg	
 RFMiD	train_58.jpg	RVO
-RFMiD	train_59.jpg	DR,激光术后
+RFMiD	train_59.jpg	DR
 RFMiD	train_60.jpg	
 RFMiD	train_61.jpg	DR
 RFMiD	train_62.jpg	DR
@@ -77,23 +77,23 @@ RFMiD	train_76.jpg
 RFMiD	train_77.jpg	
 RFMiD	train_78.jpg	
 RFMiD	train_79.jpg	
-RFMiD	train_80.jpg	DR,激光术后
+RFMiD	train_80.jpg	DR
 RFMiD	train_81.jpg	
 RFMiD	train_82.jpg	
 RFMiD	train_83.jpg	
 RFMiD	train_84.jpg	
 RFMiD	train_85.jpg	DR
 RFMiD	train_86.jpg	DR
-RFMiD	train_87.jpg	中浆
+RFMiD	train_87.jpg	
 RFMiD	train_88.jpg	
-RFMiD	train_89.jpg	中浆
+RFMiD	train_89.jpg	
 RFMiD	train_90.jpg	
 RFMiD	train_91.jpg	
 RFMiD	train_92.jpg	
 RFMiD	train_93.jpg	
 RFMiD	train_94.jpg	
-RFMiD	train_95.jpg	黄斑前膜
-RFMiD	train_96.jpg	黄斑前膜
+RFMiD	train_95.jpg	
+RFMiD	train_96.jpg	
 RFMiD	train_97.jpg	DR
 RFMiD	train_98.jpg	DR
 RFMiD	train_99.jpg	
@@ -101,15 +101,15 @@ RFMiD	train_100.jpg
 RFMiD	train_101.jpg	DR
 RFMiD	train_102.jpg	DR
 RFMiD	train_103.jpg	
-RFMiD	train_104.jpg	DR,黄斑前膜,激光术后
+RFMiD	train_104.jpg	DR
 RFMiD	train_105.jpg	DR
 RFMiD	train_106.jpg	DR
-RFMiD	train_107.jpg	病理性近视
-RFMiD	train_108.jpg	病理性近视
-RFMiD	train_109.jpg	病理性近视
-RFMiD	train_110.jpg	病理性近视
+RFMiD	train_107.jpg	
+RFMiD	train_108.jpg	
+RFMiD	train_109.jpg	
+RFMiD	train_110.jpg	
 RFMiD	train_111.jpg	DR
-RFMiD	train_112.jpg	DR,星状玻璃体变性
+RFMiD	train_112.jpg	DR
 RFMiD	train_113.jpg	
 RFMiD	train_114.jpg	
 RFMiD	train_115.jpg	
@@ -119,22 +119,22 @@ RFMiD	train_118.jpg
 RFMiD	train_119.jpg	DR
 RFMiD	train_120.jpg	DR
 RFMiD	train_121.jpg	
-RFMiD	train_122.jpg	DR,激光术后
+RFMiD	train_122.jpg	DR
 RFMiD	train_123.jpg	
 RFMiD	train_124.jpg	
-RFMiD	train_125.jpg	DR,激光术后,视神经萎缩
+RFMiD	train_125.jpg	DR
 RFMiD	train_126.jpg	
 RFMiD	train_127.jpg	RVO
 RFMiD	train_128.jpg	DR
 RFMiD	train_129.jpg	DR,RVO
-RFMiD	train_130.jpg	DR,激光术后
-RFMiD	train_131.jpg	DR,激光术后
+RFMiD	train_130.jpg	DR
+RFMiD	train_131.jpg	DR
 RFMiD	train_132.jpg	
 RFMiD	train_133.jpg	
 RFMiD	train_134.jpg	DR
 RFMiD	train_135.jpg	
 RFMiD	train_136.jpg	RVO
-RFMiD	train_137.jpg	黄斑前膜
+RFMiD	train_137.jpg	
 RFMiD	train_138.jpg	
 RFMiD	train_139.jpg	
 RFMiD	train_140.jpg	RVO
@@ -147,19 +147,19 @@ RFMiD	train_146.jpg
 RFMiD	train_147.jpg	
 RFMiD	train_148.jpg	
 RFMiD	train_149.jpg	
-RFMiD	train_150.jpg	星状玻璃体变性
+RFMiD	train_150.jpg	
 RFMiD	train_151.jpg	
 RFMiD	train_152.jpg	
 RFMiD	train_153.jpg	
 RFMiD	train_154.jpg	
-RFMiD	train_155.jpg	中浆
+RFMiD	train_155.jpg	
 RFMiD	train_156.jpg	
-RFMiD	train_157.jpg	病理性近视
-RFMiD	train_158.jpg	病理性近视,视神经萎缩
+RFMiD	train_157.jpg	
+RFMiD	train_158.jpg	
 RFMiD	train_159.jpg	
 RFMiD	train_160.jpg	
-RFMiD	train_161.jpg	病理性近视
-RFMiD	train_162.jpg	AMD,病理性近视
+RFMiD	train_161.jpg	
+RFMiD	train_162.jpg	AMD
 RFMiD	train_163.jpg	
 RFMiD	train_164.jpg	
 RFMiD	train_165.jpg	
@@ -169,8 +169,8 @@ RFMiD	train_168.jpg	AMD
 RFMiD	train_169.jpg	
 RFMiD	train_170.jpg	DR
 RFMiD	train_171.jpg	
-RFMiD	train_172.jpg	中浆
-RFMiD	train_173.jpg	黄斑裂孔
+RFMiD	train_172.jpg	
+RFMiD	train_173.jpg	
 RFMiD	train_174.jpg	RVO
 RFMiD	train_175.jpg	
 RFMiD	train_176.jpg	
@@ -182,22 +182,22 @@ RFMiD	train_181.jpg
 RFMiD	train_182.jpg	
 RFMiD	train_183.jpg	
 RFMiD	train_184.jpg	
-RFMiD	train_185.jpg	AMD,病理性近视
+RFMiD	train_185.jpg	AMD
 RFMiD	train_186.jpg	
 RFMiD	train_187.jpg	
 RFMiD	train_188.jpg	AMD
 RFMiD	train_189.jpg	
 RFMiD	train_190.jpg	
-RFMiD	train_191.jpg	DR,激光术后
+RFMiD	train_191.jpg	DR
 RFMiD	train_192.jpg	
 RFMiD	train_193.jpg	
 RFMiD	train_194.jpg	
-RFMiD	train_195.jpg	DR,激光术后
-RFMiD	train_196.jpg	DR,激光术后
-RFMiD	train_197.jpg	DR,病理性近视
+RFMiD	train_195.jpg	DR
+RFMiD	train_196.jpg	DR
+RFMiD	train_197.jpg	DR
 RFMiD	train_198.jpg	
 RFMiD	train_199.jpg	
-RFMiD	train_200.jpg	视盘水肿
+RFMiD	train_200.jpg	
 RFMiD	train_201.jpg	
 RFMiD	train_202.jpg	DR
 RFMiD	train_203.jpg	
@@ -209,7 +209,7 @@ RFMiD	train_208.jpg
 RFMiD	train_209.jpg	
 RFMiD	train_210.jpg	
 RFMiD	train_211.jpg	RVO
-RFMiD	train_212.jpg	病理性近视
+RFMiD	train_212.jpg	
 RFMiD	train_213.jpg	
 RFMiD	train_214.jpg	DR
 RFMiD	train_215.jpg	DR
@@ -217,12 +217,12 @@ RFMiD	train_216.jpg
 RFMiD	train_217.jpg	
 RFMiD	train_218.jpg	
 RFMiD	train_219.jpg	DR
-RFMiD	train_220.jpg	视神经萎缩
-RFMiD	train_221.jpg	视神经萎缩
-RFMiD	train_222.jpg	视盘水肿
-RFMiD	train_223.jpg	视盘水肿
-RFMiD	train_224.jpg	AMD,病理性近视
-RFMiD	train_225.jpg	AMD,病理性近视
+RFMiD	train_220.jpg	
+RFMiD	train_221.jpg	
+RFMiD	train_222.jpg	
+RFMiD	train_223.jpg	
+RFMiD	train_224.jpg	AMD
+RFMiD	train_225.jpg	AMD
 RFMiD	train_226.jpg	
 RFMiD	train_227.jpg	
 RFMiD	train_228.jpg	DR
@@ -272,7 +272,7 @@ RFMiD	train_271.jpg
 RFMiD	train_272.jpg	RVO
 RFMiD	train_273.jpg	
 RFMiD	train_274.jpg	
-RFMiD	train_275.jpg	RAO
+RFMiD	train_275.jpg	
 RFMiD	train_276.jpg	
 RFMiD	train_277.jpg	DR
 RFMiD	train_278.jpg	
@@ -283,12 +283,12 @@ RFMiD	train_282.jpg	RVO
 RFMiD	train_283.jpg	RVO
 RFMiD	train_284.jpg	DR
 RFMiD	train_285.jpg	DR
-RFMiD	train_286.jpg	视神经萎缩
+RFMiD	train_286.jpg	
 RFMiD	train_287.jpg	DR
 RFMiD	train_288.jpg	
 RFMiD	train_289.jpg	RVO
 RFMiD	train_290.jpg	
-RFMiD	train_291.jpg	中浆
+RFMiD	train_291.jpg	
 RFMiD	train_292.jpg	
 RFMiD	train_293.jpg	
 RFMiD	train_294.jpg	DR
@@ -297,17 +297,17 @@ RFMiD	train_296.jpg	RVO
 RFMiD	train_297.jpg	RVO
 RFMiD	train_298.jpg	
 RFMiD	train_299.jpg	AMD
-RFMiD	train_300.jpg	黄斑前膜
-RFMiD	train_301.jpg	星状玻璃体变性
-RFMiD	train_302.jpg	视盘水肿
+RFMiD	train_300.jpg	
+RFMiD	train_301.jpg	
+RFMiD	train_302.jpg	
 RFMiD	train_303.jpg	
 RFMiD	train_304.jpg	
 RFMiD	train_305.jpg	DR
 RFMiD	train_306.jpg	DR
 RFMiD	train_307.jpg	
 RFMiD	train_308.jpg	DR
-RFMiD	train_309.jpg	视神经萎缩
-RFMiD	train_310.jpg	视神经萎缩
+RFMiD	train_309.jpg	
+RFMiD	train_310.jpg	
 RFMiD	train_311.jpg	
 RFMiD	train_312.jpg	
 RFMiD	train_313.jpg	
@@ -324,23 +324,23 @@ RFMiD	train_323.jpg
 RFMiD	train_324.jpg	
 RFMiD	train_325.jpg	
 RFMiD	train_326.jpg	RVO
-RFMiD	train_327.jpg	视盘水肿
+RFMiD	train_327.jpg	
 RFMiD	train_328.jpg	
 RFMiD	train_329.jpg	
 RFMiD	train_330.jpg	
 RFMiD	train_331.jpg	
-RFMiD	train_332.jpg	视盘水肿
-RFMiD	train_333.jpg	视盘水肿
+RFMiD	train_332.jpg	
+RFMiD	train_333.jpg	
 RFMiD	train_334.jpg	
 RFMiD	train_335.jpg	
 RFMiD	train_336.jpg	
 RFMiD	train_337.jpg	DR
 RFMiD	train_338.jpg	RVO
 RFMiD	train_339.jpg	
-RFMiD	train_340.jpg	病理性近视
-RFMiD	train_341.jpg	病理性近视
+RFMiD	train_340.jpg	
+RFMiD	train_341.jpg	
 RFMiD	train_342.jpg	AMD
-RFMiD	train_343.jpg	AMD,病理性近视
+RFMiD	train_343.jpg	AMD
 RFMiD	train_344.jpg	
 RFMiD	train_345.jpg	
 RFMiD	train_346.jpg	DR
@@ -349,21 +349,21 @@ RFMiD	train_348.jpg	RVO
 RFMiD	train_349.jpg	
 RFMiD	train_350.jpg	DR
 RFMiD	train_351.jpg	
-RFMiD	train_352.jpg	视神经萎缩
-RFMiD	train_353.jpg	视神经萎缩
+RFMiD	train_352.jpg	
+RFMiD	train_353.jpg	
 RFMiD	train_354.jpg	
 RFMiD	train_355.jpg	
 RFMiD	train_356.jpg	
-RFMiD	train_357.jpg	黄斑前膜,视神经萎缩
+RFMiD	train_357.jpg	
 RFMiD	train_358.jpg	
 RFMiD	train_359.jpg	
 RFMiD	train_360.jpg	
 RFMiD	train_361.jpg	
-RFMiD	train_362.jpg	AMD,星状玻璃体变性
+RFMiD	train_362.jpg	AMD
 RFMiD	train_363.jpg	
 RFMiD	train_364.jpg	
 RFMiD	train_365.jpg	
-RFMiD	train_366.jpg	病理性近视
+RFMiD	train_366.jpg	
 RFMiD	train_367.jpg	DR
 RFMiD	train_368.jpg	RVO
 RFMiD	train_369.jpg	
@@ -373,30 +373,30 @@ RFMiD	train_372.jpg
 RFMiD	train_373.jpg	RVO
 RFMiD	train_374.jpg	
 RFMiD	train_375.jpg	
-RFMiD	train_376.jpg	视盘水肿
+RFMiD	train_376.jpg	
 RFMiD	train_377.jpg	AMD
 RFMiD	train_378.jpg	
 RFMiD	train_379.jpg	DR
 RFMiD	train_380.jpg	
-RFMiD	train_381.jpg	RVO,视神经萎缩
+RFMiD	train_381.jpg	RVO
 RFMiD	train_382.jpg	
 RFMiD	train_383.jpg	
 RFMiD	train_384.jpg	RVO
-RFMiD	train_385.jpg	DR,视神经萎缩
+RFMiD	train_385.jpg	DR
 RFMiD	train_386.jpg	
-RFMiD	train_387.jpg	中浆
-RFMiD	train_388.jpg	视盘水肿
+RFMiD	train_387.jpg	
+RFMiD	train_388.jpg	
 RFMiD	train_389.jpg	
 RFMiD	train_390.jpg	DR
 RFMiD	train_391.jpg	DR
-RFMiD	train_392.jpg	DR,病理性近视
-RFMiD	train_393.jpg	病理性近视
+RFMiD	train_392.jpg	DR
+RFMiD	train_393.jpg	
 RFMiD	train_394.jpg	DR
 RFMiD	train_395.jpg	DR
 RFMiD	train_396.jpg	RVO
 RFMiD	train_397.jpg	
 RFMiD	train_398.jpg	
-RFMiD	train_399.jpg	病理性近视
+RFMiD	train_399.jpg	
 RFMiD	train_400.jpg	
 RFMiD	train_401.jpg	
 RFMiD	train_402.jpg	DR
@@ -404,23 +404,23 @@ RFMiD	train_403.jpg	DR
 RFMiD	train_404.jpg	AMD
 RFMiD	train_405.jpg	
 RFMiD	train_406.jpg	
-RFMiD	train_407.jpg	视盘水肿
+RFMiD	train_407.jpg	
 RFMiD	train_408.jpg	
 RFMiD	train_409.jpg	
 RFMiD	train_410.jpg	
-RFMiD	train_411.jpg	病理性近视
-RFMiD	train_412.jpg	黄斑前膜
+RFMiD	train_411.jpg	
+RFMiD	train_412.jpg	
 RFMiD	train_413.jpg	
 RFMiD	train_414.jpg	
 RFMiD	train_415.jpg	
 RFMiD	train_416.jpg	
 RFMiD	train_417.jpg	
-RFMiD	train_418.jpg	病理性近视
-RFMiD	train_419.jpg	AMD,病理性近视,RVO
+RFMiD	train_418.jpg	
+RFMiD	train_419.jpg	AMD,RVO
 RFMiD	train_420.jpg	
 RFMiD	train_421.jpg	
 RFMiD	train_422.jpg	
-RFMiD	train_423.jpg	中浆
+RFMiD	train_423.jpg	
 RFMiD	train_424.jpg	
 RFMiD	train_425.jpg	
 RFMiD	train_426.jpg	DR
@@ -429,22 +429,22 @@ RFMiD	train_428.jpg
 RFMiD	train_429.jpg	
 RFMiD	train_430.jpg	
 RFMiD	train_431.jpg	
-RFMiD	train_432.jpg	视神经萎缩
+RFMiD	train_432.jpg	
 RFMiD	train_433.jpg	
 RFMiD	train_434.jpg	
 RFMiD	train_435.jpg	
 RFMiD	train_436.jpg	
-RFMiD	train_437.jpg	视神经萎缩
+RFMiD	train_437.jpg	
 RFMiD	train_438.jpg	
 RFMiD	train_439.jpg	
 RFMiD	train_440.jpg	DR
-RFMiD	train_441.jpg	DR,激光术后
+RFMiD	train_441.jpg	DR
 RFMiD	train_442.jpg	
 RFMiD	train_443.jpg	
-RFMiD	train_444.jpg	视神经萎缩
+RFMiD	train_444.jpg	
 RFMiD	train_445.jpg	AMD
 RFMiD	train_446.jpg	
-RFMiD	train_447.jpg	视盘水肿
+RFMiD	train_447.jpg	
 RFMiD	train_448.jpg	
 RFMiD	train_449.jpg	
 RFMiD	train_450.jpg	
@@ -457,22 +457,22 @@ RFMiD	train_456.jpg
 RFMiD	train_457.jpg	AMD
 RFMiD	train_458.jpg	
 RFMiD	train_459.jpg	RVO
-RFMiD	train_460.jpg	DR,激光术后
+RFMiD	train_460.jpg	DR
 RFMiD	train_461.jpg	AMD
 RFMiD	train_462.jpg	
 RFMiD	train_463.jpg	DR
-RFMiD	train_464.jpg	黄斑前膜
+RFMiD	train_464.jpg	
 RFMiD	train_465.jpg	DR
 RFMiD	train_466.jpg	
 RFMiD	train_467.jpg	
 RFMiD	train_468.jpg	DR
 RFMiD	train_469.jpg	DR
 RFMiD	train_470.jpg	
-RFMiD	train_471.jpg	中浆
-RFMiD	train_472.jpg	AMD,病理性近视,视神经萎缩
-RFMiD	train_473.jpg	DR,激光术后
+RFMiD	train_471.jpg	
+RFMiD	train_472.jpg	AMD
+RFMiD	train_473.jpg	DR
 RFMiD	train_474.jpg	
-RFMiD	train_475.jpg	中浆
+RFMiD	train_475.jpg	
 RFMiD	train_476.jpg	
 RFMiD	train_477.jpg	
 RFMiD	train_478.jpg	DR
@@ -481,10 +481,10 @@ RFMiD	train_480.jpg
 RFMiD	train_481.jpg	RVO
 RFMiD	train_482.jpg	
 RFMiD	train_483.jpg	
-RFMiD	train_484.jpg	AMD,病理性近视
-RFMiD	train_485.jpg	AMD,病理性近视
-RFMiD	train_486.jpg	DR,激光术后
-RFMiD	train_487.jpg	DR,激光术后
+RFMiD	train_484.jpg	AMD
+RFMiD	train_485.jpg	AMD
+RFMiD	train_486.jpg	DR
+RFMiD	train_487.jpg	DR
 RFMiD	train_488.jpg	AMD
 RFMiD	train_489.jpg	
 RFMiD	train_490.jpg	RVO
@@ -493,24 +493,24 @@ RFMiD	train_492.jpg
 RFMiD	train_493.jpg	
 RFMiD	train_494.jpg	
 RFMiD	train_495.jpg	DR
-RFMiD	train_496.jpg	DR,激光术后
-RFMiD	train_497.jpg	DR,激光术后
+RFMiD	train_496.jpg	DR
+RFMiD	train_497.jpg	DR
 RFMiD	train_498.jpg	
 RFMiD	train_499.jpg	
 RFMiD	train_500.jpg	
 RFMiD	train_501.jpg	
 RFMiD	train_502.jpg	
-RFMiD	train_503.jpg	视神经萎缩
-RFMiD	train_504.jpg	视神经萎缩
+RFMiD	train_503.jpg	
+RFMiD	train_504.jpg	
 RFMiD	train_505.jpg	AMD
-RFMiD	train_506.jpg	病理性近视
+RFMiD	train_506.jpg	
 RFMiD	train_507.jpg	
 RFMiD	train_508.jpg	
 RFMiD	train_509.jpg	
-RFMiD	train_510.jpg	病理性近视
+RFMiD	train_510.jpg	
 RFMiD	train_511.jpg	
 RFMiD	train_512.jpg	
-RFMiD	train_513.jpg	黄斑前膜
+RFMiD	train_513.jpg	
 RFMiD	train_514.jpg	AMD
 RFMiD	train_515.jpg	
 RFMiD	train_516.jpg	
@@ -539,48 +539,48 @@ RFMiD	train_538.jpg	DR
 RFMiD	train_539.jpg	DR
 RFMiD	train_540.jpg	DR
 RFMiD	train_541.jpg	DR
-RFMiD	train_542.jpg	AMD,病理性近视
+RFMiD	train_542.jpg	AMD
 RFMiD	train_543.jpg	
-RFMiD	train_544.jpg	视神经萎缩
-RFMiD	train_545.jpg	AMD,病理性近视
+RFMiD	train_544.jpg	
+RFMiD	train_545.jpg	AMD
 RFMiD	train_546.jpg	AMD
 RFMiD	train_547.jpg	AMD
 RFMiD	train_548.jpg	
 RFMiD	train_549.jpg	
 RFMiD	train_550.jpg	
 RFMiD	train_551.jpg	
-RFMiD	train_552.jpg	视盘水肿
+RFMiD	train_552.jpg	
 RFMiD	train_553.jpg	
 RFMiD	train_554.jpg	
 RFMiD	train_555.jpg	
 RFMiD	train_556.jpg	DR
 RFMiD	train_557.jpg	DR
-RFMiD	train_558.jpg	视盘水肿
-RFMiD	train_559.jpg	视盘水肿
-RFMiD	train_560.jpg	DR,视神经萎缩
+RFMiD	train_558.jpg	
+RFMiD	train_559.jpg	
+RFMiD	train_560.jpg	DR
 RFMiD	train_561.jpg	DR
 RFMiD	train_562.jpg	AMD
 RFMiD	train_563.jpg	
-RFMiD	train_564.jpg	AMD,病理性近视
-RFMiD	train_565.jpg	AMD,病理性近视
-RFMiD	train_566.jpg	视盘水肿
+RFMiD	train_564.jpg	AMD
+RFMiD	train_565.jpg	AMD
+RFMiD	train_566.jpg	
 RFMiD	train_567.jpg	
 RFMiD	train_568.jpg	
 RFMiD	train_569.jpg	
-RFMiD	train_570.jpg	病理性近视
-RFMiD	train_571.jpg	病理性近视
+RFMiD	train_570.jpg	
+RFMiD	train_571.jpg	
 RFMiD	train_572.jpg	
 RFMiD	train_573.jpg	
 RFMiD	train_574.jpg	
-RFMiD	train_575.jpg	中浆
-RFMiD	train_576.jpg	视盘水肿
-RFMiD	train_577.jpg	视盘水肿
+RFMiD	train_575.jpg	
+RFMiD	train_576.jpg	
+RFMiD	train_577.jpg	
 RFMiD	train_578.jpg	
 RFMiD	train_579.jpg	
 RFMiD	train_580.jpg	
 RFMiD	train_581.jpg	
 RFMiD	train_582.jpg	
-RFMiD	train_583.jpg	DR,视神经萎缩
+RFMiD	train_583.jpg	DR
 RFMiD	train_584.jpg	DR
 RFMiD	train_585.jpg	DR
 RFMiD	train_586.jpg	DR
@@ -589,7 +589,7 @@ RFMiD	train_588.jpg
 RFMiD	train_589.jpg	
 RFMiD	train_590.jpg	DR
 RFMiD	train_591.jpg	DR
-RFMiD	train_592.jpg	中浆
+RFMiD	train_592.jpg	
 RFMiD	train_593.jpg	
 RFMiD	train_594.jpg	
 RFMiD	train_595.jpg	DR
@@ -599,16 +599,16 @@ RFMiD	train_598.jpg
 RFMiD	train_599.jpg	
 RFMiD	train_600.jpg	
 RFMiD	train_601.jpg	
-RFMiD	train_602.jpg	中浆
-RFMiD	train_603.jpg	星状玻璃体变性
-RFMiD	train_604.jpg	星状玻璃体变性
+RFMiD	train_602.jpg	
+RFMiD	train_603.jpg	
+RFMiD	train_604.jpg	
 RFMiD	train_605.jpg	
-RFMiD	train_606.jpg	中浆
+RFMiD	train_606.jpg	
 RFMiD	train_607.jpg	
 RFMiD	train_608.jpg	
-RFMiD	train_609.jpg	中浆
-RFMiD	train_610.jpg	视神经萎缩
-RFMiD	train_611.jpg	中浆
+RFMiD	train_609.jpg	
+RFMiD	train_610.jpg	
+RFMiD	train_611.jpg	
 RFMiD	train_612.jpg	RVO
 RFMiD	train_613.jpg	DR
 RFMiD	train_614.jpg	DR
@@ -621,38 +621,38 @@ RFMiD	train_620.jpg	RVO
 RFMiD	train_621.jpg	RVO
 RFMiD	train_622.jpg	
 RFMiD	train_623.jpg	
-RFMiD	train_624.jpg	DR,激光术后
-RFMiD	train_625.jpg	DR,激光术后
+RFMiD	train_624.jpg	DR
+RFMiD	train_625.jpg	DR
 RFMiD	train_626.jpg	
 RFMiD	train_627.jpg	RVO
-RFMiD	train_628.jpg	AMD,病理性近视
+RFMiD	train_628.jpg	AMD
 RFMiD	train_629.jpg	
 RFMiD	train_630.jpg	
 RFMiD	train_631.jpg	
-RFMiD	train_632.jpg	视神经萎缩
-RFMiD	train_633.jpg	DR,激光术后,视神经萎缩
+RFMiD	train_632.jpg	
+RFMiD	train_633.jpg	DR
 RFMiD	train_634.jpg	
 RFMiD	train_635.jpg	
 RFMiD	train_636.jpg	
 RFMiD	train_637.jpg	
-RFMiD	train_638.jpg	视神经萎缩
+RFMiD	train_638.jpg	
 RFMiD	train_639.jpg	
 RFMiD	train_640.jpg	
 RFMiD	train_641.jpg	
 RFMiD	train_642.jpg	
 RFMiD	train_643.jpg	
-RFMiD	train_644.jpg	视神经萎缩
+RFMiD	train_644.jpg	
 RFMiD	train_645.jpg	
 RFMiD	train_646.jpg	
 RFMiD	train_647.jpg	
 RFMiD	train_648.jpg	RVO
 RFMiD	train_649.jpg	
-RFMiD	train_650.jpg	中浆
+RFMiD	train_650.jpg	
 RFMiD	train_651.jpg	
 RFMiD	train_652.jpg	
 RFMiD	train_653.jpg	
 RFMiD	train_654.jpg	
-RFMiD	train_655.jpg	中浆
+RFMiD	train_655.jpg	
 RFMiD	train_656.jpg	
 RFMiD	train_657.jpg	
 RFMiD	train_658.jpg	DR
@@ -662,13 +662,13 @@ RFMiD	train_661.jpg
 RFMiD	train_662.jpg	
 RFMiD	train_663.jpg	
 RFMiD	train_664.jpg	
-RFMiD	train_665.jpg	视盘水肿
+RFMiD	train_665.jpg	
 RFMiD	train_666.jpg	
 RFMiD	train_667.jpg	
 RFMiD	train_668.jpg	
 RFMiD	train_669.jpg	
 RFMiD	train_670.jpg	RVO
-RFMiD	train_671.jpg	视神经萎缩
+RFMiD	train_671.jpg	
 RFMiD	train_672.jpg	
 RFMiD	train_673.jpg	
 RFMiD	train_674.jpg	
@@ -685,7 +685,7 @@ RFMiD	train_684.jpg
 RFMiD	train_685.jpg	
 RFMiD	train_686.jpg	
 RFMiD	train_687.jpg	
-RFMiD	train_688.jpg	视盘水肿
+RFMiD	train_688.jpg	
 RFMiD	train_689.jpg	AMD
 RFMiD	train_690.jpg	
 RFMiD	train_691.jpg	RVO
@@ -693,13 +693,13 @@ RFMiD	train_692.jpg
 RFMiD	train_693.jpg	
 RFMiD	train_694.jpg	
 RFMiD	train_695.jpg	DR
-RFMiD	train_696.jpg	DR,激光术后
+RFMiD	train_696.jpg	DR
 RFMiD	train_697.jpg	
 RFMiD	train_698.jpg	
 RFMiD	train_699.jpg	
 RFMiD	train_700.jpg	
 RFMiD	train_701.jpg	
-RFMiD	train_702.jpg	视盘水肿
+RFMiD	train_702.jpg	
 RFMiD	train_703.jpg	
 RFMiD	train_704.jpg	
 RFMiD	train_705.jpg	DR
@@ -707,17 +707,17 @@ RFMiD	train_706.jpg	DR
 RFMiD	train_707.jpg	
 RFMiD	train_708.jpg	
 RFMiD	train_709.jpg	
-RFMiD	train_710.jpg	DR,星状玻璃体变性
+RFMiD	train_710.jpg	DR
 RFMiD	train_711.jpg	DR
 RFMiD	train_712.jpg	
 RFMiD	train_713.jpg	
 RFMiD	train_714.jpg	
 RFMiD	train_715.jpg	
-RFMiD	train_716.jpg	RAO
+RFMiD	train_716.jpg	
 RFMiD	train_717.jpg	
 RFMiD	train_718.jpg	
-RFMiD	train_719.jpg	视盘水肿
-RFMiD	train_720.jpg	视盘水肿
+RFMiD	train_719.jpg	
+RFMiD	train_720.jpg	
 RFMiD	train_721.jpg	
 RFMiD	train_722.jpg	
 RFMiD	train_723.jpg	
@@ -739,19 +739,19 @@ RFMiD	train_738.jpg	RVO
 RFMiD	train_739.jpg	DR
 RFMiD	train_740.jpg	
 RFMiD	train_741.jpg	
-RFMiD	train_742.jpg	激光术后
+RFMiD	train_742.jpg	
 RFMiD	train_743.jpg	
 RFMiD	train_744.jpg	
 RFMiD	train_745.jpg	
 RFMiD	train_746.jpg	
 RFMiD	train_747.jpg	
-RFMiD	train_748.jpg	黄斑裂孔
+RFMiD	train_748.jpg	
 RFMiD	train_749.jpg	
-RFMiD	train_750.jpg	病理性近视
-RFMiD	train_751.jpg	病理性近视
+RFMiD	train_750.jpg	
+RFMiD	train_751.jpg	
 RFMiD	train_752.jpg	
 RFMiD	train_753.jpg	
-RFMiD	train_754.jpg	病理性近视,激光术后,视神经萎缩
+RFMiD	train_754.jpg	
 RFMiD	train_755.jpg	AMD
 RFMiD	train_756.jpg	AMD
 RFMiD	train_757.jpg	
@@ -761,25 +761,25 @@ RFMiD	train_760.jpg	DR
 RFMiD	train_761.jpg	
 RFMiD	train_762.jpg	
 RFMiD	train_763.jpg	
-RFMiD	train_764.jpg	中浆
+RFMiD	train_764.jpg	
 RFMiD	train_765.jpg	
 RFMiD	train_766.jpg	
 RFMiD	train_767.jpg	AMD
-RFMiD	train_768.jpg	中浆
+RFMiD	train_768.jpg	
 RFMiD	train_769.jpg	
 RFMiD	train_770.jpg	RVO
-RFMiD	train_771.jpg	病理性近视
-RFMiD	train_772.jpg	病理性近视
-RFMiD	train_773.jpg	病理性近视
+RFMiD	train_771.jpg	
+RFMiD	train_772.jpg	
+RFMiD	train_773.jpg	
 RFMiD	train_774.jpg	
-RFMiD	train_775.jpg	视神经萎缩
+RFMiD	train_775.jpg	
 RFMiD	train_776.jpg	
 RFMiD	train_777.jpg	
 RFMiD	train_778.jpg	
-RFMiD	train_779.jpg	DR,激光术后
+RFMiD	train_779.jpg	DR
 RFMiD	train_780.jpg	
 RFMiD	train_781.jpg	DR
-RFMiD	train_782.jpg	视盘水肿
+RFMiD	train_782.jpg	
 RFMiD	train_783.jpg	
 RFMiD	train_784.jpg	
 RFMiD	train_785.jpg	
@@ -789,11 +789,11 @@ RFMiD	train_788.jpg
 RFMiD	train_789.jpg	
 RFMiD	train_790.jpg	
 RFMiD	train_791.jpg	
-RFMiD	train_792.jpg	RAO
+RFMiD	train_792.jpg	
 RFMiD	train_793.jpg	
 RFMiD	train_794.jpg	
 RFMiD	train_795.jpg	
-RFMiD	train_796.jpg	中浆
+RFMiD	train_796.jpg	
 RFMiD	train_797.jpg	
 RFMiD	train_798.jpg	
 RFMiD	train_799.jpg	
@@ -803,21 +803,21 @@ RFMiD	train_802.jpg
 RFMiD	train_803.jpg	
 RFMiD	train_804.jpg	
 RFMiD	train_805.jpg	
-RFMiD	train_806.jpg	中浆
-RFMiD	train_807.jpg	视盘水肿
-RFMiD	train_808.jpg	视盘水肿
-RFMiD	train_809.jpg	视盘水肿
-RFMiD	train_810.jpg	视神经萎缩
-RFMiD	train_811.jpg	视神经萎缩
+RFMiD	train_806.jpg	
+RFMiD	train_807.jpg	
+RFMiD	train_808.jpg	
+RFMiD	train_809.jpg	
+RFMiD	train_810.jpg	
+RFMiD	train_811.jpg	
 RFMiD	train_812.jpg	
 RFMiD	train_813.jpg	
-RFMiD	train_814.jpg	中浆
+RFMiD	train_814.jpg	
 RFMiD	train_815.jpg	
 RFMiD	train_816.jpg	
 RFMiD	train_817.jpg	
 RFMiD	train_818.jpg	
-RFMiD	train_819.jpg	中浆
-RFMiD	train_820.jpg	中浆
+RFMiD	train_819.jpg	
+RFMiD	train_820.jpg	
 RFMiD	train_821.jpg	
 RFMiD	train_822.jpg	
 RFMiD	train_823.jpg	DR
@@ -827,19 +827,19 @@ RFMiD	train_826.jpg
 RFMiD	train_827.jpg	DR
 RFMiD	train_828.jpg	DR
 RFMiD	train_829.jpg	DR
-RFMiD	train_830.jpg	视盘水肿
-RFMiD	train_831.jpg	视神经萎缩
-RFMiD	train_832.jpg	视盘水肿
+RFMiD	train_830.jpg	
+RFMiD	train_831.jpg	
+RFMiD	train_832.jpg	
 RFMiD	train_833.jpg	
 RFMiD	train_834.jpg	
 RFMiD	train_835.jpg	
-RFMiD	train_836.jpg	视神经萎缩
-RFMiD	train_837.jpg	病理性近视
+RFMiD	train_836.jpg	
+RFMiD	train_837.jpg	
 RFMiD	train_838.jpg	RVO
 RFMiD	train_839.jpg	
 RFMiD	train_840.jpg	
 RFMiD	train_841.jpg	
-RFMiD	train_842.jpg	病理性近视
+RFMiD	train_842.jpg	
 RFMiD	train_843.jpg	
 RFMiD	train_844.jpg	RVO
 RFMiD	train_845.jpg	
@@ -857,17 +857,17 @@ RFMiD	train_856.jpg	AMD
 RFMiD	train_857.jpg	AMD
 RFMiD	train_858.jpg	DR
 RFMiD	train_859.jpg	
-RFMiD	train_860.jpg	中浆
+RFMiD	train_860.jpg	
 RFMiD	train_861.jpg	
 RFMiD	train_862.jpg	
 RFMiD	train_863.jpg	
 RFMiD	train_864.jpg	RVO
 RFMiD	train_865.jpg	RVO
 RFMiD	train_866.jpg	
-RFMiD	train_867.jpg	中浆
+RFMiD	train_867.jpg	
 RFMiD	train_868.jpg	
-RFMiD	train_869.jpg	视盘水肿
-RFMiD	train_870.jpg	视盘水肿
+RFMiD	train_869.jpg	
+RFMiD	train_870.jpg	
 RFMiD	train_871.jpg	RVO
 RFMiD	train_872.jpg	
 RFMiD	train_873.jpg	
@@ -879,7 +879,7 @@ RFMiD	train_878.jpg	AMD
 RFMiD	train_879.jpg	AMD
 RFMiD	train_880.jpg	
 RFMiD	train_881.jpg	
-RFMiD	train_882.jpg	中浆
+RFMiD	train_882.jpg	
 RFMiD	train_883.jpg	
 RFMiD	train_884.jpg	
 RFMiD	train_885.jpg	
@@ -889,12 +889,12 @@ RFMiD	train_888.jpg	DR
 RFMiD	train_889.jpg	
 RFMiD	train_890.jpg	AMD
 RFMiD	train_891.jpg	RVO
-RFMiD	train_892.jpg	RAO
+RFMiD	train_892.jpg	
 RFMiD	train_893.jpg	
 RFMiD	train_894.jpg	
 RFMiD	train_895.jpg	
 RFMiD	train_896.jpg	
-RFMiD	train_897.jpg	视神经萎缩
+RFMiD	train_897.jpg	
 RFMiD	train_898.jpg	
 RFMiD	train_899.jpg	
 RFMiD	train_900.jpg	
@@ -903,34 +903,34 @@ RFMiD	train_902.jpg
 RFMiD	train_903.jpg	
 RFMiD	train_904.jpg	
 RFMiD	train_905.jpg	
-RFMiD	train_906.jpg	中浆
-RFMiD	train_907.jpg	中浆
+RFMiD	train_906.jpg	
+RFMiD	train_907.jpg	
 RFMiD	train_908.jpg	
-RFMiD	train_909.jpg	中浆
+RFMiD	train_909.jpg	
 RFMiD	train_910.jpg	
-RFMiD	train_911.jpg	DR,激光术后
-RFMiD	train_912.jpg	DR,激光术后
+RFMiD	train_911.jpg	DR
+RFMiD	train_912.jpg	DR
 RFMiD	train_913.jpg	RVO
 RFMiD	train_914.jpg	
-RFMiD	train_915.jpg	中浆,视神经萎缩
+RFMiD	train_915.jpg	
 RFMiD	train_916.jpg	
 RFMiD	train_917.jpg	
-RFMiD	train_918.jpg	病理性近视
+RFMiD	train_918.jpg	
 RFMiD	train_919.jpg	
 RFMiD	train_920.jpg	
-RFMiD	train_921.jpg	病理性近视
+RFMiD	train_921.jpg	
 RFMiD	train_922.jpg	
 RFMiD	train_923.jpg	
-RFMiD	train_924.jpg	激光术后,视神经萎缩
-RFMiD	train_925.jpg	DR,激光术后,视神经萎缩
+RFMiD	train_924.jpg	
+RFMiD	train_925.jpg	DR
 RFMiD	train_926.jpg	
 RFMiD	train_927.jpg	
 RFMiD	train_928.jpg	
 RFMiD	train_929.jpg	
-RFMiD	train_930.jpg	中浆
+RFMiD	train_930.jpg	
 RFMiD	train_931.jpg	
 RFMiD	train_932.jpg	
-RFMiD	train_933.jpg	病理性近视
+RFMiD	train_933.jpg	
 RFMiD	train_934.jpg	DR
 RFMiD	train_935.jpg	
 RFMiD	train_936.jpg	
@@ -942,19 +942,19 @@ RFMiD	train_941.jpg	AMD
 RFMiD	train_942.jpg	
 RFMiD	train_943.jpg	
 RFMiD	train_944.jpg	
-RFMiD	train_945.jpg	中浆
-RFMiD	train_946.jpg	视盘水肿
+RFMiD	train_945.jpg	
+RFMiD	train_946.jpg	
 RFMiD	train_947.jpg	
 RFMiD	train_948.jpg	DR
 RFMiD	train_949.jpg	DR
 RFMiD	train_950.jpg	DR
 RFMiD	train_951.jpg	
-RFMiD	train_952.jpg	视盘水肿
+RFMiD	train_952.jpg	
 RFMiD	train_953.jpg	
 RFMiD	train_954.jpg	
 RFMiD	train_955.jpg	
 RFMiD	train_956.jpg	
-RFMiD	train_957.jpg	视盘水肿
+RFMiD	train_957.jpg	
 RFMiD	train_958.jpg	
 RFMiD	train_959.jpg	
 RFMiD	train_960.jpg	
@@ -963,11 +963,11 @@ RFMiD	train_962.jpg
 RFMiD	train_963.jpg	
 RFMiD	train_964.jpg	
 RFMiD	train_965.jpg	
-RFMiD	train_966.jpg	中浆
+RFMiD	train_966.jpg	
 RFMiD	train_967.jpg	DR
 RFMiD	train_968.jpg	
 RFMiD	train_969.jpg	
-RFMiD	train_970.jpg	中浆
+RFMiD	train_970.jpg	
 RFMiD	train_971.jpg	
 RFMiD	train_972.jpg	
 RFMiD	train_973.jpg	
@@ -977,25 +977,25 @@ RFMiD	train_976.jpg	DR
 RFMiD	train_977.jpg	
 RFMiD	train_978.jpg	
 RFMiD	train_979.jpg	
-RFMiD	train_980.jpg	病理性近视,RVO
+RFMiD	train_980.jpg	RVO
 RFMiD	train_981.jpg	
 RFMiD	train_982.jpg	RVO
-RFMiD	train_983.jpg	黄斑裂孔
+RFMiD	train_983.jpg	
 RFMiD	train_984.jpg	
 RFMiD	train_985.jpg	
 RFMiD	train_986.jpg	
 RFMiD	train_987.jpg	
 RFMiD	train_988.jpg	
 RFMiD	train_989.jpg	
-RFMiD	train_990.jpg	视盘水肿
-RFMiD	train_991.jpg	视盘水肿
+RFMiD	train_990.jpg	
+RFMiD	train_991.jpg	
 RFMiD	train_992.jpg	
 RFMiD	train_993.jpg	
 RFMiD	train_994.jpg	
 RFMiD	train_995.jpg	DR
 RFMiD	train_996.jpg	RVO
 RFMiD	train_997.jpg	
-RFMiD	train_998.jpg	视神经萎缩
+RFMiD	train_998.jpg	
 RFMiD	train_999.jpg	
 RFMiD	train_1000.jpg	
 RFMiD	train_1001.jpg	
@@ -1008,17 +1008,17 @@ RFMiD	train_1007.jpg
 RFMiD	train_1008.jpg	
 RFMiD	train_1009.jpg	RVO
 RFMiD	train_1010.jpg	
-RFMiD	train_1011.jpg	星状玻璃体变性
+RFMiD	train_1011.jpg	
 RFMiD	train_1012.jpg	AMD
-RFMiD	train_1013.jpg	AMD,病理性近视
+RFMiD	train_1013.jpg	AMD
 RFMiD	train_1014.jpg	
 RFMiD	train_1015.jpg	
 RFMiD	train_1016.jpg	
 RFMiD	train_1017.jpg	
 RFMiD	train_1018.jpg	
 RFMiD	train_1019.jpg	
-RFMiD	train_1020.jpg	病理性近视
-RFMiD	train_1021.jpg	病理性近视
+RFMiD	train_1020.jpg	
+RFMiD	train_1021.jpg	
 RFMiD	train_1022.jpg	
 RFMiD	train_1023.jpg	
 RFMiD	train_1024.jpg	
@@ -1027,8 +1027,8 @@ RFMiD	train_1026.jpg	DR
 RFMiD	train_1027.jpg	
 RFMiD	train_1028.jpg	AMD
 RFMiD	train_1029.jpg	AMD
-RFMiD	train_1030.jpg	AMD,病理性近视
-RFMiD	train_1031.jpg	病理性近视
+RFMiD	train_1030.jpg	AMD
+RFMiD	train_1031.jpg	
 RFMiD	train_1032.jpg	
 RFMiD	train_1033.jpg	RVO
 RFMiD	train_1034.jpg	
@@ -1040,7 +1040,7 @@ RFMiD	train_1039.jpg	DR
 RFMiD	train_1040.jpg	DR
 RFMiD	train_1041.jpg	
 RFMiD	train_1042.jpg	RVO
-RFMiD	train_1043.jpg	DR,激光术后
+RFMiD	train_1043.jpg	DR
 RFMiD	train_1044.jpg	RVO
 RFMiD	train_1045.jpg	
 RFMiD	train_1046.jpg	
@@ -1055,7 +1055,7 @@ RFMiD	train_1054.jpg
 RFMiD	train_1055.jpg	
 RFMiD	train_1056.jpg	
 RFMiD	train_1057.jpg	
-RFMiD	train_1058.jpg	视盘水肿
+RFMiD	train_1058.jpg	
 RFMiD	train_1059.jpg	RVO
 RFMiD	train_1060.jpg	DR
 RFMiD	train_1061.jpg	DR
@@ -1072,63 +1072,63 @@ RFMiD	train_1071.jpg
 RFMiD	train_1072.jpg	
 RFMiD	train_1073.jpg	
 RFMiD	train_1074.jpg	
-RFMiD	train_1075.jpg	黄斑裂孔
+RFMiD	train_1075.jpg	
 RFMiD	train_1076.jpg	
 RFMiD	train_1077.jpg	
 RFMiD	train_1078.jpg	RVO
 RFMiD	train_1079.jpg	DR
 RFMiD	train_1080.jpg	
-RFMiD	train_1081.jpg	黄斑裂孔
+RFMiD	train_1081.jpg	
 RFMiD	train_1082.jpg	
 RFMiD	train_1083.jpg	AMD
-RFMiD	train_1084.jpg	病理性近视
+RFMiD	train_1084.jpg	
 RFMiD	train_1085.jpg	
 RFMiD	train_1086.jpg	
-RFMiD	train_1087.jpg	视盘水肿
-RFMiD	train_1088.jpg	视盘水肿
-RFMiD	train_1089.jpg	DR,病理性近视
+RFMiD	train_1087.jpg	
+RFMiD	train_1088.jpg	
+RFMiD	train_1089.jpg	DR
 RFMiD	train_1090.jpg	DR
-RFMiD	train_1091.jpg	视神经萎缩
-RFMiD	train_1092.jpg	视神经萎缩
+RFMiD	train_1091.jpg	
+RFMiD	train_1092.jpg	
 RFMiD	train_1093.jpg	DR
-RFMiD	train_1094.jpg	病理性近视
-RFMiD	train_1095.jpg	病理性近视,视神经萎缩
-RFMiD	train_1096.jpg	激光术后,视神经萎缩
+RFMiD	train_1094.jpg	
+RFMiD	train_1095.jpg	
+RFMiD	train_1096.jpg	
 RFMiD	train_1097.jpg	DR
 RFMiD	train_1098.jpg	DR
 RFMiD	train_1099.jpg	
 RFMiD	train_1100.jpg	DR
 RFMiD	train_1101.jpg	
 RFMiD	train_1102.jpg	
-RFMiD	train_1103.jpg	病理性近视
+RFMiD	train_1103.jpg	
 RFMiD	train_1104.jpg	DR
 RFMiD	train_1105.jpg	DR
 RFMiD	train_1106.jpg	
 RFMiD	train_1107.jpg	
-RFMiD	train_1108.jpg	视盘水肿
+RFMiD	train_1108.jpg	
 RFMiD	train_1109.jpg	
-RFMiD	train_1110.jpg	DR,激光术后
+RFMiD	train_1110.jpg	DR
 RFMiD	train_1111.jpg	
 RFMiD	train_1112.jpg	
 RFMiD	train_1113.jpg	
 RFMiD	train_1114.jpg	
 RFMiD	train_1115.jpg	RVO
-RFMiD	train_1116.jpg	病理性近视
+RFMiD	train_1116.jpg	
 RFMiD	train_1117.jpg	DR
 RFMiD	train_1118.jpg	
-RFMiD	train_1119.jpg	DR,激光术后
-RFMiD	train_1120.jpg	病理性近视
-RFMiD	train_1121.jpg	病理性近视
-RFMiD	train_1122.jpg	黄斑裂孔
+RFMiD	train_1119.jpg	DR
+RFMiD	train_1120.jpg	
+RFMiD	train_1121.jpg	
+RFMiD	train_1122.jpg	
 RFMiD	train_1123.jpg	
 RFMiD	train_1124.jpg	
 RFMiD	train_1125.jpg	RVO
 RFMiD	train_1126.jpg	
 RFMiD	train_1127.jpg	DR
 RFMiD	train_1128.jpg	DR
-RFMiD	train_1129.jpg	病理性近视
+RFMiD	train_1129.jpg	
 RFMiD	train_1130.jpg	DR
-RFMiD	train_1131.jpg	星状玻璃体变性
+RFMiD	train_1131.jpg	
 RFMiD	train_1132.jpg	
 RFMiD	train_1133.jpg	DR
 RFMiD	train_1134.jpg	
@@ -1137,7 +1137,7 @@ RFMiD	train_1136.jpg
 RFMiD	train_1137.jpg	
 RFMiD	train_1138.jpg	
 RFMiD	train_1139.jpg	
-RFMiD	train_1140.jpg	视盘水肿
+RFMiD	train_1140.jpg	
 RFMiD	train_1141.jpg	DR
 RFMiD	train_1142.jpg	DR
 RFMiD	train_1143.jpg	AMD
@@ -1158,20 +1158,20 @@ RFMiD	train_1157.jpg	DR
 RFMiD	train_1158.jpg	DR
 RFMiD	train_1159.jpg	DR
 RFMiD	train_1160.jpg	DR
-RFMiD	train_1161.jpg	DR,视神经萎缩
-RFMiD	train_1162.jpg	DR,视神经萎缩
+RFMiD	train_1161.jpg	DR
+RFMiD	train_1162.jpg	DR
 RFMiD	train_1163.jpg	
 RFMiD	train_1164.jpg	
 RFMiD	train_1165.jpg	DR
 RFMiD	train_1166.jpg	DR
-RFMiD	train_1167.jpg	病理性近视
+RFMiD	train_1167.jpg	
 RFMiD	train_1168.jpg	
-RFMiD	train_1169.jpg	病理性近视
-RFMiD	train_1170.jpg	病理性近视
-RFMiD	train_1171.jpg	AMD,病理性近视
+RFMiD	train_1169.jpg	
+RFMiD	train_1170.jpg	
+RFMiD	train_1171.jpg	AMD
 RFMiD	train_1172.jpg	DR
-RFMiD	train_1173.jpg	视盘水肿
-RFMiD	train_1174.jpg	视盘水肿
+RFMiD	train_1173.jpg	
+RFMiD	train_1174.jpg	
 RFMiD	train_1175.jpg	DR
 RFMiD	train_1176.jpg	
 RFMiD	train_1177.jpg	RVO
@@ -1194,15 +1194,15 @@ RFMiD	train_1193.jpg
 RFMiD	train_1194.jpg	
 RFMiD	train_1195.jpg	DR
 RFMiD	train_1196.jpg	
-RFMiD	train_1197.jpg	DR,视神经萎缩
-RFMiD	train_1198.jpg	DR,视神经萎缩
+RFMiD	train_1197.jpg	DR
+RFMiD	train_1198.jpg	DR
 RFMiD	train_1199.jpg	DR
 RFMiD	train_1200.jpg	
 RFMiD	train_1201.jpg	DR
 RFMiD	train_1202.jpg	
-RFMiD	train_1203.jpg	病理性近视
+RFMiD	train_1203.jpg	
 RFMiD	train_1204.jpg	
-RFMiD	train_1205.jpg	视盘水肿
+RFMiD	train_1205.jpg	
 RFMiD	train_1206.jpg	
 RFMiD	train_1207.jpg	DR
 RFMiD	train_1208.jpg	DR
@@ -1212,7 +1212,7 @@ RFMiD	train_1211.jpg	DR
 RFMiD	train_1212.jpg	DR
 RFMiD	train_1213.jpg	
 RFMiD	train_1214.jpg	
-RFMiD	train_1215.jpg	视神经萎缩
+RFMiD	train_1215.jpg	
 RFMiD	train_1216.jpg	
 RFMiD	train_1217.jpg	
 RFMiD	train_1218.jpg	AMD
@@ -1223,10 +1223,10 @@ RFMiD	train_1222.jpg	DR
 RFMiD	train_1223.jpg	DR
 RFMiD	train_1224.jpg	
 RFMiD	train_1225.jpg	
-RFMiD	train_1226.jpg	DR,激光术后
-RFMiD	train_1227.jpg	DR,激光术后
-RFMiD	train_1228.jpg	视盘水肿
-RFMiD	train_1229.jpg	视盘水肿
+RFMiD	train_1226.jpg	DR
+RFMiD	train_1227.jpg	DR
+RFMiD	train_1228.jpg	
+RFMiD	train_1229.jpg	
 RFMiD	train_1230.jpg	AMD
 RFMiD	train_1231.jpg	
 RFMiD	train_1232.jpg	DR
@@ -1253,10 +1253,10 @@ RFMiD	train_1252.jpg	DR
 RFMiD	train_1253.jpg	
 RFMiD	train_1254.jpg	
 RFMiD	train_1255.jpg	
-RFMiD	train_1256.jpg	视盘水肿
+RFMiD	train_1256.jpg	
 RFMiD	train_1257.jpg	DR
 RFMiD	train_1258.jpg	DR
-RFMiD	train_1259.jpg	病理性近视
+RFMiD	train_1259.jpg	
 RFMiD	train_1260.jpg	RVO
 RFMiD	train_1261.jpg	
 RFMiD	train_1262.jpg	
@@ -1270,8 +1270,8 @@ RFMiD	train_1269.jpg	AMD
 RFMiD	train_1270.jpg	AMD
 RFMiD	train_1271.jpg	AMD
 RFMiD	train_1272.jpg	
-RFMiD	train_1273.jpg	视神经萎缩
-RFMiD	train_1274.jpg	视神经萎缩
+RFMiD	train_1273.jpg	
+RFMiD	train_1274.jpg	
 RFMiD	train_1275.jpg	DR
 RFMiD	train_1276.jpg	DR
 RFMiD	train_1277.jpg	DR
@@ -1288,7 +1288,7 @@ RFMiD	train_1287.jpg	AMD
 RFMiD	train_1288.jpg	
 RFMiD	train_1289.jpg	RVO
 RFMiD	train_1290.jpg	
-RFMiD	train_1291.jpg	视盘水肿
+RFMiD	train_1291.jpg	
 RFMiD	train_1292.jpg	
 RFMiD	train_1293.jpg	
 RFMiD	train_1294.jpg	
@@ -1314,7 +1314,7 @@ RFMiD	train_1313.jpg	DR
 RFMiD	train_1314.jpg	
 RFMiD	train_1315.jpg	RVO
 RFMiD	train_1316.jpg	
-RFMiD	train_1317.jpg	RVO,视神经萎缩
+RFMiD	train_1317.jpg	RVO
 RFMiD	train_1318.jpg	
 RFMiD	train_1319.jpg	
 RFMiD	train_1320.jpg	
@@ -1337,10 +1337,10 @@ RFMiD	train_1336.jpg
 RFMiD	train_1337.jpg	DR
 RFMiD	train_1338.jpg	
 RFMiD	train_1339.jpg	
-RFMiD	train_1340.jpg	DR,视神经萎缩
+RFMiD	train_1340.jpg	DR
 RFMiD	train_1341.jpg	
-RFMiD	train_1342.jpg	视盘水肿
-RFMiD	train_1343.jpg	视盘水肿
+RFMiD	train_1342.jpg	
+RFMiD	train_1343.jpg	
 RFMiD	train_1344.jpg	AMD
 RFMiD	train_1345.jpg	
 RFMiD	train_1346.jpg	
@@ -1352,7 +1352,7 @@ RFMiD	train_1351.jpg
 RFMiD	train_1352.jpg	
 RFMiD	train_1353.jpg	
 RFMiD	train_1354.jpg	
-RFMiD	train_1355.jpg	视神经萎缩
+RFMiD	train_1355.jpg	
 RFMiD	train_1356.jpg	DR
 RFMiD	train_1357.jpg	DR
 RFMiD	train_1358.jpg	DR
@@ -1361,7 +1361,7 @@ RFMiD	train_1360.jpg	RVO
 RFMiD	train_1361.jpg	RVO
 RFMiD	train_1362.jpg	DR
 RFMiD	train_1363.jpg	
-RFMiD	train_1364.jpg	DR,视神经萎缩
+RFMiD	train_1364.jpg	DR
 RFMiD	train_1365.jpg	DR
 RFMiD	train_1366.jpg	RVO
 RFMiD	train_1367.jpg	
@@ -1384,9 +1384,9 @@ RFMiD	train_1383.jpg	DR
 RFMiD	train_1384.jpg	DR
 RFMiD	train_1385.jpg	
 RFMiD	train_1386.jpg	DR
-RFMiD	train_1387.jpg	DR,星状玻璃体变性
+RFMiD	train_1387.jpg	DR
 RFMiD	train_1388.jpg	
-RFMiD	train_1389.jpg	病理性近视
+RFMiD	train_1389.jpg	
 RFMiD	train_1390.jpg	
 RFMiD	train_1391.jpg	RVO
 RFMiD	train_1392.jpg	
@@ -1394,7 +1394,7 @@ RFMiD	train_1393.jpg	DR
 RFMiD	train_1394.jpg	DR
 RFMiD	train_1395.jpg	DR
 RFMiD	train_1396.jpg	DR
-RFMiD	train_1397.jpg	病理性近视
+RFMiD	train_1397.jpg	
 RFMiD	train_1398.jpg	DR
 RFMiD	train_1399.jpg	
 RFMiD	train_1400.jpg	
@@ -1403,7 +1403,7 @@ RFMiD	train_1402.jpg
 RFMiD	train_1403.jpg	DR
 RFMiD	train_1404.jpg	
 RFMiD	train_1405.jpg	RVO
-RFMiD	train_1406.jpg	DR,激光术后
+RFMiD	train_1406.jpg	DR
 RFMiD	train_1407.jpg	RVO
 RFMiD	train_1408.jpg	DR
 RFMiD	train_1409.jpg	DR
@@ -1418,39 +1418,39 @@ RFMiD	train_1417.jpg	DR
 RFMiD	train_1418.jpg	DR
 RFMiD	train_1419.jpg	
 RFMiD	train_1420.jpg	DR
-RFMiD	train_1421.jpg	病理性近视
-RFMiD	train_1422.jpg	视盘水肿
-RFMiD	train_1423.jpg	视盘水肿
-RFMiD	train_1424.jpg	视盘水肿
-RFMiD	train_1425.jpg	视盘水肿
+RFMiD	train_1421.jpg	
+RFMiD	train_1422.jpg	
+RFMiD	train_1423.jpg	
+RFMiD	train_1424.jpg	
+RFMiD	train_1425.jpg	
 RFMiD	train_1426.jpg	
 RFMiD	train_1427.jpg	
 RFMiD	train_1428.jpg	RVO
-RFMiD	train_1429.jpg	病理性近视
+RFMiD	train_1429.jpg	
 RFMiD	train_1430.jpg	RVO
 RFMiD	train_1431.jpg	RVO
 RFMiD	train_1432.jpg	RVO
 RFMiD	train_1433.jpg	
 RFMiD	train_1434.jpg	RVO
 RFMiD	train_1435.jpg	
-RFMiD	train_1436.jpg	DR,激光术后
-RFMiD	train_1437.jpg	DR,激光术后
+RFMiD	train_1436.jpg	DR
+RFMiD	train_1437.jpg	DR
 RFMiD	train_1438.jpg	
 RFMiD	train_1439.jpg	
-RFMiD	train_1440.jpg	星状玻璃体变性
-RFMiD	train_1441.jpg	病理性近视
-RFMiD	train_1442.jpg	星状玻璃体变性
-RFMiD	train_1443.jpg	星状玻璃体变性
+RFMiD	train_1440.jpg	
+RFMiD	train_1441.jpg	
+RFMiD	train_1442.jpg	
+RFMiD	train_1443.jpg	
 RFMiD	train_1444.jpg	
-RFMiD	train_1445.jpg	病理性近视
-RFMiD	train_1446.jpg	病理性近视
-RFMiD	train_1447.jpg	病理性近视
+RFMiD	train_1445.jpg	
+RFMiD	train_1446.jpg	
+RFMiD	train_1447.jpg	
 RFMiD	train_1448.jpg	
 RFMiD	train_1449.jpg	
 RFMiD	train_1450.jpg	
 RFMiD	train_1451.jpg	
 RFMiD	train_1452.jpg	
-RFMiD	train_1453.jpg	病理性近视
+RFMiD	train_1453.jpg	
 RFMiD	train_1454.jpg	
 RFMiD	train_1455.jpg	
 RFMiD	train_1456.jpg	
@@ -1463,8 +1463,8 @@ RFMiD	train_1462.jpg
 RFMiD	train_1463.jpg	
 RFMiD	train_1464.jpg	
 RFMiD	train_1465.jpg	
-RFMiD	train_1466.jpg	DR,激光术后
-RFMiD	train_1467.jpg	DR,激光术后
+RFMiD	train_1466.jpg	DR
+RFMiD	train_1467.jpg	DR
 RFMiD	train_1468.jpg	
 RFMiD	train_1469.jpg	
 RFMiD	train_1470.jpg	
@@ -1472,23 +1472,23 @@ RFMiD	train_1471.jpg
 RFMiD	train_1472.jpg	
 RFMiD	train_1473.jpg	
 RFMiD	train_1474.jpg	
-RFMiD	train_1475.jpg	黄斑裂孔
+RFMiD	train_1475.jpg	
 RFMiD	train_1476.jpg	
 RFMiD	train_1477.jpg	
 RFMiD	train_1478.jpg	
-RFMiD	train_1479.jpg	星状玻璃体变性
-RFMiD	train_1480.jpg	黄斑裂孔
+RFMiD	train_1479.jpg	
+RFMiD	train_1480.jpg	
 RFMiD	train_1481.jpg	
 RFMiD	train_1482.jpg	
-RFMiD	train_1483.jpg	黄斑裂孔
+RFMiD	train_1483.jpg	
 RFMiD	train_1484.jpg	
 RFMiD	train_1485.jpg	
-RFMiD	train_1486.jpg	黄斑裂孔
+RFMiD	train_1486.jpg	
 RFMiD	train_1487.jpg	DR
-RFMiD	train_1488.jpg	DR,激光术后,视神经萎缩
+RFMiD	train_1488.jpg	DR
 RFMiD	train_1489.jpg	RVO
 RFMiD	train_1490.jpg	
-RFMiD	train_1491.jpg	病理性近视
+RFMiD	train_1491.jpg	
 RFMiD	train_1492.jpg	
 RFMiD	train_1493.jpg	DR
 RFMiD	train_1494.jpg	AMD
@@ -1497,8 +1497,8 @@ RFMiD	train_1496.jpg	DR
 RFMiD	train_1497.jpg	DR
 RFMiD	train_1498.jpg	DR
 RFMiD	train_1499.jpg	DR
-RFMiD	train_1500.jpg	病理性近视
-RFMiD	train_1501.jpg	病理性近视
+RFMiD	train_1500.jpg	
+RFMiD	train_1501.jpg	
 RFMiD	train_1502.jpg	DR
 RFMiD	train_1503.jpg	DR
 RFMiD	train_1504.jpg	DR
@@ -1508,7 +1508,7 @@ RFMiD	train_1507.jpg
 RFMiD	train_1508.jpg	
 RFMiD	train_1509.jpg	
 RFMiD	train_1510.jpg	
-RFMiD	train_1511.jpg	视神经萎缩
+RFMiD	train_1511.jpg	
 RFMiD	train_1512.jpg	DR
 RFMiD	train_1513.jpg	AMD
 RFMiD	train_1514.jpg	DR
@@ -1517,14 +1517,14 @@ RFMiD	train_1516.jpg	DR
 RFMiD	train_1517.jpg	
 RFMiD	train_1518.jpg	DR
 RFMiD	train_1519.jpg	DR
-RFMiD	train_1520.jpg	AMD,病理性近视
-RFMiD	train_1521.jpg	AMD,病理性近视
+RFMiD	train_1520.jpg	AMD
+RFMiD	train_1521.jpg	AMD
 RFMiD	train_1522.jpg	DR
 RFMiD	train_1523.jpg	DR
 RFMiD	train_1524.jpg	
 RFMiD	train_1525.jpg	
 RFMiD	train_1526.jpg	
-RFMiD	train_1527.jpg	黄斑前膜
+RFMiD	train_1527.jpg	
 RFMiD	train_1528.jpg	
 RFMiD	train_1529.jpg	
 RFMiD	train_1530.jpg	DR
@@ -1536,7 +1536,7 @@ RFMiD	train_1535.jpg
 RFMiD	train_1536.jpg	
 RFMiD	train_1537.jpg	DR
 RFMiD	train_1538.jpg	DR
-RFMiD	train_1539.jpg	黄斑裂孔
+RFMiD	train_1539.jpg	
 RFMiD	train_1540.jpg	AMD
 RFMiD	train_1541.jpg	DR
 RFMiD	train_1542.jpg	DR
@@ -1544,7 +1544,7 @@ RFMiD	train_1543.jpg
 RFMiD	train_1544.jpg	
 RFMiD	train_1545.jpg	
 RFMiD	train_1546.jpg	DR
-RFMiD	train_1547.jpg	星状玻璃体变性
+RFMiD	train_1547.jpg	
 RFMiD	train_1548.jpg	DR
 RFMiD	train_1549.jpg	
 RFMiD	train_1550.jpg	
@@ -1556,7 +1556,7 @@ RFMiD	train_1555.jpg
 RFMiD	train_1556.jpg	AMD
 RFMiD	train_1557.jpg	AMD
 RFMiD	train_1558.jpg	
-RFMiD	train_1559.jpg	黄斑前膜
+RFMiD	train_1559.jpg	
 RFMiD	train_1560.jpg	
 RFMiD	train_1561.jpg	DR
 RFMiD	train_1562.jpg	
@@ -1564,13 +1564,13 @@ RFMiD	train_1563.jpg	DR
 RFMiD	train_1564.jpg	
 RFMiD	train_1565.jpg	
 RFMiD	train_1566.jpg	
-RFMiD	train_1567.jpg	病理性近视
-RFMiD	train_1568.jpg	病理性近视
+RFMiD	train_1567.jpg	
+RFMiD	train_1568.jpg	
 RFMiD	train_1569.jpg	DR
 RFMiD	train_1570.jpg	DR
 RFMiD	train_1571.jpg	
 RFMiD	train_1572.jpg	
-RFMiD	train_1573.jpg	中浆
+RFMiD	train_1573.jpg	
 RFMiD	train_1574.jpg	
 RFMiD	train_1575.jpg	
 RFMiD	train_1576.jpg	
@@ -1580,14 +1580,14 @@ RFMiD	train_1579.jpg
 RFMiD	train_1580.jpg	AMD
 RFMiD	train_1581.jpg	AMD
 RFMiD	train_1582.jpg	DR
-RFMiD	train_1583.jpg	黄斑前膜,视神经萎缩
+RFMiD	train_1583.jpg	
 RFMiD	train_1584.jpg	
 RFMiD	train_1585.jpg	
 RFMiD	train_1586.jpg	
 RFMiD	train_1587.jpg	
 RFMiD	train_1588.jpg	
-RFMiD	train_1589.jpg	视神经萎缩
-RFMiD	train_1590.jpg	视神经萎缩
+RFMiD	train_1589.jpg	
+RFMiD	train_1590.jpg	
 RFMiD	train_1591.jpg	
 RFMiD	train_1592.jpg	AMD
 RFMiD	train_1593.jpg	DR
@@ -1614,9 +1614,9 @@ RFMiD	train_1613.jpg
 RFMiD	train_1614.jpg	
 RFMiD	train_1615.jpg	DR
 RFMiD	train_1616.jpg	DR
-RFMiD	train_1617.jpg	视神经萎缩
+RFMiD	train_1617.jpg	
 RFMiD	train_1618.jpg	
-RFMiD	train_1619.jpg	病理性近视
+RFMiD	train_1619.jpg	
 RFMiD	train_1620.jpg	
 RFMiD	train_1621.jpg	
 RFMiD	train_1622.jpg	AMD
@@ -1627,7 +1627,7 @@ RFMiD	train_1626.jpg	DR
 RFMiD	train_1627.jpg	DR
 RFMiD	train_1628.jpg	DR
 RFMiD	train_1629.jpg	DR
-RFMiD	train_1630.jpg	视盘水肿
+RFMiD	train_1630.jpg	
 RFMiD	train_1631.jpg	RVO
 RFMiD	train_1632.jpg	
 RFMiD	train_1633.jpg	AMD
@@ -1652,7 +1652,7 @@ RFMiD	train_1651.jpg
 RFMiD	train_1652.jpg	
 RFMiD	train_1653.jpg	
 RFMiD	train_1654.jpg	
-RFMiD	train_1655.jpg	病理性近视
+RFMiD	train_1655.jpg	
 RFMiD	train_1656.jpg	AMD
 RFMiD	train_1657.jpg	
 RFMiD	train_1658.jpg	
@@ -1661,7 +1661,7 @@ RFMiD	train_1660.jpg	DR
 RFMiD	train_1661.jpg	DR
 RFMiD	train_1662.jpg	DR
 RFMiD	train_1663.jpg	
-RFMiD	train_1664.jpg	病理性近视
+RFMiD	train_1664.jpg	
 RFMiD	train_1665.jpg	DR
 RFMiD	train_1666.jpg	DR
 RFMiD	train_1667.jpg	DR
@@ -1669,9 +1669,9 @@ RFMiD	train_1668.jpg	DR
 RFMiD	train_1669.jpg	DR
 RFMiD	train_1670.jpg	
 RFMiD	train_1671.jpg	RVO
-RFMiD	train_1672.jpg	病理性近视
-RFMiD	train_1673.jpg	病理性近视
-RFMiD	train_1674.jpg	黄斑前膜
+RFMiD	train_1672.jpg	
+RFMiD	train_1673.jpg	
+RFMiD	train_1674.jpg	
 RFMiD	train_1675.jpg	
 RFMiD	train_1676.jpg	RVO
 RFMiD	train_1677.jpg	
@@ -1685,8 +1685,8 @@ RFMiD	train_1684.jpg
 RFMiD	train_1685.jpg	RVO
 RFMiD	train_1686.jpg	
 RFMiD	train_1687.jpg	DR
-RFMiD	train_1688.jpg	视神经萎缩
-RFMiD	train_1689.jpg	视神经萎缩
+RFMiD	train_1688.jpg	
+RFMiD	train_1689.jpg	
 RFMiD	train_1690.jpg	
 RFMiD	train_1691.jpg	
 RFMiD	train_1692.jpg	AMD
@@ -1697,9 +1697,9 @@ RFMiD	train_1696.jpg
 RFMiD	train_1697.jpg	
 RFMiD	train_1698.jpg	RVO
 RFMiD	train_1699.jpg	
-RFMiD	train_1700.jpg	视盘水肿
+RFMiD	train_1700.jpg	
 RFMiD	train_1701.jpg	
-RFMiD	train_1702.jpg	AMD,病理性近视
+RFMiD	train_1702.jpg	AMD
 RFMiD	train_1703.jpg	
 RFMiD	train_1704.jpg	
 RFMiD	train_1705.jpg	
@@ -1707,20 +1707,20 @@ RFMiD	train_1706.jpg
 RFMiD	train_1707.jpg	
 RFMiD	train_1708.jpg	RVO
 RFMiD	train_1709.jpg	
-RFMiD	train_1710.jpg	激光术后
-RFMiD	train_1711.jpg	激光术后
-RFMiD	train_1712.jpg	病理性近视
-RFMiD	train_1713.jpg	病理性近视
+RFMiD	train_1710.jpg	
+RFMiD	train_1711.jpg	
+RFMiD	train_1712.jpg	
+RFMiD	train_1713.jpg	
 RFMiD	train_1714.jpg	
 RFMiD	train_1715.jpg	
 RFMiD	train_1716.jpg	
 RFMiD	train_1717.jpg	
 RFMiD	train_1718.jpg	
 RFMiD	train_1719.jpg	
-RFMiD	train_1720.jpg	视盘水肿
-RFMiD	train_1721.jpg	视神经萎缩
-RFMiD	train_1722.jpg	病理性近视
-RFMiD	train_1723.jpg	病理性近视
+RFMiD	train_1720.jpg	
+RFMiD	train_1721.jpg	
+RFMiD	train_1722.jpg	
+RFMiD	train_1723.jpg	
 RFMiD	train_1724.jpg	RVO
 RFMiD	train_1725.jpg	DR
 RFMiD	train_1726.jpg	DR
@@ -1780,7 +1780,7 @@ RFMiD	train_1779.jpg
 RFMiD	train_1780.jpg	
 RFMiD	train_1781.jpg	
 RFMiD	train_1782.jpg	
-RFMiD	train_1783.jpg	星状玻璃体变性
+RFMiD	train_1783.jpg	
 RFMiD	train_1784.jpg	
 RFMiD	train_1785.jpg	
 RFMiD	train_1786.jpg	
@@ -1848,7 +1848,7 @@ RFMiD	train_1847.jpg
 RFMiD	train_1848.jpg	
 RFMiD	train_1849.jpg	
 RFMiD	train_1850.jpg	
-RFMiD	train_1851.jpg	病理性近视
+RFMiD	train_1851.jpg	
 RFMiD	train_1852.jpg	
 RFMiD	train_1853.jpg	
 RFMiD	train_1854.jpg	
@@ -1863,7 +1863,7 @@ RFMiD	train_1862.jpg
 RFMiD	train_1863.jpg	
 RFMiD	train_1864.jpg	
 RFMiD	train_1865.jpg	
-RFMiD	train_1866.jpg	病理性近视
+RFMiD	train_1866.jpg	
 RFMiD	train_1867.jpg	
 RFMiD	train_1868.jpg	
 RFMiD	train_1869.jpg	
@@ -1913,8 +1913,8 @@ RFMiD	train_1912.jpg
 RFMiD	train_1913.jpg	
 RFMiD	train_1914.jpg	
 RFMiD	train_1915.jpg	
-RFMiD	train_1916.jpg	视神经萎缩
-RFMiD	train_1917.jpg	DR,激光术后
+RFMiD	train_1916.jpg	
+RFMiD	train_1917.jpg	DR
 RFMiD	train_1918.jpg	
 RFMiD	train_1919.jpg	
 RFMiD	train_1920.jpg	
