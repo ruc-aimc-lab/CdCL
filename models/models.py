@@ -24,3 +24,5 @@ class Models(object):
             model.my_load_state_dict(torch.load(custom_pretrained))
         return model
 
+
+    # You can put your own models here

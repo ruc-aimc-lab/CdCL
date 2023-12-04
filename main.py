@@ -19,4 +19,3 @@ if __name__ == '__main__':
     test_target_collection = sys.argv[5]
     os.environ["CUDA_VISIBLE_DEVICES"] = sys.argv[6]
     main(train_source_collection, train_target_collection, val_target_collection, config_path, test_target_collection)
-    # python main.py train val configs/inception_v3_WeightedBCEWithLogitsLoss_05.json test 0

@@ -32,10 +32,9 @@ class Trainer(object):
 
         self.num_workers = self.training_params['num_workers']
 
-        # self.target_type = self.training_params['target_type']  # 用来区分输入的是uwf还是wf
         
         self.evaluater = Evaluater()
-        # 数据集
+
         self.train_source_loader = build_dataloader(
             paths=self.paths, collection_names=self.train_source_collection, 
             training_params=self.training_params, mapping_path=self.mapping_path,
@@ -52,14 +51,14 @@ class Trainer(object):
             augmentation_params=self.augmentation_params, 
             domain='target', train=False)
         
-
         self.inter_val = int(self.train_target_loader.dataset.__len__() / self.train_target_loader.batch_size + 0.5)
         self.training_params['inter_val'] = self.inter_val
+        
         self.model = build_model(training_params['net'], training_params)
         self.model.change_device('cuda')
         print('finish model loading')
 
-        # 输出目录
+        # output folder
         self.run_num = 0
         self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
         while os.path.exists(self.out):
@@ -76,7 +75,6 @@ class Trainer(object):
         with open(os.path.join(self.out, 'log.csv'), 'w') as f:
             f.write(','.join(self.log_headers) + '\n')
 
-        
         self.iteration = 0
         self.best_ap = -1
         self.no_improve = 0
@@ -91,7 +89,7 @@ class Trainer(object):
         print('validating...')
         predictor = Predictor(self.model, self.val_target_loader)
         _, scores, labels = predictor.predict()
-        hist, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(scores, labels)
+        _, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(scores, labels)
         precisions, recalls, fs, specificities, aps, iaps, aucs = np.nanmean(precisions), np.nanmean(recalls), np.nanmean(fs), np.nanmean(specificities), np.nanmean(aps), np.nanmean(iaps), np.nanmean(aucs)
 
         with open(os.path.join(self.out, 'log.csv'), 'a') as f:
@@ -139,7 +137,7 @@ class Trainer(object):
                 self.model.change_model_mode('eval')
                 self.validate()
                 self.model.change_model_mode('train')
-                # self.end = True
+                
                 if self.end:
                     break
             self.iteration += 1
@@ -161,7 +159,7 @@ class Trainer(object):
 
             if len(target_label) > len(target_score):
                 target_label = target_label[:len(target_score)]
-            hist, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(target_score, target_label)
+            _, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(target_score, target_label)
             precisions, recalls, fs, specificities, aps, iaps, aucs = np.nanmean(precisions), np.nanmean(recalls), np.nanmean(fs), np.nanmean(specificities), np.nanmean(aps), np.nanmean(iaps), np.nanmean(aucs)
 
             total_time = time.time() - self.start_time

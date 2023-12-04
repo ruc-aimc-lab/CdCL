@@ -71,8 +71,7 @@ def main(train_source_collection, train_target_collection, val_target_collection
 
     evaluater = Evaluater()
 
-    hist, precisions, recalls, fs, specificities, aps, iaps, aucs = evaluater.evaluate(preds, gts, thre=0.5)
-    # recalls, specificities, thres, fs = evaluater.best_f1(preds, gts)
+    _, precisions, recalls, fs, specificities, aps, iaps, aucs = evaluater.evaluate(preds, gts, thre=0.5)
     row_heads = ['precision', 'recall', 'f1', 'specificity', 'auc', 'ap']
     column_head = ['mean'] + [reserve_mappings[i] for i in range(len(precisions))]
     results = [precisions, recalls, fs, specificities, aucs, aps]

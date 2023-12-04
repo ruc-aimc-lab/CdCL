@@ -31,7 +31,6 @@ def main(train_source_collection, train_target_collection, val_target_collection
         augmentation_params=augmentation_params, 
         domain='target', train=False)
 
-
     model = build_model(training_params['net'], training_params, only_predict=True)
     model.requires_grad_false()
     model.change_model_mode('eval')

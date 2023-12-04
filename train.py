@@ -4,7 +4,6 @@ import json
 from trainer import Trainer
 
 
-
 def main(source_train_collection, target_train_collection, target_val_collection, config_path):
     f = open(config_path, 'r').read()
     config = json.loads(f)
@@ -33,7 +32,3 @@ if __name__ == '__main__':
     os.environ["CUDA_VISIBLE_DEVICES"] = sys.argv[5]
 
     main(train_cfp_collection, train_uwf_collection, val_collection, config_path)
-
-    #python train_zeiss.py mcs_train_8 final_zeiss_train_8 final_zeiss_val_8 configs/noatten_mil_cla12_5e4_L1consistency_38_coscycle4.json 0
-    #
-    #python train_zeiss.py mcs_train_8 zeiss_train_8 zeiss_val_8 configs/mil_1e3_cla12_1e4_L1consistency_softmax_38_coscycle4.json 0
