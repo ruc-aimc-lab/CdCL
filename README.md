@@ -4,6 +4,6 @@ Code for our BIBM2023 paper "Supervised Domain Adaptation for Recognizing Retina
 # Get started
 
 ### Data
-Download the public datasets [RFMiD](https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid) and [TOP](https://github.com/DateCazuki/Fundus_Diagnosis) and move the images to folders ./public_datasets/RFMiD and ./public_datasets/TOP
-- 2. Install packages by `pip install -r requirements.txt`. This step is suggested to be done in your docker container or things like that.
-- 3.
+- 1. See [imagedata](https://github.com/ruc-aimc-lab/CdCL/imagedata) for data preparation.
+- 2. Install packages by `pip install -r requirements.txt`. This step is suggested to be done in your docker container or virtual environment or things like that.
+- 3. Run `source main.sh` to start training.
