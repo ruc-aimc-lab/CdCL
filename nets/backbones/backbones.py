@@ -33,7 +33,7 @@ def build_backbone(model_name, pretrained):
 class Backbones(object):
     @staticmethod
     def effi_b3_p(pretrained=True, **kwargs):
-        model = efficientnet_b3_pruned(pretrained=pretrained, drop_rate=0.3, drop_path_rate=0.2, just_feature=True)
+        model = efficientnet_b3_pruned(pretrained=pretrained, drop_rate=0.3, drop_path_rate=0.2)
         return model
     
     '''@staticmethod

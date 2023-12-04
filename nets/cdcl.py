@@ -160,7 +160,7 @@ class CdCL(nn.Module):
         score_gap, feature_gap = self.forward_gap(x)
         score_lap, feature_lap = self.forward_lap(x)
 
-        weight_fusion = self.cw_att_fusion(torch.cat((feature_gap.view(B, 1, -1), feature_lap.view(B, 1, -1)), dim=1))
+        weight_fusion = self.channel_att_fusion(torch.cat((feature_gap.view(B, 1, -1), feature_lap.view(B, 1, -1)), dim=1))
         score = torch.cat((score_gap.view(B, 1, -1), score_lap.view(B, 1, -1)), dim=1)
         score = torch.bmm(weight_fusion, score) # B * n_class * 2 , B * 2 * n_class
         score = score.view(B, -1)
@@ -261,4 +261,12 @@ class CdCLProcessor(object):
             self.model.eval()
         else:
             raise Exception('Invalid model mode {}'.format(mode))
+        
+    def change_device(self, device):
+        self.model.to(device)
 
+    def save_model(self, path):
+        torch.save(self.model.state_dict(), path)
+
+    def load_model(self, path):
+        self.model.load_state_dict(torch.load(path))

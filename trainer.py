@@ -44,16 +44,16 @@ class Trainer(object):
             augmentation_params=self.augmentation_params, 
             domain='target', train=True)
         self.val_target_loader = build_dataloader(
-            paths=self.paths, collection_names=self.val_uwf_collection, 
+            paths=self.paths, collection_names=self.val_target_collection, 
             training_params=self.training_params, mapping_path=self.mapping_path, 
             augmentation_params=self.augmentation_params, 
             domain='target', train=False)
         
 
-        self.inter_val = int(self.train_uwf_loader.dataset.__len__() / self.train_uwf_loader.batch_size + 0.5)
+        self.inter_val = int(self.train_target_loader.dataset.__len__() / self.train_target_loader.batch_size + 0.5)
         self.training_params['inter_val'] = self.inter_val
         self.model = build_model(training_params['net'], training_params)
-        self.model.cuda()
+        self.model.change_device('cuda')
         print('finish model loading')
         # self.optimizer = Optimizer(self.model, self.training_params, method=training_params['optimizer'])
 
@@ -109,7 +109,7 @@ class Trainer(object):
         if is_best:
             self.best_ap = aps
             self.no_improve = 0
-            torch.save(self.model.state_dict(), os.path.join(self.out, 'best_model.pkl'))
+            self.model.save_model(os.path.join(self.out, 'best_model.pkl'))
             print('model saved')
         else:
             self.no_improve += 1
@@ -128,15 +128,15 @@ class Trainer(object):
                 data_in_target = next(self.iter_target_train_loader)
 
             try:      
-                data_in_source = next(self.iter_cfp_train_loader)
+                data_in_source = next(self.iter_source_train_loader)
             except StopIteration:
                 self.iter_source_train_loader = iter(self.train_source_loader)
                 data_in_source = next(self.iter_source_train_loader)
 
             if self.iteration % self.inter_val  == 0:
-                self.model.eval()
+                self.model.change_model_mode('eval')
                 self.validate()
-                self.model.train()
+                self.model.change_model_mode('train')
                 if self.end:
                     break
             self.iteration += 1

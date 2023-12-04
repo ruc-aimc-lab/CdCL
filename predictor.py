@@ -10,7 +10,7 @@ class Predictor(object):
         self.dataloader = dataloader
 
     def predict(self):
-        self.model.eval()
+        self.model.change_model_mode('eval')
         eval_img_paths = []
         eval_scores = np.zeros((self.dataloader.dataset.__len__(), self.dataloader.dataset.num_class))
         eval_labels = np.zeros((self.dataloader.dataset.__len__(), self.dataloader.dataset.num_class), dtype=int)
