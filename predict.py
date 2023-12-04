@@ -3,7 +3,7 @@ import sys
 import json
 
 from nets import build_model
-from data import build_dataloader
+from dataloader import build_dataloader
 import numpy as np
 from predictor import Predictor
 

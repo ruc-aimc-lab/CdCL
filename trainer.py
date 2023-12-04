@@ -5,7 +5,7 @@ import torch
 from nets import build_model
 
 from utils import Evaluater
-from data import build_dataloader
+from dataloader import build_dataloader
 from predictor import Predictor
 import numpy as np
 import warnings
