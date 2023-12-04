@@ -50,7 +50,7 @@ class Trainer(object):
             domain='target', train=False)
         
 
-        self.inter_val = int(self.train_uwf_loader.dataset.__len__() / self.train_uwf_loader.batch_size) + 1
+        self.inter_val = int(self.train_uwf_loader.dataset.__len__() / self.train_uwf_loader.batch_size + 0.5)
         self.training_params['inter_val'] = self.inter_val
         self.model = build_model(training_params['net'], training_params)
         self.model.cuda()
@@ -59,13 +59,13 @@ class Trainer(object):
 
         # 输出目录
         self.run_num = 0
-        self.out = os.path.join(self.collection_root + '_out', self.train_uwf_collection + '_' + self.train_cfp_collection, 'Models', self.val_uwf_collection, self.config_name, 'runs_{}'.format(self.run_num))
+        self.out = os.path.join(self.collection_root + '_out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
         while os.path.exists(self.out):
             self.run_num += 1
-            self.out = os.path.join(self.collection_root + '_out', self.train_uwf_collection + '_' + self.train_cfp_collection, 'Models', self.val_uwf_collection, self.config_name, 'runs_{}'.format(self.run_num))
+            self.out = os.path.join(self.collection_root + '_out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
         os.makedirs(os.path.join(self.out, 'models'))
 
-        # log表头
+        # log head
         self.log_headers = ['iteration', 'train/loss', 
         'train/ap', 'train/f1', 'train/precision', 'train/recall', 
         'valid/ap', 'valid/f1', 'valid/precision', 'valid/recall', 
@@ -76,20 +76,20 @@ class Trainer(object):
 
         
         self.iteration = 0
-        self.ap = -1
+        self.best_ap = -1
         self.no_improve = 0
         self.start_time = time.time()
         self.end = False
 
         print('model: {}'.format(training_params['net']))
-        print('dataset: ', self.train_cfp_collection, self.train_uwf_collection, self.val_uwf_collection)
+        print('dataset: ', self.train_source_collection, self.train_target_collection, self.val_target_collection)
         print('optimizer: {}'.format(training_params['optimizer']))
 
     def validate(self):
         print('validating...')
-        predictor = Predictor(self.model, self.val_uwf_loader)
-        _, scores, targets = predictor.predict()
-        hist, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(scores, targets)
+        predictor = Predictor(self.model, self.val_target_loader)
+        _, scores, labels = predictor.predict()
+        hist, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(scores, labels)
         precisions, recalls, fs, specificities, aps, iaps, aucs = np.nanmean(precisions), np.nanmean(recalls), np.nanmean(fs), np.nanmean(specificities), np.nanmean(aps), np.nanmean(iaps), np.nanmean(aucs)
 
         with open(os.path.join(self.out, 'log.csv'), 'a') as f:
@@ -105,9 +105,9 @@ class Trainer(object):
             log = '{},{},{},{:.2f}\n'.format(log_iter, log_train, log_test, total_time)
             f.write(log)
         
-        is_best = aps > self.ap
+        is_best = aps > self.best_ap
         if is_best:
-            self.ap = aps
+            self.best_ap = aps
             self.no_improve = 0
             torch.save(self.model.state_dict(), os.path.join(self.out, 'best_model.pkl'))
             print('model saved')
@@ -118,23 +118,20 @@ class Trainer(object):
             self.end = True
 
     def train(self):
-        self.iter_cfp_train_loader = iter(self.train_cfp_loader)
-        self.iter_uwf_train_loader = iter(self.train_uwf_loader)
+        self.iter_source_train_loader = iter(self.train_source_loader)
+        self.iter_target_train_loader = iter(self.train_target_loader)
         while True:
             try:      
-                data_in_uwf = next(self.iter_uwf_train_loader)
+                data_in_target = next(self.iter_target_train_loader)
             except StopIteration:
-                print('new_batch, 1')
-                self.iter_uwf_train_loader = iter(self.train_uwf_loader)
-                print(2)
-                data_in_uwf = next(self.iter_uwf_train_loader)
-                print(3)
+                self.iter_target_train_loader = iter(self.train_target_loader)
+                data_in_target = next(self.iter_target_train_loader)
 
             try:      
-                data_in_cfp = next(self.iter_cfp_train_loader)
+                data_in_source = next(self.iter_cfp_train_loader)
             except StopIteration:
-                self.iter_cfp_train_loader = iter(self.train_cfp_loader)
-                data_in_cfp = next(self.iter_cfp_train_loader)
+                self.iter_source_train_loader = iter(self.train_source_loader)
+                data_in_source = next(self.iter_source_train_loader)
 
             if self.iteration % self.inter_val  == 0:
                 self.model.eval()
@@ -144,30 +141,29 @@ class Trainer(object):
                     break
             self.iteration += 1
 
-            _, cfp_img, cfp_target, cfp_mask = data_in_cfp
-            _, uwf_whole_img, uwf_crop_img, uwf_target, uwf_mask = data_in_uwf
+            _, source_img, source_label = data_in_source
+            _, target_img, target_label = data_in_target
 
-            cfp_img = cfp_img.type(torch.FloatTensor).cuda()
-            cfp_target = cfp_target.type(torch.FloatTensor).cuda()
+            source_img = source_img.type(torch.FloatTensor).cuda()
+            source_label = source_label.type(torch.FloatTensor).cuda()
 
-            uwf_whole_img = uwf_whole_img.type(torch.FloatTensor).cuda()
-            uwf_crop_img = uwf_crop_img.type(torch.FloatTensor).cuda()
-            uwf_target = uwf_target.type(torch.FloatTensor).cuda()
+            target_img = target_img.type(torch.FloatTensor).cuda()
+            target_label = target_label.type(torch.FloatTensor).cuda()
 
-            uwf_score, train_loss, detailed_losses, detailed_scores = \
-            self.model.train_model(cfp=cfp_img, clarus_whole=uwf_whole_img, clarus_split=uwf_crop_img, gt_cfp=cfp_target, gt_clarus=uwf_target, iter_num=self.iteration)
+            target_score, train_loss = self.model.train_model(source=source_img, target=target_img, 
+                                                              source_label=source_label, target_label=target_label)
             
-            uwf_score = uwf_score.data.cpu().numpy()
-            uwf_target = uwf_target.data.cpu().numpy()
+            target_score = target_score.data.cpu().numpy()
+            target_label = target_label.data.cpu().numpy()
 
-            if len(uwf_target) > len(uwf_score):
-                uwf_target = uwf_target[:len(uwf_score)]
-            hist, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(uwf_score, uwf_target)
+            if len(target_label) > len(target_score):
+                target_label = target_label[:len(target_score)]
+            hist, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(target_score, target_label)
             precisions, recalls, fs, specificities, aps, iaps, aucs = np.nanmean(precisions), np.nanmean(recalls), np.nanmean(fs), np.nanmean(specificities), np.nanmean(aps), np.nanmean(iaps), np.nanmean(aucs)
 
             total_time = time.time() - self.start_time
             print('iteration {:d}, loss={:.3f}, lr={:.3e}, ap={:.3f}, max_ap={:.3f}, no_improve:{:d}'.format(
-                self.iteration, train_loss.data.item(), self.model.opt.get_lr(), aps, self.ap, self.no_improve))
+                self.iteration, train_loss.data.item(), self.model.opt.get_lr(), aps, self.best_ap, self.no_improve))
            
             with open(os.path.join(self.out, 'log.csv'), 'a') as f:
                 log_iter = [self.iteration, train_loss.data.item()]

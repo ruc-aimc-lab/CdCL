@@ -18,15 +18,15 @@ def _fast_hist(label_true, label_pred, n_class=2):
 
 class Measurement(object):
     @staticmethod
-    def conf_mats(targets, preds):
-        targets = np.array(targets)
+    def conf_mats(labels, preds):
+        labels = np.array(labels)
         preds = np.array(preds)
 
-        assert preds.shape == targets.shape
-        n_class = targets.shape[1]
+        assert preds.shape == labels.shape
+        n_class = labels.shape[1]
         hists = np.zeros((n_class, 2, 2))
         for i in range(n_class):
-            hists[i] = _fast_hist(targets[:, i].flatten(), preds[:, i].flatten())
+            hists[i] = _fast_hist(labels[:, i].flatten(), preds[:, i].flatten())
         return hists
 
     @staticmethod
@@ -51,8 +51,8 @@ class Measurement(object):
         return precisions, recalls, fs, specificities
 
     @staticmethod
-    def score_based_measurements(scores, targets):
-        assert scores.shape == targets.shape
+    def rank_based_measurements(scores, labels):
+        assert scores.shape == labels.shape
         im_num, label_num = scores.shape
 
         aps = np.zeros(label_num)
@@ -61,7 +61,7 @@ class Measurement(object):
 
         for i in range(label_num):
             score = scores[:, i]
-            target = targets[:, i]
+            target = labels[:, i]
             if (target == 0).all() or (target == 1).all():
                 ap = np.nan
                 auc = np.nan
@@ -72,7 +72,7 @@ class Measurement(object):
             aucs[i] = auc
         for i in range(im_num):
             score = scores[i, :]
-            target = targets[i, :]
+            target = labels[i, :]
             if (target == 0).all() or (target == 1).all():
                 ap = np.nan
             else:
@@ -83,22 +83,22 @@ class Measurement(object):
 
 
 class Evaluater(Measurement):
-    def evaluate(self, scores, targets, thre=0):
+    def evaluate(self, scores, labels, thre=0):
         preds = scores.copy()
         preds[preds>thre] = 1
         preds[preds<=thre] = 0
         preds = preds.astype(np.int)
-        targets = targets.astype(np.int)
+        labels = labels.astype(np.int)
 
-        hist = self.conf_mats(targets, preds)
+        hist = self.conf_mats(labels, preds)
         precisions, recalls, fs, specificities = self.conf_mat_based_measurements(hist)
-        aps, iaps, aucs = self.score_based_measurements(scores, targets)
+        aps, iaps, aucs = self.rank_based_measurements(scores, labels)
 
         
         return hist, precisions, recalls, fs, specificities, aps, iaps, aucs
 
     @staticmethod
-    def best_f1(scores, targets):
+    def best_f1(scores, labels):
         n_class = scores.shape[1]
 
         senss = []
@@ -111,7 +111,7 @@ class Evaluater(Measurement):
             b_sens = -1
             b_f1 = -1
             b_thre = -1
-            fprs, tprs, thres = roc_curve(targets[:, i], scores[:, i])
+            fprs, tprs, thres = roc_curve(labels[:, i], scores[:, i])
 
             for fpr, tpr, thre in zip(fprs, tprs, thres):
                 sens = tpr

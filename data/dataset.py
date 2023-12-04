@@ -32,8 +32,9 @@ class MyDataset(Dataset):
             lst = random.sample(lst, int(len(lst) * self.ratio))
         return lst
 
-    def __getitem__(self, index):
-        
+    def __getitem__(self, index, only_img=False, only_label=False):
+        assert not (only_img and only_label)
+
         line = self.lst[index]
         dataset, img_name, labels = line 
         labels = labels.split(',')
