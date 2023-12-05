@@ -58,7 +58,7 @@ class Trainer(object):
         print('finish model loading')
 
         # output folder
-        self.run_num = 0
+        self.run_num = 0  # We run multiple times with the same settings.
         self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
         while os.path.exists(self.out):
             self.run_num += 1

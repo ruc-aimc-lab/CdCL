@@ -52,4 +52,5 @@ for line in tqdm(lines):
     circle_mask = np.zeros((D, D), dtype=np.uint8)
     cv2.circle(circle_mask, (int(D/2), int(D/2)), int(D/2), 255, -1)
     square_im[circle_mask==0] = 0
+    
     cv2.imwrite(path_out, square_im)
