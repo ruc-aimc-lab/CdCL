@@ -44,7 +44,7 @@ class MyDataset(Dataset):
         dataset, img_name, labels = line 
         img_path = os.path.join(self.img_root, dataset, img_name)
         if not os.path.exists(img_path):
-            raise Exception(img_path)
+            raise Exception('image file missing', img_path)
         
         # load image
         img = cv2.imread(img_path)[:, :, [2, 1, 0]]

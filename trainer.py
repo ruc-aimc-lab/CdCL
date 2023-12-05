@@ -32,7 +32,6 @@ class Trainer(object):
 
         self.num_workers = self.training_params['num_workers']
 
-        
         self.evaluater = Evaluater()
 
         self.train_source_loader = build_dataloader(
@@ -64,7 +63,7 @@ class Trainer(object):
         while os.path.exists(self.out):
             self.run_num += 1
             self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
-        os.makedirs(os.path.join(self.out, 'models'))
+        os.makedirs(self.out)
 
         # log head
         self.log_headers = ['iteration', 'train/loss', 
@@ -105,8 +104,7 @@ class Trainer(object):
             log = '{},{},{},{:.2f}\n'.format(log_iter, log_train, log_test, total_time)
             f.write(log)
         
-        is_best = aps > self.best_ap
-        if is_best:
+        if aps > self.best_ap:
             self.best_ap = aps
             self.no_improve = 0
             self.model.save_model(os.path.join(self.out, 'best_model.pkl'))
@@ -163,9 +161,13 @@ class Trainer(object):
             precisions, recalls, fs, specificities, aps, iaps, aucs = np.nanmean(precisions), np.nanmean(recalls), np.nanmean(fs), np.nanmean(specificities), np.nanmean(aps), np.nanmean(iaps), np.nanmean(aucs)
 
             total_time = time.time() - self.start_time
+
+            """
+            It is ok to recieve aps=nan here. When all the labels in a batch are the same, AP cannot be calculated.
+            """
             print('iteration {:d}, loss={:.3f}, lr={:.3e}, ap={:.3f}, max_ap={:.3f}, no_improve:{:d}'.format(
                 self.iteration, train_loss.data.item(), self.model.opt.get_lr(), aps, self.best_ap, self.no_improve))
-           
+
             with open(os.path.join(self.out, 'log.csv'), 'a') as f:
                 log_iter = [self.iteration, train_loss.data.item()]
                 log_train = [aps, fs, precisions, recalls]

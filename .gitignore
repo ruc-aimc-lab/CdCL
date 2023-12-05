@@ -32,7 +32,6 @@ __pycache__
 *.pyc
 *.pth
 logs
-Predictions
 Models
 temporary*
 out
@@ -40,7 +39,6 @@ damaged*
 heat_map*
 scores*
 
-VisualSearch
-tools
-
+VisualSearch*
 public_datasets
+imagedata
