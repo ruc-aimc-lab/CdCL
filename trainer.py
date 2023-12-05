@@ -2,12 +2,12 @@
 import os
 import time
 import torch
-from models import build_model
+import numpy as np
 
+from models import build_model
 from utils import Evaluater
 from dataloader import build_dataloader
 from predictor import Predictor
-import numpy as np
 import warnings
 warnings.filterwarnings("ignore", category=RuntimeWarning)
 

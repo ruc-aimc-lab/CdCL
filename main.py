@@ -1,8 +1,9 @@
+import sys
+import os
 from train import main as train_main
 from predict import main as predict_main
 from evaluate import main as evaluate_main
-import sys
-import os
+
 
 
 def main(train_source_collection, train_target_collection, val_target_collection, config_path, test_target_collection):

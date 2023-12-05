@@ -1,9 +1,9 @@
 # Crop the RFMiD images into squares.
 # The parameters are pre-calculated based on a circular fitting algorithm.
-import cv2
-import numpy as np
 import os
+import numpy as np
 from tqdm import tqdm
+import cv2
 
 img_root = '../A. RFMiD_All_Classes_Dataset/1. Original Images'  # your downloaded RFMiD dataset
 out_root = './imagedata/RFMiD'
@@ -52,5 +52,5 @@ for line in tqdm(lines):
     circle_mask = np.zeros((D, D), dtype=np.uint8)
     cv2.circle(circle_mask, (int(D/2), int(D/2)), int(D/2), 255, -1)
     square_im[circle_mask==0] = 0
-    
+
     cv2.imwrite(path_out, square_im)
