@@ -1,4 +1,4 @@
-# 对数据进行几何变换
+# transformation, not the network
 import numpy as np
 import cv2
 
