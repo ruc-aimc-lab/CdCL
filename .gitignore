@@ -31,8 +31,6 @@ Temporary Items
 __pycache__
 *.pyc
 *.pth
-logs
-Models
 temporary*
 out
 damaged*
@@ -40,5 +38,4 @@ heat_map*
 scores*
 
 VisualSearch*
-public_datasets
 imagedata
