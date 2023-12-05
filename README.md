@@ -21,7 +21,7 @@ python tools/RFMiD_dataset/square.py
 ### Data Organization
 The images are organized as follows:
 ```
-./imagedata/  
+imagedata/  
 ├── RFMiD/
 │   ├── train_1.jpg
 │   ├── train_2.jpg
@@ -41,7 +41,7 @@ The images are organized as follows:
 
 The annotations are organized as follows:
 ```
-./Annotations/
+Annotations/
 ├── test_RFMiD/
 │   └── Annotations/
 │       └── anno.txt
