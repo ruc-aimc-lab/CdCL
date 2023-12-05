@@ -52,7 +52,7 @@ The annotations are organized as follows:
     val_TOP/
 ```
 
-
+ 
 ### Codes
 Try `sh main.sh` which combines training, predicting and evaluating together. 
 
