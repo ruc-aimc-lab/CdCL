@@ -6,19 +6,18 @@ Code for our BIBM2023 paper [Supervised Domain Adaptation for Recognizing Retina
 ## Environment
 Install packages by `pip install -r requirements.txt`. This step is suggested to be done in your docker container or virtual environment or things like that. 
 
-## Data
-### Datasets
+## Datasets
 - RFMiD: [https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid](https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid)
 - TOP: [https://github.com/DateCazuki/Fundus_Diagnosis](https://github.com/DateCazuki/Fundus_Diagnosis)
 
 
-### Data preparation
+## Data preparation
 It is recommended to crop the RFMiD images into squares by using
 ```
 python tools/RFMiD_dataset/square.py
 ```
 
-### Data Organization
+## Data Organization
 The images are organized as follows:
 ```
 imagedata/  
