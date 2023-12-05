@@ -163,7 +163,7 @@ class Trainer(object):
             total_time = time.time() - self.start_time
 
             """
-            It is ok to recieve aps=nan here. When all the labels in a batch are the same, AP cannot be calculated.
+            It is ok to receive aps=nan here. When all the labels in a batch are the same, AP cannot be calculated.
             """
             print('iteration {:d}, loss={:.3f}, lr={:.3e}, ap={:.3f}, max_ap={:.3f}, no_improve:{:d}'.format(
                 self.iteration, train_loss.data.item(), self.model.opt.get_lr(), aps, self.best_ap, self.no_improve))
