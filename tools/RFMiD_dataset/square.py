@@ -15,7 +15,6 @@ dataset_mapping = {'a. Training Set': 'train', 'b. Validation Set': 'val', 'c. T
 with open(params_path) as fin:
     lines = fin.readlines()[1:]
 for line in tqdm(lines):
-
     """
     h, w: raw height and width of the image
     X, Y: the coordinate of the top left corner of the square
@@ -33,18 +32,20 @@ for line in tqdm(lines):
 
     im = cv2.imread(path_in)
     assert list(im.shape[:2]) == [h, w]
-
+    
     square_im = np.zeros((D, D, 3), dtype=np.uint8)
+    dh = min(h, D + Y) - max(0, Y)
+    dw = min(w, D + X) - max(0, X)
 
     square_h_start = max(0, -Y)
-    square_h_end = min(D, square_h_start + h)
+    square_h_end = min(D, square_h_start + dh)
     square_w_start = max(0, -X)
-    square_w_end = min(D, square_w_start + w)
+    square_w_end = min(D, square_w_start + dw)
 
     raw_h_start = max(0, Y)
-    raw_h_end = min(h, raw_h_start + D)
+    raw_h_end = min(h, raw_h_start + dh)
     raw_w_start = max(0, X)
-    raw_w_end = min(w, raw_w_start + D)
+    raw_w_end = min(w, raw_w_start + dw)
 
     square_im[square_h_start:square_h_end, square_w_start:square_w_end, :] = im[raw_h_start:raw_h_end, raw_w_start:raw_w_end, :]
     
@@ -52,4 +53,3 @@ for line in tqdm(lines):
     cv2.circle(circle_mask, (int(D/2), int(D/2)), int(D/2), 255, -1)
     square_im[circle_mask==0] = 0
     cv2.imwrite(path_out, square_im)
-
