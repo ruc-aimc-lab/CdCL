@@ -2,14 +2,59 @@
 Code for our BIBM2023 paper [Supervised Domain Adaptation for Recognizing Retinal Diseases from Wide-Field Fundus Images](https://arxiv.org/abs/2305.08078)
 
 # Get started
-### Datasets
-See [imagedata](https://github.com/ruc-aimc-lab/CdCL/tree/main/imagedata) for data preparation.  
 
-### Environment
-Install packages by `pip install -r requirements.txt`. This step is suggested to be done in your docker container or virtual environment or things like that.  
+## Environment
+Install packages by `pip install -r requirements.txt`. This step is suggested to be done in your docker container or virtual environment or things like that. 
+
+## Data
+### Datasets
+- RFMiD: [https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid](https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid)
+- TOP: [https://github.com/DateCazuki/Fundus_Diagnosis](https://github.com/DateCazuki/Fundus_Diagnosis)
+
+
+### Data preparation
+Crop the RFMiD images into squares by
+```
+python tools/RFMiD_dataset/square.py
+```
+
+### Data Organization
+The images are organized as follows:
+```
+./imagedata/  
+    RFMiD/
+        train_1.jpg
+        train_2.jpg
+        ...
+        val_1.jpg
+        val_2.jpg
+        ...
+        test_1.jpg
+        test_2.jpg
+        ...
+    TOP/
+        000000_00.jpg
+        000000_01.jpg
+        000001_00.jpg
+        ...
+```
+
+The annotations are organized as follows:
+```
+./Annotations/
+    test_RFMiD/
+        Annotations/
+            anno.txt
+    test_TOP/
+    train_RFMiD/
+    train_TOP/
+    val_RFMiD/
+    val_TOP/
+```
+
 
 ### Codes
-Try `source main.sh` which contains training, prediction and evaluating together.
+Try `source main.sh` which combines training, predicting and evaluating together. 
 
 # Citations
 If you find this our work useful, please consider citing:
