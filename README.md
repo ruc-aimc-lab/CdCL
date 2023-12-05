@@ -13,7 +13,7 @@ Install packages by `pip install -r requirements.txt`. This step is suggested to
 
 
 ### Data preparation
-Crop the RFMiD images into squares by
+It is recommended to crop the RFMiD images into squares by using
 ```
 python tools/RFMiD_dataset/square.py
 ```
