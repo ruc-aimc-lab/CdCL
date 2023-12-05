@@ -56,7 +56,7 @@ Annotations/
 ## Codes
 Try `sh main.sh` which combines training, predicting and evaluating together. 
 
-# Citations
+# Citation
 If you find this our work useful, please consider citing:
 ```
 @inproceedings{wei2023cdcl,
