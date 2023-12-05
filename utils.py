@@ -9,10 +9,10 @@ def one_hot(x, num_ratings=None):
     return np.eye(num_ratings)[x]
 
 
-def _fast_hist(label_true, label_pred, n_class=2):
-    hist = np.bincount((n_class * label_true.astype(np.int) + label_pred.astype(np.int)).flatten(),
+def _fast_mat(label_true, label_pred, n_class=2):
+    mat = np.bincount((n_class * label_true.astype(np.int) + label_pred.astype(np.int)).flatten(),
                        minlength=n_class ** 2).reshape(n_class, n_class)
-    return hist
+    return mat
 
 
 
@@ -24,24 +24,24 @@ class Measurement(object):
 
         assert preds.shape == labels.shape
         n_class = labels.shape[1]
-        hists = np.zeros((n_class, 2, 2))
+        mats = np.zeros((n_class, 2, 2))
         for i in range(n_class):
-            hists[i] = _fast_hist(labels[:, i].flatten(), preds[:, i].flatten())
-        return hists
+            mats[i] = _fast_mat(labels[:, i].flatten(), preds[:, i].flatten())
+        return mats
 
     @staticmethod
-    def conf_mat_based_measurements(hists, e=1e-10):
-        n_class = hists.shape[0]
+    def conf_mat_based_measurements(mats, e=1e-10):
+        n_class = mats.shape[0]
         precisions = np.zeros(n_class)
         recalls = np.zeros(n_class)
         fs = np.zeros(n_class)
         specificities = np.zeros(n_class)
         for i in range(n_class):
-            hist = hists[i]
-            tp = hist[1, 1]
-            tn = hist[0, 0]
-            fp = hist[0, 1]
-            fn = hist[1, 0]
+            mat = mats[i]
+            tp = mat[1, 1]
+            tn = mat[0, 0]
+            fp = mat[0, 1]
+            fn = mat[1, 0]
 
             precisions[i] = tp / (tp + fp + e)
             recalls[i] = tp / (tp + fn + e)
@@ -90,11 +90,11 @@ class Evaluater(Measurement):
         preds = preds.astype(np.int)
         labels = labels.astype(np.int)
 
-        hist = self.conf_mats(labels, preds)
-        precisions, recalls, fs, specificities = self.conf_mat_based_measurements(hist)
+        mat = self.conf_mats(labels, preds)
+        precisions, recalls, fs, specificities = self.conf_mat_based_measurements(mat)
         aps, iaps, aucs = self.rank_based_measurements(scores, labels)
 
-        return hist, precisions, recalls, fs, specificities, aps, iaps, aucs
+        return mat, precisions, recalls, fs, specificities, aps, iaps, aucs
 
     @staticmethod
     def best_f1(scores, labels):
