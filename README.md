@@ -70,4 +70,6 @@ If you find this our work useful, please consider citing:
 ```
 
 # Contact
-Feel free to contact me at qijie.wei@ruc.edu.cn
+If you encounter any issue when running the code, please feel free to reach us either by creating a new issue in the GitHub or by emailing
+
++ Qijie Wei (qijie.wei@ruc.edu.cn)
