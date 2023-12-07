@@ -2,7 +2,7 @@ import sys
 import os
 import json
 import numpy as np
-from utils import Evaluater
+from utils import Evaluater, list2str
 
 
 def load_pred(pred_path):
@@ -76,8 +76,9 @@ def main(train_source_collection, train_target_collection, val_target_collection
     column_head = ['mean'] + [reserve_mappings[i] for i in range(len(precisions))]
     results = [precisions, recalls, fs, specificities, aucs, aps]
 
-    with open(os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
-                            val_target_collection, config_name, 'runs_{}'.format(run_num), 'eval_results.csv'), 'w') as fout:
+    out_path = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+                            val_target_collection, config_name, 'runs_{}'.format(run_num), 'eval_results.csv')
+    with open(out_path, 'w') as fout:
         column_head = ','.join(column_head)
         fout.write(',{}\n'.format(column_head))
 
@@ -85,8 +86,9 @@ def main(train_source_collection, train_target_collection, val_target_collection
             row_head = row_heads[i]
             result = results[i]
             result_mean = np.nanmean(result)
-            result = ','.join(list(map(lambda x: '{:.4f}'.format(x), result)))
+            result = list2str(lst=result, decimals=4, separator=',')
             fout.write('{},{:.4f},{}\n'.format(row_head, result_mean, result))
+    print('Evaluation results saved to {}'.format(out_path))
 
 
 if __name__ == '__main__':

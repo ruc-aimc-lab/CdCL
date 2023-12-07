@@ -6,6 +6,7 @@ from models import build_model
 from dataloader import build_dataloader
 import numpy as np
 from predictor import Predictor
+from utils import list2str
 
 
 def weighted_sigmoid(arr, w=1):
@@ -46,11 +47,14 @@ def main(train_source_collection, train_target_collection, val_target_collection
     predictor = Predictor(model, test_target_loader)
     img_names, scores, _ = predictor.predict()
     scores = weighted_sigmoid(scores)
-    with open(os.path.join(out_root, 'results.csv'), 'w') as fout:
+
+    results_path = os.path.join(out_root, 'results.csv')
+    with open(results_path, 'w') as fout:
         for img_name, score in zip(img_names, scores):
-            score = ','.join(list(map(lambda x: '{:.4f}'.format(x), score)))
+            score = list2str(lst=score, decimals=4, separator=',')
             line = '{},{}\n'.format(img_name, score)
             fout.write(line)
+    return results_path
     
 if __name__ == '__main__':
     train_source_collection = sys.argv[1]

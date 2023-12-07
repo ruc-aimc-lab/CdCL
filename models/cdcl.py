@@ -193,10 +193,10 @@ class CdCLProcessor(object):
         over_lap = model_params['over_lap']
         
         self.model = CdCL(backbone=backbone, n_class=n_class, backbone_out_channels=backbone_out_channels, 
-                     mhsa_nums=mhsa_nums, lap_ratio=lap_ratio, over_lap=over_lap)
+                          mhsa_nums=mhsa_nums, lap_ratio=lap_ratio, over_lap=over_lap)
         if training:
+            # We only need to initialize these attributes in training
             self.mix_ratio = model_params['mix_ratio']  # (0.5, 1)
-
             self.opt = Optimizer([self.model], training_params)
             self.crit = nn.BCEWithLogitsLoss()
             self.weights = model_params['weights'] 
@@ -233,7 +233,7 @@ class CdCLProcessor(object):
         else:
             raise Exception('Invalid model mode {}'.format(mode))
 
-    def requires_grad_false(self,):
+    def requires_grad_false(self):
         for param in self.model.parameters():
             param.requires_grad = False
 
