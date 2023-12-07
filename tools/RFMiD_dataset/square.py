@@ -1,5 +1,5 @@
 # Crop the RFMiD images into squares.
-# The parameters are pre-calculated based on a circular fitting algorithm.
+# The parameters are pre-calculated based on a circle fitting algorithm.
 import os
 import numpy as np
 from tqdm import tqdm

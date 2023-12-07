@@ -13,6 +13,19 @@ Install packages by `pip install -r requirements.txt`. This step is suggested to
 - RFMiD: [https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid](https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid)
 - TOP: [https://github.com/DateCazuki/Fundus_Diagnosis](https://github.com/DateCazuki/Fundus_Diagnosis)
 
+## Data split
+For RFMiD dataset, we follow the official data split.
+For TOP dataset, with the absence of official data split, we have randomly divided it into training, validation and test sets with ratio 6:2:2. Furthermore, as mentioned in our paper, only one tenth of the TOP training images are used. The data split is provided in `Annotations`
+
+| Dataset               | Images  |
+| :--                   | --:     |
+|train_RFMiD            | 1,920   |
+|val_RFMiD              | 640     |
+|test_RFMiD             | 640     |
+|train_TOP              | 1,920   |
+|train_TOP_10percent    | 1,920   |
+|val_TOP                | 1,920   |
+|test_TOP               | 1,920   |
 
 ## Data preparation
 It is recommended to crop the RFMiD images into squares by using

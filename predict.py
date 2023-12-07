@@ -39,21 +39,22 @@ def main(train_source_collection, train_target_collection, val_target_collection
 
     out_root = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num))
-    if not os.path.exists(out_root):
-        os.makedirs(out_root)
+    results_path = os.path.join(out_root, 'results.csv')
+    if os.path.exists(results_path):
+        raise Exception('Prediction \n{}\nalready exists'.format(results_path))
     else:
-        raise Exception('prediction \n{}\nalready exists'.format(out_root))
-
+        os.makedirs(out_root, exist_ok=True)
+   
     predictor = Predictor(model, test_target_loader)
     img_names, scores, _ = predictor.predict()
     scores = weighted_sigmoid(scores)
-
-    results_path = os.path.join(out_root, 'results.csv')
+    
     with open(results_path, 'w') as fout:
         for img_name, score in zip(img_names, scores):
             score = list2str(lst=score, decimals=4, separator=',')
             line = '{},{}\n'.format(img_name, score)
             fout.write(line)
+    print('Predictions saved to {}'.format(results_path))
     return results_path
     
 if __name__ == '__main__':

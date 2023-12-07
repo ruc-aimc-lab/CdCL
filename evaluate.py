@@ -89,6 +89,7 @@ def main(train_source_collection, train_target_collection, val_target_collection
             result = list2str(lst=result, decimals=4, separator=',')
             fout.write('{},{:.4f},{}\n'.format(row_head, result_mean, result))
     print('Evaluation results saved to {}'.format(out_path))
+    return out_path
 
 
 if __name__ == '__main__':
