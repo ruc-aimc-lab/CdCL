@@ -20,9 +20,9 @@ class Trainer(object):
 
         self.imroot = paths['image_root']
 
-        self.train_source_collection = paths['source_train_collection']
-        self.train_target_collection = paths['target_train_collection']
-        self.val_target_collection = paths['target_val_collection']
+        self.train_source_collection = paths['train_source_collection']
+        self.train_target_collection = paths['train_target_collection']
+        self.val_target_collection = paths['val_target_collection']
 
         self.collection_root = paths['collection_root']
         self.config_path = paths['config_path']
