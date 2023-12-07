@@ -13,10 +13,10 @@ def main(train_source_collection, train_target_collection, val_target_collection
 
 
 if __name__ == '__main__':
-    train_source_collection = sys.argv[1]
-    train_target_collection = sys.argv[2]
-    val_target_collection = sys.argv[3]
-    config_path = sys.argv[4]
-    test_target_collection = sys.argv[5]
+    train_source_collection = sys.argv[1]  # The training set of source domain
+    train_target_collection = sys.argv[2]  # The training set of target domain
+    val_target_collection = sys.argv[3]    # The validation set of target domain
+    config_path = sys.argv[4]              
+    test_target_collection = sys.argv[5]   # The test set of target domain
     os.environ["CUDA_VISIBLE_DEVICES"] = sys.argv[6]
     main(train_source_collection, train_target_collection, val_target_collection, config_path, test_target_collection)

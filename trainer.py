@@ -5,7 +5,7 @@ import torch
 import numpy as np
 
 from models import build_model
-from utils import Evaluater
+from utils import Evaluater, list2str
 from dataloader import build_dataloader
 from predictor import Predictor
 import warnings
@@ -53,23 +53,27 @@ class Trainer(object):
         self.inter_val = int(self.train_target_loader.dataset.__len__() / self.train_target_loader.batch_size + 0.5)
         self.training_params['inter_val'] = self.inter_val
         
-        self.model = build_model(training_params['net'], training_params)
-        self.model.change_device('cuda')
+        self.model = build_model(training_params['net'], training_params, training=True)
+        self.model.set_device('cuda')
         print('finish model loading')
 
         # output folder
         self.run_num = 0  # We run multiple times with the same settings.
-        self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
+        self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 
+                                'Models', self.val_target_collection, self.config_name, 
+                                'runs_{}'.format(self.run_num))
         while os.path.exists(self.out):
             self.run_num += 1
-            self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 'Models', self.val_target_collection, self.config_name, 'runs_{}'.format(self.run_num))
+            self.out = os.path.join('./out', self.train_target_collection + '_' + self.train_source_collection, 
+                                    'Models', self.val_target_collection, self.config_name, 
+                                    'runs_{}'.format(self.run_num))
         os.makedirs(self.out)
 
         # log head
         self.log_headers = ['iteration', 'train/loss', 
-        'train/ap', 'train/f1', 'train/precision', 'train/recall', 
-        'valid/ap', 'valid/f1', 'valid/precision', 'valid/recall', 
-        'total_time']
+                            'train/ap', 'train/f1', 'train/precision', 'train/recall', 
+                            'valid/ap', 'valid/f1', 'valid/precision', 'valid/recall',
+                            'total_time']
 
         with open(os.path.join(self.out, 'log.csv'), 'w') as f:
             f.write(','.join(self.log_headers) + '\n')
@@ -78,7 +82,7 @@ class Trainer(object):
         self.best_ap = -1
         self.no_improve = 0
         self.start_time = time.time()
-        self.end = False
+        self.end = False  # whether to stop training
 
         print('model: {}'.format(training_params['net']))
         print('dataset: ', self.train_source_collection, self.train_target_collection, self.val_target_collection)
@@ -97,9 +101,9 @@ class Trainer(object):
             log_test = [aps, fs, precisions, recalls]
             total_time = time.time() - self.start_time
 
-            log_iter = ','.join(list(map(str, log_iter)))
+            log_iter = ','.join(map(str, log_iter))
             log_train = ','.join(log_train)
-            log_test = ','.join(list(map(lambda x: '{:.4f}'.format(x), log_test)))
+            log_test = list2str(lst=log_test, decimals=4, separator=',')
 
             log = '{},{},{},{:.2f}\n'.format(log_iter, log_train, log_test, total_time)
             f.write(log)
@@ -132,33 +136,32 @@ class Trainer(object):
                 data_in_source = next(self.iter_source_train_loader)
 
             if self.iteration % self.inter_val  == 0:
-                self.model.change_model_mode('eval')
+                self.model.set_model_mode('eval')
                 self.validate()
-                self.model.change_model_mode('train')
+                self.model.set_model_mode('train')
                 
                 if self.end:
                     break
             self.iteration += 1
 
-            _, source_img, source_label = data_in_source
-            _, target_img, target_label = data_in_target
+            _, source_x, source_y = data_in_source
+            _, target_x, target_y = data_in_target
+            source_x = source_x.type(torch.FloatTensor).cuda()
+            source_y = source_y.type(torch.FloatTensor).cuda()
+            target_x = target_x.type(torch.FloatTensor).cuda()
+            target_y = target_y.type(torch.FloatTensor).cuda()
 
-            source_img = source_img.type(torch.FloatTensor).cuda()
-            source_label = source_label.type(torch.FloatTensor).cuda()
-
-            target_img = target_img.type(torch.FloatTensor).cuda()
-            target_label = target_label.type(torch.FloatTensor).cuda()
-
-            target_score, train_loss = self.model.train_model(source=source_img, target=target_img, 
-                                                              source_label=source_label, target_label=target_label)
+            target_score, train_loss = self.model.fit(source_x=source_x, target_x=target_x, 
+                                                      source_y=source_y, target_y=target_y)
             
             target_score = target_score.data.cpu().numpy()
-            target_label = target_label.data.cpu().numpy()
+            target_y = target_y.data.cpu().numpy()
 
-            if len(target_label) > len(target_score):
-                target_label = target_label[:len(target_score)]
-            _, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(target_score, target_label)
-            precisions, recalls, fs, specificities, aps, iaps, aucs = np.nanmean(precisions), np.nanmean(recalls), np.nanmean(fs), np.nanmean(specificities), np.nanmean(aps), np.nanmean(iaps), np.nanmean(aucs)
+            if len(target_y) > len(target_score):
+                target_y = target_y[:len(target_score)]
+            _, precisions, recalls, fs, specificities, aps, iaps, aucs = self.evaluater.evaluate(target_score, target_y)
+            precisions, recalls, fs, specificities, aps, iaps, aucs = \
+                np.nanmean(precisions), np.nanmean(recalls), np.nanmean(fs), np.nanmean(specificities), np.nanmean(aps), np.nanmean(iaps), np.nanmean(aucs)
 
             total_time = time.time() - self.start_time
 
@@ -173,9 +176,9 @@ class Trainer(object):
                 log_train = [aps, fs, precisions, recalls]
                 log_test = [''] * 4
 
-                log_iter = ','.join(list(map(str, log_iter)))
+                log_iter = ','.join(map(str, log_iter))
                 log_test = ','.join(log_test)
-                log_train = ','.join(list(map(lambda x: '{:.4f}'.format(x), log_train)))
+                log_train = list2str(lst=log_train, decimals=4, separator=',')
 
                 log = '{},{},{},{:.2f}\n'.format(log_iter, log_train, log_test, total_time)
                 f.write(log)

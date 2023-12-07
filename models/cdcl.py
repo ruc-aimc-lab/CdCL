@@ -4,8 +4,6 @@ import torch.nn.functional as F
 from .optimizer import Optimizer
 from .MLP import MLP, GELU
 
-import math
-
 
 class ChannelAttention(nn.Module):
     def __init__(self, channels, reduction, act=nn.Sigmoid()):
@@ -187,43 +185,34 @@ class CdCL(nn.Module):
 
 
 class CdCLProcessor(object):
-    def __init__(self, backbone, backbone_out_channels, training_params, only_predict=False):
+    def __init__(self, backbone, backbone_out_channels, training_params, training=True):
         model_params = training_params['model_params']
         n_class = model_params['n_class']
         mhsa_nums = model_params['mhsa_nums']
         lap_ratio = model_params['lap_ratio']
         over_lap = model_params['over_lap']
         
-        
         self.model = CdCL(backbone=backbone, n_class=n_class, backbone_out_channels=backbone_out_channels, 
                      mhsa_nums=mhsa_nums, lap_ratio=lap_ratio, over_lap=over_lap)
-        if not only_predict:
+        if training:
             self.mix_ratio = model_params['mix_ratio']  # (0.5, 1)
 
             self.opt = Optimizer([self.model], training_params)
             self.crit = nn.BCEWithLogitsLoss()
-            self.weights = model_params['weights'] # 长度为2，原始损失，mix up损失
+            self.weights = model_params['weights'] 
 
-    def train_model(self, source, target, source_label, target_label):
-        '''if cfp.size(0) != clarus_whole.size(0):
-            if cfp.size(0) > clarus_whole.size(0):
-                cfp = cfp[:clarus_whole.size(0)]
-                gt_cfp = gt_cfp[:clarus_whole.size(0)]
-            else:
-                repeat_num = int(math.ceil(clarus_whole.size(0) / cfp.size(0)))
-                cfp = cfp.repeat((repeat_num, 1, 1, 1))[:clarus_whole.size(0)]
-                gt_cfp = gt_cfp.repeat((repeat_num, 1))[:clarus_whole.size(0)]'''
+    def fit(self, source_x, target_x, source_y, target_y):
 
         self.opt.z_grad()
 
-        source, target = self.uniform_size(source=source, target=target)
-        mixup = (1 - self.mix_ratio) * source + self.mix_ratio * target
+        source_x, target_x = self.uniform_size(source=source_x, target=target_x)
+        mixup = (1 - self.mix_ratio) * source_x + self.mix_ratio * target_x
 
-        score_target = self.model(target)
+        score_target = self.model(target_x)
         score_mixup = self.model(mixup)
         
-        loss_target = self.crit(score_target, target_label)
-        loss_mixup = self.crit(score_mixup, target_label) * self.mix_ratio + self.crit(score_mixup, source_label) * (1 - self.mix_ratio)
+        loss_target = self.crit(score_target, target_y)
+        loss_mixup = self.crit(score_mixup, target_y) * self.mix_ratio + self.crit(score_mixup, source_y) * (1 - self.mix_ratio)
 
         loss = loss_target * self.weights[0] + loss_mixup * self.weights[1]
 
@@ -233,10 +222,10 @@ class CdCLProcessor(object):
 
         return score_target, loss
 
-    def predict_result(self, x):
+    def predict(self, x):
         return self.model(x)
     
-    def change_model_mode(self, mode):
+    def set_model_mode(self, mode):
         if mode == 'train':
             self.model.train()
         elif mode == 'eval':
@@ -248,7 +237,7 @@ class CdCLProcessor(object):
         for param in self.model.parameters():
             param.requires_grad = False
 
-    def change_device(self, device):
+    def set_device(self, device):
         self.model.to(device)
 
     def save_model(self, path):

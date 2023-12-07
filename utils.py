@@ -1,6 +1,12 @@
-# evaluation metrics
 import numpy as np
 from sklearn.metrics import average_precision_score, roc_auc_score, roc_curve
+
+
+def list2str(lst, decimals, separator=','):
+    """
+    convert a list of float into string with defined decimals and separator
+    """
+    return separator.join(map(lambda x: '{:.{}f}'.format(x, decimals), lst))
 
 
 def one_hot(x, num_ratings=None):

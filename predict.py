@@ -21,9 +21,7 @@ def main(train_source_collection, train_target_collection, val_target_collection
     paths = config['paths']
     augmentation_params = config['augmentation_params']
 
-    collection_root = paths['collection_root']
     mapping_path = paths['mapping_path']
-
 
     test_target_loader = build_dataloader(
         paths=paths, collection_names=test_target_collection, 
@@ -31,12 +29,12 @@ def main(train_source_collection, train_target_collection, val_target_collection
         augmentation_params=augmentation_params, 
         domain='target', train=False)
 
-    model = build_model(training_params['net'], training_params, only_predict=True)
+    model = build_model(training_params['net'], training_params, training=False)
     model.requires_grad_false()
-    model.change_model_mode('eval')
+    model.set_model_mode('eval')
     model_path = os.path.join('./out', train_target_collection + '_' + train_source_collection, 'Models', val_target_collection, config_name, 'runs_{}'.format(run_num), 'best_model.pkl')
     model.load_model(model_path)
-    model.change_device('cuda')
+    model.set_device('cuda')
 
     out_root = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num))
