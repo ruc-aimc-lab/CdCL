@@ -12,10 +12,11 @@ Install packages by `pip install -r requirements.txt`. This step is suggested to
 ## Datasets
 - RFMiD: [https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid](https://ieee-dataport.org/open-access/retinal-fundus-multi-disease-image-dataset-rfmid)
 - TOP: [https://github.com/DateCazuki/Fundus_Diagnosis](https://github.com/DateCazuki/Fundus_Diagnosis)
-
+ 
 ## Data split
+The data split is provided in `Annotations`.
 For RFMiD dataset, we follow the official data split.
-For TOP dataset, with the absence of official data split, we have randomly divided it into training, validation and test sets with ratio 6:2:2. Furthermore, as mentioned in our paper, we have built a subset of TOP training set with one tenth of its images used. The data split is provided in `Annotations`.
+For TOP dataset, with the absence of official data split, we have randomly divided it into training, validation and test sets with ratio 6:2:2. Furthermore, as mentioned in our paper, we have built a subset of TOP training set with one tenth of its images used. 
 
 | Dataset               | Images  | DR      | RVO   | AMD   |
 | :--                   | --:     | --:     | --:   | --:   |
@@ -68,8 +69,13 @@ Annotations/
 └── val_TOP/
 ```
 
+## Model checkpoint
+You can download the model checkpoint in [Google drive](https://drive.google.com/file/d/1QkLgdzSo11Q0gUnEXoxTYz-OlYF2_8DR/view?usp=drive_link).
  
 ## Codes
+### Prediction and evaluation
+
+### Training
 Try `sh main.sh` which combines training, predicting and evaluating together. 
 
 # Citation
