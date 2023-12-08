@@ -58,15 +58,15 @@ imagedata/
 The annotations are organized as follows:
 ```
 Annotations/
-├── test_RFMiD/
+├── RFMiD_test/
 │   └── Annotations/
 │       └── anno.txt
-├── test_TOP/
-├── train_RFMiD/
-├── train_TOP/
-├── train_TOP_10percent/
-├── val_RFMiD/
-└── val_TOP/
+├── TOP_test/
+├── RFMiD_train/
+├── TOP_train/
+├── TOP_train_10percent/
+├── RFMiD_val/
+└── TOP_val/
 ```
 
 ## Model checkpoint
