@@ -61,11 +61,11 @@ Annotations/
 ├── RFMiD_test/
 │   └── Annotations/
 │       └── anno.txt
-├── TOP_test/
 ├── RFMiD_train/
+├── RFMiD_val/
+├── TOP_test/
 ├── TOP_train/
 ├── TOP_train_10percent/
-├── RFMiD_val/
 └── TOP_val/
 ```
 
