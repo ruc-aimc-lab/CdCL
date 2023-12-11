@@ -74,6 +74,11 @@ You can download the model checkpoint in [Google drive](https://drive.google.com
  
 ## Codes
 ### Prediction and evaluation
+By using `python checkpoint_eval.py`, you can evaluate the downloaded checkpoint. If everything goes well, you may get following result:
+```
+
+```
+
 
 ### Training
 Try `sh main.sh` which combines training, predicting and evaluating together. 
