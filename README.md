@@ -76,7 +76,10 @@ You can download the model checkpoint in [Google drive](https://drive.google.com
 ### Prediction and evaluation
 By using `python checkpoint_eval.py`, you can evaluate the downloaded checkpoint. If everything goes well, you may get following result:
 ```
-
+Disease: DR, AP: 0.8478
+Disease: RVO, AP: 0.6796
+Disease: AMD, AP: 0.5056
+Mean AP: 0.6777
 ```
 
 

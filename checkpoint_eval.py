@@ -33,18 +33,19 @@ model.load_model(model_path)
 model.set_device('cuda')
 
 predictor = Predictor(model, test_target_loader)
-img_names, scores, _ = predictor.predict()
+img_paths, scores, _ = predictor.predict()
 # scores = weighted_sigmoid(scores)
 mappings = test_target_loader.dataset.mappings
 reserve_mappings = {}
 for k in mappings:
     reserve_mappings[mappings[k]] = k
 
-gt_dic = load_gt(gt_path=test_target_loader.dataset.lstpaths[0], mappings=mappings)
+gt_dic = load_gt(gt_path=test_target_loader.dataset.lstpaths[0], mapping=mappings)
 
 gts = []
 preds = []
-for im_name, score_arr in zip(img_names, scores):
+for im_path, score_arr in zip(img_paths, scores):
+    im_name = im_path.split(os.sep)[-1]
     gts.append(gt_dic[im_name])
     preds.append(score_arr)
 gts = np.array(gts)
@@ -55,6 +56,6 @@ evaluater = Evaluater()
 _, precisions, recalls, fs, specificities, aps, iaps, aucs = evaluater.evaluate(preds, gts, thre=0.)
 
 for i in range(len(aps)):
-    print('Disease: {}, AP: {:.4f}\n'.format(reserve_mappings[i], aps[i]))    
-print('Mean AP: {:.4f}\n'.format(np.mean(aps)))  
+    print('Disease: {}, AP: {:.4f}'.format(reserve_mappings[i], aps[i]))    
+print('Mean AP: {:.4f}'.format(np.mean(aps)))  
     
