@@ -40,5 +40,20 @@ def main(model_path, config_path, collection_path):
     
     gt_dic = load_gt(gt_path=collection_path, mappings=test_target_loader.dataset.mappings)
 
+    gts = []
+    preds = []
+    for im_name, score_arr in zip(img_names, scores):
+        gts.append(gt_dic[im_name])
+        preds.append(score_arr)
+    gts = np.array(gts)
+    preds = np.array(preds)
+
+    evaluater = Evaluater()
+
+    _, precisions, recalls, fs, specificities, aps, iaps, aucs = evaluater.evaluate(preds, gts, thre=0.)
+    row_heads = ['precision', 'recall', 'f1', 'specificity', 'auc', 'ap']
+    column_head = ['mean'] + [reserve_mappings[i] for i in range(len(precisions))]
+    results = [precisions, recalls, fs, specificities, aucs, aps]
+
 
     

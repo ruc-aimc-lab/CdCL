@@ -50,9 +50,9 @@ def main(train_source_collection, train_target_collection, val_target_collection
     scores = weighted_sigmoid(scores)
     
     with open(results_path, 'w') as fout:
-        for img_name, score in zip(img_names, scores):
-            score = list2str(lst=score, decimals=4, separator=',')
-            line = '{},{}\n'.format(img_name, score)
+        for img_name, score_arr in zip(img_names, scores):
+            score_str = list2str(lst=score_arr, decimals=4, separator=',')
+            line = '{},{}\n'.format(img_name, score_str)
             fout.write(line)
     print('Predictions saved to {}'.format(results_path))
     return results_path
