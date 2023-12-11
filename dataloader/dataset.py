@@ -12,6 +12,10 @@ class MyDataset(Dataset):
         """
         lstpaths: paths of the dataset list file
         img_root: root path of images
+        mappings: the mappings of disease name to category number
+        aug: data augmentation
+        ratio: randomly choose the ratio * 100% of the dataset. 
+            For example, you can use TOP_train and set ratio to 0.1 which is similar to directly use TOP_train_10percent with ratio 1.0
         """
 
         self.img_root = img_root
