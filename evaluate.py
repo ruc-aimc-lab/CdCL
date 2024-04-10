@@ -45,11 +45,11 @@ def main(train_source_collection, train_target_collection, val_target_collection
     
     paths = config['paths']
     collection_root = paths['collection_root']
-    pred_path = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+    pred_path = os.path.join('out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num), 'results.csv')
     gt_path = os.path.join(collection_root, test_target_collection, 'Annotations', 'anno.txt')
     mapping_path = paths['mapping_path']
-    out_path = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+    out_path = os.path.join('out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num), 'eval_results.csv')
     
     eval(pred_path=pred_path, gt_path=gt_path, mapping_path=mapping_path, out_path=out_path)

@@ -1,9 +1,9 @@
 {
     "paths":
     {
-        "image_root": "./imagedata",
-        "collection_root": "./Annotations",
-        "mapping_path": "./Annotations/mapping_public_dataset.json"
+        "image_root": "imagedata",
+        "collection_root": "Annotations",
+        "mapping_path": "Annotations/mapping_public_dataset.json"
     },
 
     "training_params":

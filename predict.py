@@ -33,11 +33,11 @@ def main(train_source_collection, train_target_collection, val_target_collection
     model = build_model(training_params['net'], training_params, training=False)
     model.requires_grad_false()
     model.set_model_mode('eval')
-    model_path = os.path.join('./out', train_target_collection + '_' + train_source_collection, 'Models', val_target_collection, config_name, 'runs_{}'.format(run_num), 'best_model.pkl')
+    model_path = os.path.join('out', train_target_collection + '_' + train_source_collection, 'Models', val_target_collection, config_name, 'runs_{}'.format(run_num), 'best_model.pkl')
     model.load_model(model_path)
     model.set_device('cuda')
 
-    out_root = os.path.join('./out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
+    out_root = os.path.join('out', test_target_collection, 'Predictions', train_target_collection + '_' + train_source_collection,
                             val_target_collection, config_name, 'runs_{}'.format(run_num))
     results_path = os.path.join(out_root, 'results.csv')
     if os.path.exists(results_path):
